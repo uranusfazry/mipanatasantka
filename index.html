@@ -1441,219 +1441,327 @@ function applyRippleEffect() {
 }
 applyRippleEffect();
 
-/* ============================================================
-   DATA: BANK SOAL (DENGAN EXPLANATION & KEYWORDS - HOTS TKA)
-   ============================================================ */
+/**
+ * =========================================================================
+ * 🚀 UPGRADE SISTEM PENILAIAN ESAI & BANK SOAL TKA CBT
+ * =========================================================================
+ * Update meliputi:
+ * 1. Struktur keywords esai diubah menjadi array of objects (bobot & wajib).
+ * 2. Penambahan atribut `difficulty`, `skill`, dan `insight` di semua soal.
+ * 3. Logika grading cerdas: Anti-spam, minimal kata, dan validasi keyword wajib.
+ */
+
 const BANK_SOAL = [
   // =========================================================================
   // BAHASA INDONESIA: LITERASI (11 PG + 4 ESAI)
-  // Konteks: IPA (Lingkungan), IPS (Sosial/Ekonomi), PAI (Akhlak)
   // =========================================================================
   { 
     id: 1, mapel: 'Bahasa Indonesia', type: 'pg', 
     teks: 'Bacalah teks berikut dengan saksama!\n\n"Desa Sukatani dulunya merupakan wilayah yang gersang dan sulit air. Namun, sejak Pak Kades menggerakkan warga untuk menanam pohon aren di sepanjang bukit, kondisi perlahan berubah. Kini, desa tersebut menjadi rimbun, air tanah kembali melimpah, dan warga bahkan mendapatkan penghasilan tambahan dari menjual gula aren."\n\nKesimpulan tersirat (yang tidak tertulis langsung) dari teks tersebut adalah...', 
     opsi: ['Pohon aren dapat tumbuh di tanah yang gersang dan kurang air.', 'Warga desa Sukatani sekarang menjadi kaya raya karena gula aren.', 'Penghijauan lingkungan dapat membawa dampak positif bagi alam dan ekonomi warga.', 'Pak Kades memaksa warganya menanam pohon aren agar bisa berjualan gula.'], 
     jawaban: 2, 
-    explanation: 'Kesimpulan tersirat harus mewakili pesan utama bacaan tanpa mengulangi teks secara harfiah. Teks menunjukkan bahwa aksi penghijauan (menanam pohon aren) berhasil memperbaiki alam (air melimpah) sekaligus memberikan keuntungan finansial (jual gula aren).' 
+    explanation: 'Kesimpulan tersirat harus mewakili pesan utama bacaan tanpa mengulangi teks secara harfiah. Teks menunjukkan bahwa aksi penghijauan berhasil memperbaiki alam sekaligus memberikan keuntungan finansial.',
+    difficulty: 'medium', skill: 'inferensi',
+    insight: 'Banyak siswa salah karena memilih jawaban yang tersurat di teks, bukan menarik kesimpulan secara keseluruhan (HOTS).'
   },
   { 
     id: 2, mapel: 'Bahasa Indonesia', type: 'pg', 
     teks: 'Berdasarkan teks "Desa Sukatani" pada soal sebelumnya, mengapa saat ini air tanah di desa tersebut kembali melimpah?', 
     opsi: ['Karena warga desa tidak lagi menggunakan air secara boros.', 'Karena akar pohon aren yang ditanam warga membantu menyerap dan menahan air hujan di dalam tanah.', 'Karena Pak Kades membuat sumur resapan yang besar di tengah desa.', 'Karena warga menjual gula aren untuk membeli air bersih dari luar desa.'], 
     jawaban: 1, 
-    explanation: 'Dalam konteks IPA (ekologi), pohon berperan penting dalam siklus air. Akarnya berfungsi menahan dan menyimpan air hujan sehingga air tanah tetap terjaga.' 
+    explanation: 'Dalam konteks IPA (ekologi), pohon berperan penting dalam siklus air. Akarnya berfungsi menahan dan menyimpan air hujan.',
+    difficulty: 'easy', skill: 'sebab-akibat',
+    insight: 'Sebagian siswa salah mengira pembangunan fisik (sumur resapan) adalah penyebabnya, padahal teks berfokus pada fungsi ekologis pohon.'
   },
   { 
     id: 3, mapel: 'Bahasa Indonesia', type: 'pg', 
     teks: '"Setelah berhasil membangun bisnis kerajinan anyaman bambu, Bu Rina menjadi buah bibir di kampungnya. Meskipun pesanan datang dari luar negeri, ia tetap ramah dan mau mengajarkan keterampilannya kepada ibu-ibu lain secara gratis."\n\nMakna ungkapan "buah bibir" pada teks di atas adalah...', 
     opsi: ['Orang yang suka banyak bicara', 'Orang yang selalu memakai lipstik', 'Bahan pembicaraan orang banyak (terkenal)', 'Orang yang sombong karena kaya'], 
     jawaban: 2, 
-    explanation: 'Ungkapan "buah bibir" berarti sesuatu atau seseorang yang sedang ramai dibicarakan oleh banyak orang (terkenal/viral).' 
+    explanation: 'Ungkapan "buah bibir" berarti sesuatu atau seseorang yang sedang ramai dibicarakan oleh banyak orang (terkenal/viral).',
+    difficulty: 'easy', skill: 'analisis',
+    insight: 'Siswa yang kurang literasi idiom sering menerjemahkan makna harfiah (berkaitan dengan mulut/bicara).'
   },
   { 
     id: 4, mapel: 'Bahasa Indonesia', type: 'pg', 
     teks: 'Perhatikan jadwal piket dan sedekah Jumat Kelas 6 di bawah ini!\n- Senin: Andi, Budi, Citra\n- Selasa: Deni, Eka, Farid\n- Rabu: Gita, Hasan, Indah\n\nPada hari Selasa, Farid sakit dan tidak masuk sekolah. Berdasarkan sikap gotong royong, tindakan yang paling tepat dilakukan oleh Deni dan Eka adalah...', 
     opsi: ['Melaporkan Farid ke guru agar dihukum karena tidak piket.', 'Mengerjakan tugas piket berdua saja dengan ikhlas tanpa mengeluh.', 'Meninggalkan sebagian tugas piket agar Farid yang mengerjakannya besok.', 'Meminta siswa dari hari Rabu untuk menggantikan Farid.'], 
     jawaban: 1, 
-    explanation: 'Sikap gotong royong dan empati (PAI/Sosial) mengharuskan kita untuk saling membantu, terutama saat ada teman yang berhalangan hadir karena alasan yang sah (sakit).' 
+    explanation: 'Sikap gotong royong mengharuskan kita untuk saling membantu, terutama saat ada teman berhalangan hadir karena sakit.',
+    difficulty: 'medium', skill: 'logika',
+    insight: 'Siswa sering memisahkan antara keadilan tugas (harus diganti) dengan empati sosial (mengerjakan dengan ikhlas).'
   },
   { 
     id: 5, mapel: 'Bahasa Indonesia', type: 'pg', 
     teks: '"Hafiz selalu menyisihkan sebagian uang sakunya untuk anak yatim. Ia percaya bahwa menyumbangkan harta tidak akan membuat seseorang jatuh miskin, melainkan justru membersihkan harta tersebut."\n\nPesan moral dari perilaku Hafiz adalah...', 
     opsi: ['Kita harus memamerkan uang kita kepada anak yatim.', 'Bersedekah harus dilakukan jika kita sudah memiliki banyak uang.', 'Berbagi kepada sesama dapat mensucikan harta dan membawa keberkahan.', 'Lebih baik tidak jajan di sekolah agar uangnya bisa disumbangkan semua.'], 
     jawaban: 2, 
-    explanation: 'Teks ini mengandung nilai PAI mengenai sedekah. Pesan utamanya adalah sedekah tidak membuat miskin, tapi justru membersihkan harta dan membawa berkah.' 
+    explanation: 'Pesan utamanya adalah sedekah tidak membuat miskin, tapi justru membersihkan harta dan membawa berkah.',
+    difficulty: 'easy', skill: 'inferensi',
+    insight: 'Soal ini cukup mudah, kesalahan biasanya terjadi akibat kurang teliti membaca keseluruhan opsi.'
   },
   { 
     id: 6, mapel: 'Bahasa Indonesia', type: 'pg', 
     teks: 'Kemajuan teknologi membuat komunikasi menjadi sangat *efisien*. Kita bisa menghubungi kerabat di luar negeri hanya dalam hitungan detik menggunakan panggilan video.\n\nAntonim dari kata bercetak miring dalam kalimat tersebut adalah...', 
     opsi: ['Cepat', 'Tepat guna', 'Boros waktu / Lambat', 'Modern'], 
     jawaban: 2, 
-    explanation: 'Efisien berarti tepat guna atau tidak membuang-buang waktu/tenaga. Maka antonim (lawan kata) yang paling tepat adalah boros waktu atau lambat.' 
+    explanation: 'Efisien berarti tepat guna. Maka antonim (lawan kata) yang paling tepat adalah boros waktu atau lambat.',
+    difficulty: 'medium', skill: 'analisis',
+    insight: 'Banyak siswa terjebak memilih sinonimnya (Cepat/Tepat guna) alih-alih membaca perintah "Antonim".'
   },
   { 
     id: 7, mapel: 'Bahasa Indonesia', type: 'pg', 
     teks: 'Bacalah informasi berikut!\nNyamuk *Aedes aegypti* memiliki ciri belang hitam-putih pada tubuhnya dan biasanya menggigit pada pagi hingga sore hari. Nyamuk ini berkembang biak di genangan air bersih. Sementara itu, nyamuk biasa (Culex) umumnya menggigit pada malam hari dan berkembang biak di air kotor atau selokan.\n\nBerdasarkan teks di atas, manakah pernyataan perbandingan yang paling tepat?', 
     opsi: ['Kedua nyamuk sama-sama berbahaya jika menggigit pada malam hari.', 'Aedes aegypti menyukai air kotor, sedangkan nyamuk biasa menyukai air bersih.', 'Cara mencegah Aedes aegypti adalah menguras bak mandi, sedangkan nyamuk biasa dengan membersihkan selokan.', 'Nyamuk biasa memiliki belang hitam-putih, sedangkan Aedes aegypti tidak.'], 
     jawaban: 2, 
-    explanation: 'Teks menyatakan Aedes di air bersih (bak mandi) dan Culex di air kotor (selokan). Maka tindakan pencegahannya harus disesuaikan dengan habitat masing-masing nyamuk.' 
+    explanation: 'Aedes di air bersih (bak mandi) dan Culex di air kotor (selokan). Tindakan pencegahan harus sesuai habitatnya.',
+    difficulty: 'hard', skill: 'analisis',
+    insight: 'Butuh pemahaman komparatif. Siswa salah jika mencampuradukkan data habitat kedua nyamuk.'
   },
   { 
     id: 8, mapel: 'Bahasa Indonesia', type: 'pg', 
     teks: 'Berdasarkan teks tentang nyamuk pada soal sebelumnya, apa yang sebaiknya kamu lakukan jika melihat ban bekas yang terisi air hujan di halaman rumahmu?', 
     opsi: ['Dibiarkan saja karena air hujan sangat bersih dan segar.', 'Segera membuang airnya dan mengubur atau mendaur ulang ban tersebut.', 'Menyemprotnya dengan pewangi ruangan agar tidak bau.', 'Memindahkan ban tersebut ke dalam rumah agar nyamuk tidak masuk.'], 
     jawaban: 1, 
-    explanation: 'Ban bekas berisi air hujan adalah habitat air bersih yang sangat disukai nyamuk Aedes aegypti untuk bertelur. Tindakan pencegahan terbaik adalah membuang airnya (3M).' 
+    explanation: 'Ban bekas berisi air hujan adalah habitat air bersih yang sangat disukai nyamuk Aedes aegypti untuk bertelur.',
+    difficulty: 'medium', skill: 'logika',
+    insight: 'Penerapan teori ke praktik nyata. Siswa salah jika menganggap air hujan bersih itu aman.'
   },
   { 
     id: 9, mapel: 'Bahasa Indonesia', type: 'pg', 
     teks: '"Meskipun di sekolah sudah disediakan fasilitas kotak sampah yang terpisah (organik dan anorganik), beberapa siswa masih sering membuang bungkus plastik ke kotak sampah daun."\n\nKalimat tersebut menunjukkan adanya masalah berupa...', 
     opsi: ['Kurangnya fasilitas tempat sampah di sekolah.', 'Tidak adanya petugas kebersihan yang berjaga.', 'Kurangnya kesadaran dan kepedulian siswa terhadap pemilahan sampah.', 'Plastik dan daun memiliki jenis sampah yang sama.'], 
     jawaban: 2, 
-    explanation: 'Fasilitas sudah ada (kotak sampah terpisah), tetapi perilaku siswanya yang salah. Ini menunjukkan masalah pada tingkat kesadaran/kepedulian siswa.' 
+    explanation: 'Fasilitas sudah ada, tetapi perilaku siswanya yang salah. Ini menunjukkan masalah kesadaran/kepedulian.',
+    difficulty: 'medium', skill: 'inferensi',
+    insight: 'Membiasakan siswa mencari akar masalah dari suatu fenomena sosial.'
   },
   { 
     id: 10, mapel: 'Bahasa Indonesia', type: 'pg', 
     teks: 'Perhatikan kalimat surat resmi berikut!\n"Dengan hormat, kami mengundang bapak/ibu wali murid untuk hadir pada acara pengambilan raport yang akan dilaksanakan pada Hari senin."\n\nKesalahan penggunaan huruf kapital pada kalimat di atas terdapat pada kata...', 
     opsi: ['Hormat dan Hadir', 'Bapak/ibu dan senin', 'Mengundang dan Raport', 'Acara dan Hari'], 
     jawaban: 1, 
-    explanation: 'Sapaan resmi harus menggunakan huruf kapital (Bapak/Ibu), dan nama hari juga harus diawali kapital (Senin).' 
+    explanation: 'Sapaan resmi harus menggunakan huruf kapital (Bapak/Ibu), dan nama hari juga harus diawali kapital (Senin).',
+    difficulty: 'easy', skill: 'analisis',
+    insight: 'Ketelitian PUEBI dasar yang sering diremehkan siswa saat menulis.'
   },
   { 
     id: 11, mapel: 'Bahasa Indonesia', type: 'pg', 
     teks: 'Rani melihat seorang nenek kesulitan menyeberang jalan. Tanpa pikir panjang, Rani langsung menghampiri dan menuntun nenek tersebut dengan sabar hingga sampai di seberang. Teman-teman Rani memujinya.\n\nSikap Rani sangat sesuai dengan peribahasa...', 
     opsi: ['Berakit-rakit ke hulu, berenang-renang ke tepian', 'Bagaikan air dengan minyak', 'Ringan tangan, berat perut', 'Ringan tulang, mudah menolong (Ringan tangan)'], 
     jawaban: 3, 
-    explanation: 'Sikap suka menolong dan cepat bertindak membantu orang lain diistilahkan dengan peribahasa/ungkapan "ringan tulang" atau "ringan tangan".' 
+    explanation: 'Sikap suka menolong dan cepat bertindak diistilahkan dengan peribahasa/ungkapan "ringan tulang" atau "ringan tangan".',
+    difficulty: 'medium', skill: 'inferensi',
+    insight: 'Penguasaan peribahasa sesuai konteks tindakan moral.'
   },
+  
+  // 🔥🔥🔥 UPGRADE STRUKTUR ESAI BAHASA INDONESIA 🔥🔥🔥
   { 
     id: 12, mapel: 'Bahasa Indonesia', type: 'esai', 
     teks: 'Warga desa bergotong royong membersihkan selokan setiap bulan. Mengapa menjaga kebersihan selokan di lingkungan tempat tinggal sangat berkaitan erat dengan kesehatan warga? Jelaskan alasan logismu!', 
-    keywords: ['nyamuk|dbd|demam berdarah', 'banjir|genangan', 'penyakit|bakteri', 'kesehatan|bersih'], 
-    explanation: 'Selokan yang kotor dan mampet akan menjadi genangan air kotor. Genangan ini adalah sarang bagi nyamuk pembawa penyakit (seperti demam berdarah) dan bakteri. Jika selokan bersih, genangan hilang, sehingga rantai penyakit terputus.' 
+    keywords: [
+      { kata: ['nyamuk', 'dbd', 'demam berdarah'], wajib: true, bobot: 40 },
+      { kata: ['penyakit', 'bakteri', 'kuman'], wajib: true, bobot: 30 },
+      { kata: ['banjir', 'genangan', 'mampet'], wajib: false, bobot: 20 },
+      { kata: ['kesehatan', 'bersih'], wajib: false, bobot: 10 }
+    ], 
+    explanation: 'Selokan kotor/mampet = genangan air. Genangan = sarang nyamuk DBD & bakteri. Selokan bersih = genangan hilang = rantai penyakit terputus.',
+    difficulty: 'hard', skill: 'sebab-akibat',
+    insight: 'Banyak siswa salah karena hanya menjawab "agar tidak banjir" tanpa mengaitkannya secara logis dengan penyebab biologis (nyamuk/penyakit).'
   },
   { 
     id: 13, mapel: 'Bahasa Indonesia', type: 'esai', 
-    teks: 'Berdasarkan teks tentang "Desa Sukatani" (menanam aren), jelaskan minimal 2 dampak positif penanaman pohon aren bagi desa tersebut, dilihat dari segi EKONOMI (keuangan) dan EKOLOGI (lingkungan)!', 
-    keywords: ['air|tanah|hijau', 'gula|uang|penghasilan'], 
-    explanation: '1. Segi Ekologi: Pohon aren membuat desa menjadi rimbun hijau dan akar-akarnya membantu menyimpan cadangan air tanah. 2. Segi Ekonomi: Warga mendapat tambahan uang/penghasilan dari hasil membuat dan menjual gula aren.' 
+    teks: 'Berdasarkan teks tentang "Desa Sukatani", jelaskan minimal 2 dampak positif penanaman pohon aren bagi desa tersebut, dilihat dari segi EKONOMI (keuangan) dan EKOLOGI (lingkungan)!', 
+    keywords: [
+      { kata: ['air', 'tanah', 'hijau', 'menyerap', 'akar'], wajib: true, bobot: 50 },
+      { kata: ['gula', 'uang', 'penghasilan', 'jual'], wajib: true, bobot: 50 }
+    ], 
+    explanation: 'Ekologi: Pohon rimbun & akar menyimpan cadangan air. Ekonomi: Tambahan penghasilan dari jual gula aren.',
+    difficulty: 'medium', skill: 'analisis',
+    insight: 'Kesalahan umum: Siswa gagal membedakan mana yang dampak ekonomi dan mana yang dampak ekologi, sering terjawab tumpang tindih.'
   },
   { 
     id: 14, mapel: 'Bahasa Indonesia', type: 'esai', 
-    teks: 'Saat ulangan, Budi melihat Anton sedang menyontek dari catatan kecil. Budi membiarkannya karena merasa kasihan jika Anton mendapat nilai jelek. \n\nMenurut pendapatmu, mengapa tindakan Budi "membiarkan Anton menyontek" justru merusak masa depan Anton? Jelaskan alasanmu dari segi akhlak/karakter!', 
-    keywords: ['bohong|jujur', 'malas|bodoh', 'mandiri|usaha', 'terbiasa'], 
-    explanation: 'Membiarkan teman menyontek berarti mendukung ketidakjujuran. Jika dibiarkan, Anton akan terbiasa berbohong dan menjadi malas belajar. Ke depannya, ia tidak akan bisa mandiri dan tidak memiliki ilmu yang sebenarnya.' 
+    teks: 'Saat ulangan, Budi melihat Anton sedang menyontek. Budi membiarkannya karena merasa kasihan jika Anton mendapat nilai jelek. \n\nMenurut pendapatmu, mengapa tindakan Budi "membiarkan Anton menyontek" justru merusak masa depan Anton? Jelaskan alasanmu dari segi pembentukan karakter!', 
+    keywords: [
+      { kata: ['bohong', 'jujur', 'curang'], wajib: true, bobot: 40 },
+      { kata: ['mandiri', 'usaha', 'berusaha'], wajib: true, bobot: 30 },
+      { kata: ['malas', 'bodoh', 'bergantung'], wajib: false, bobot: 20 },
+      { kata: ['terbiasa', 'kebiasaan'], wajib: false, bobot: 10 }
+    ], 
+    explanation: 'Mendukung ketidakjujuran membuat Anton terbiasa curang. Anton tidak akan mandiri, menjadi pemalas, dan kehilangan kemampuan berusaha sendiri di masa depan.',
+    difficulty: 'hard', skill: 'logika',
+    insight: 'Siswa sering menjawab terlalu dangkal seperti "karena menyontek itu dosa", tanpa menjelaskan rantai sebab-akibat pembentukan karakter mentalitas pemalas.'
   },
   { 
     id: 15, mapel: 'Bahasa Indonesia', type: 'esai', 
     teks: 'Kamu ditugaskan menulis laporan pengamatan tentang kondisi sampah di pasar tradisional. Mengapa dalam menulis laporan pengamatan, kita harus menggunakan fakta atau data nyata dan TIDAK BOLEH memasukkan karangan/pendapat pribadi yang berlebihan?', 
-    keywords: ['fakta|nyata', 'objektif|akurat', 'bukti|data', 'informasi'], 
-    explanation: 'Laporan pengamatan adalah karya non-fiksi yang bertujuan memberikan informasi akurat kepada pembaca. Jika diisi dengan karangan pribadi, informasinya menjadi subjektif, tidak valid, dan tidak bisa dijadikan acuan kebenaran data.' 
+    keywords: [
+      { kata: ['fakta', 'nyata', 'sebenarnya'], wajib: true, bobot: 40 },
+      { kata: ['objektif', 'akurat', 'pasti'], wajib: true, bobot: 30 },
+      { kata: ['bukti', 'data'], wajib: false, bobot: 20 },
+      { kata: ['informasi', 'pembaca'], wajib: false, bobot: 10 }
+    ], 
+    explanation: 'Laporan pengamatan harus memberikan informasi akurat. Jika diisi karangan, informasi menjadi subjektif dan tidak valid sebagai acuan data.',
+    difficulty: 'medium', skill: 'inferensi',
+    insight: 'Banyak siswa yang belum memahami konsep dasar penulisan saintifik/laporan, di mana validitas data lebih penting dari opini.'
   },
 
   // =========================================================================
   // MATEMATIKA: NUMERASI (10 PG + 5 ESAI)
-  // Konteks: Logika Kehidupan Nyata, Analisis Data, Pola
   // =========================================================================
   { 
     id: 16, mapel: 'Matematika', type: 'pg', 
     teks: 'Perhatikan data sumbangan beras kelas 6 untuk korban bencana:\n- Kelas 6A: 25,5 kg\n- Kelas 6B: 30 kg\n- Kelas 6C: 24,5 kg\n\nBeras tersebut akan disalurkan dalam kantong plastik yang masing-masing berisi 2,5 kg. Berapa banyak kantong beras yang bisa dibuat oleh panitia?', 
     opsi: ['30 kantong', '32 kantong', '35 kantong', '40 kantong'], 
     jawaban: 1, 
-    explanation: 'Total beras = 25,5 + 30 + 24,5 = 80 kg. Jumlah kantong = Total beras dibagi isi per kantong = 80 / 2,5. Sama dengan 800 / 25 = 32 kantong.' 
+    explanation: 'Total = 80 kg. Jumlah kantong = 80 / 2,5 = 32 kantong.',
+    difficulty: 'medium', skill: 'pecahan',
+    insight: 'Siswa salah hitung pada pembagian desimal 80 dibagi 2,5.'
   },
   { 
     id: 17, mapel: 'Matematika', type: 'pg', 
     teks: 'Berdasarkan soal sebelumnya (ada 32 kantong beras), jika sebanyak 8 kantong telah dibagikan ke panti asuhan terdekat, berapa persentase sisa kantong beras yang belum dibagikan?', 
     opsi: ['25%', '70%', '75%', '80%'], 
     jawaban: 2, 
-    explanation: 'Total 32 kantong. Dibagikan 8 kantong. Sisa = 32 - 8 = 24 kantong. Persentase sisa = (Sisa / Total) x 100% = (24/32) x 100%. Disederhanakan 24/32 dibagi 8 = 3/4. 3/4 x 100% = 75%.' 
+    explanation: 'Sisa = 32 - 8 = 24 kantong. Persentase = (24/32) x 100% = 3/4 x 100% = 75%.',
+    difficulty: 'hard', skill: 'pecahan',
+    insight: 'Siswa sering keliru menghitung 8/32 = 25% sebagai sisa, padahal itu adalah persentase yang SUDAH dibagikan.'
   },
   { 
     id: 18, mapel: 'Matematika', type: 'pg', 
     teks: 'Dari data sumbangan beras di atas (6A=25,5kg; 6B=30kg; 6C=24,5kg), berapakah rata-rata (mean) sumbangan beras dari setiap kelas?', 
     opsi: ['24 kg', '25 kg', '26,6 kg', '28 kg'], 
     jawaban: 2, 
-    explanation: 'Rata-rata = Total jumlah beras dibagi banyak kelas. Total = 80 kg. Banyak kelas = 3. Rata-rata = 80 / 3 = 26,666... kg (dibulatkan 26,6 kg).' 
+    explanation: 'Rata-rata = 80 / 3 = 26,666... kg (dibulatkan 26,6 kg).',
+    difficulty: 'easy', skill: 'analisis',
+    insight: 'Konsep dasar statistika (mean). Kesalahan umum ada di akurasi pembagian.'
   },
   { 
     id: 19, mapel: 'Matematika', type: 'pg', 
     teks: 'Keluarga Budi naik kereta api dari Jakarta menuju Cirebon. Kereta berangkat tepat pada pukul 08.15. Waktu tempuh perjalanan adalah 2 jam 45 menit. Jika kereta sempat berhenti untuk transit (menunggu jalur) selama 20 menit, pada pukul berapakah keluarga Budi tiba di Cirebon?', 
     opsi: ['10.40', '11.00', '11.20', '11.30'], 
     jawaban: 2, 
-    explanation: 'Total waktu perjalanan = waktu tempuh + transit = 2 jam 45 menit + 20 menit = 2 jam 65 menit = 3 jam 5 menit. Waktu tiba = Pukul 08.15 + 3 jam 5 menit = Pukul 11.20.' 
+    explanation: 'Waktu tempuh + transit = 3 jam 5 menit. 08.15 + 3 jam 5 menit = Pukul 11.20.',
+    difficulty: 'medium', skill: 'logika',
+    insight: 'Siswa tidak memasukkan waktu transit (20 menit) ke dalam total durasi perjalanan.'
   },
   { 
     id: 20, mapel: 'Matematika', type: 'pg', 
     teks: 'Sebuah peta pulau Jawa memiliki skala 1 : 1.500.000. Jarak antara kota X dan kota Y pada peta tersebut adalah 4 cm. Jika Ayah mengendarai mobil dari kota X ke Y dengan kecepatan rata-rata 60 km/jam, berapa lama waktu yang dibutuhkan Ayah untuk sampai?', 
     opsi: ['1 jam', '2 jam', '3 jam', '4 jam'], 
     jawaban: 0, 
-    explanation: 'Jarak sebenarnya = 4 cm x 1.500.000 = 6.000.000 cm = 60 km. Waktu tempuh = Jarak / Kecepatan = 60 km / 60 km/jam = 1 jam.' 
+    explanation: 'Jarak = 4 x 1.500.000 = 6.000.000 cm = 60 km. Waktu = 60 / 60 = 1 jam.',
+    difficulty: 'hard', skill: 'analisis',
+    insight: 'Soal berlapis: konversi skala dulu, baru gunakan rumus JKW (Jarak-Kecepatan-Waktu).'
   },
   { 
     id: 21, mapel: 'Matematika', type: 'pg', 
-    teks: 'Sebuah bak penampungan air hujan untuk mencegah genangan di sekolah berbentuk balok dengan ukuran panjang 2 meter, lebar 1 meter, dan tinggi 1 meter. Jika setelah hujan lebat bak tersebut terisi air sebanyak 3/4 bagian dari kapasitas penuhnya, berapa liter volume air hujan di dalam bak tersebut? (1 m³ = 1.000 liter)', 
+    teks: 'Sebuah bak penampungan air berbentuk balok (panjang 2m, lebar 1m, tinggi 1m). Jika setelah hujan lebat bak tersebut terisi air 3/4 bagian dari kapasitas penuhnya, berapa liter volume air hujan di dalamnya? (1 m³ = 1.000 liter)', 
     opsi: ['1.000 liter', '1.500 liter', '2.000 liter', '2.500 liter'], 
     jawaban: 1, 
-    explanation: 'Volume total bak = p x l x t = 2 x 1 x 1 = 2 m³ = 2.000 liter. Bak terisi 3/4 bagian. Volume air = 3/4 x 2.000 liter = 1.500 liter.' 
+    explanation: 'Volume total = 2 x 1 x 1 = 2 m³ = 2.000 liter. Air = 3/4 x 2.000 = 1.500 liter.',
+    difficulty: 'medium', skill: 'pecahan',
+    insight: 'Siswa lupa mengonversi m³ ke liter atau lupa mengalikan dengan 3/4.'
   },
   { 
     id: 22, mapel: 'Matematika', type: 'pg', 
-    teks: 'Sebuah taman desa berbentuk persegi panjang berukuran panjang 20 meter dan lebar 15 meter. Di sekeliling bagian dalam taman tersebut akan dibuat jalan setapak berbatu selebar 1 meter untuk warga berolahraga. Berapakah luas jalan setapak tersebut?', 
+    teks: 'Sebuah taman desa berbentuk persegi panjang (20m x 15m). Di sekeliling bagian dalam taman akan dibuat jalan setapak berbatu selebar 1 meter. Berapakah luas jalan setapak tersebut?', 
     opsi: ['66 m²', '74 m²', '134 m²', '300 m²'], 
     jawaban: 0, 
-    explanation: 'Luas taman keseluruhan = 20 x 15 = 300 m². Karena ada jalan 1m di keliling dalam, ukuran area rumput di tengah menyusut. Panjang rumput = 20 - 1 - 1 = 18m. Lebar rumput = 15 - 1 - 1 = 13m. Luas rumput = 18 x 13 = 234 m². Luas jalan = Luas total - Luas rumput = 300 - 234 = 66 m².' 
+    explanation: 'Luas total = 300 m². Ukuran area dalam = (20-2) x (15-2) = 18 x 13 = 234 m². Luas jalan = 300 - 234 = 66 m².',
+    difficulty: 'hard', skill: 'logika',
+    insight: 'Kesalahan fatal: Siswa hanya mengurangi 1 meter, padahal lebar jalan ada di kiri-kanan/atas-bawah (harus dikurangi 2).'
   },
   { 
     id: 23, mapel: 'Matematika', type: 'pg', 
-    teks: 'Koperasi Kesejahteraan Sekolah memberikan diskon 10% khusus untuk produk buku tulis. Harga normal 1 buku tulis adalah Rp4.000, sedangkan 1 buah pulpen harganya Rp2.000 tanpa diskon. Jika Ani membeli 4 buku tulis dan 3 pulpen dengan uang Rp25.000, berapakah uang kembaliannya?', 
+    teks: 'Koperasi memberikan diskon 10% untuk buku tulis. Harga normal 1 buku adalah Rp4.000, 1 pulpen Rp2.000. Jika Ani membeli 4 buku tulis dan 3 pulpen dengan uang Rp25.000, berapakah uang kembaliannya?', 
     opsi: ['Rp4.600', 'Rp5.400', 'Rp6.000', 'Rp20.400'], 
     jawaban: 0, 
-    explanation: 'Harga 1 buku setelah diskon 10% = Rp4.000 - Rp400 = Rp3.600. Belanja buku = 4 x Rp3.600 = Rp14.400. Belanja pulpen = 3 x Rp2.000 = Rp6.000. Total belanja = Rp14.400 + Rp6.000 = Rp20.400. Kembalian = Rp25.000 - Rp20.400 = Rp4.600.' 
+    explanation: 'Buku setelah diskon = Rp3.600. Belanja = (4 x 3.600) + (3 x 2.000) = 14.400 + 6.000 = 20.400. Kembalian = 25.000 - 20.400 = 4.600.',
+    difficulty: 'medium', skill: 'analisis',
+    insight: 'Siswa menghitung diskon di akhir untuk seluruh barang, padahal diskon HANYA untuk buku.'
   },
   { 
     id: 24, mapel: 'Matematika', type: 'pg', 
-    teks: 'Suhu sepotong daging sapi beku saat dikeluarkan dari lemari pendingin adalah -4°C. Setiap 5 menit dibiarkan di suhu ruang, suhu daging tersebut naik sebesar 3°C. Berapakah suhu daging tersebut setelah dibiarkan di atas meja selama 20 menit?', 
+    teks: 'Suhu daging sapi beku adalah -4°C. Setiap 5 menit, suhunya naik 3°C. Berapakah suhu daging setelah dibiarkan selama 20 menit?', 
     opsi: ['8°C', '12°C', '16°C', '20°C'], 
     jawaban: 0, 
-    explanation: 'Dalam 20 menit, daging mengalami kenaikan suhu sebanyak 4 kali (karena 20 / 5 = 4). Total kenaikan suhu = 4 x 3°C = 12°C. Suhu akhir = Suhu awal + Kenaikan = -4°C + 12°C = 8°C.' 
+    explanation: 'Kenaikan 4 kali (20/5). Total kenaikan = 12°C. Suhu akhir = -4 + 12 = 8°C.',
+    difficulty: 'medium', skill: 'logika',
+    insight: 'Kesalahan operasi bilangan bulat negatif ditambah positif (-4 + 12 sering dijawab -16 atau 16).'
   },
   { 
     id: 25, mapel: 'Matematika', type: 'pg', 
-    teks: 'Peternakan Pak Slamet memelihara ayam dan bebek. Perbandingan jumlah ayam dan bebek adalah 3 : 5. Jika diketahui selisih jumlah bebek dan ayam di peternakan tersebut adalah 14 ekor, berapakah total keseluruhan unggas yang dimiliki Pak Slamet?', 
+    teks: 'Perbandingan ayam dan bebek adalah 3 : 5. Jika selisih jumlah bebek dan ayam adalah 14 ekor, berapakah total keseluruhan unggas yang dimiliki?', 
     opsi: ['42 ekor', '48 ekor', '56 ekor', '70 ekor'], 
     jawaban: 2, 
-    explanation: 'Selisih perbandingan bebek dan ayam = 5 - 3 = 2. Nilai rasio 2 ini setara dengan 14 ekor. Maka 1 bagian rasio = 14 / 2 = 7 ekor. Total rasio (ayam+bebek) = 3 + 5 = 8. Total unggas = 8 x 7 = 56 ekor.' 
+    explanation: 'Selisih rasio = 2 (setara 14 ekor). Pengali = 14/2 = 7. Total rasio = 8. Total ekor = 8 x 7 = 56.',
+    difficulty: 'hard', skill: 'analisis',
+    insight: 'Penggunaan prinsip perbandingan tidak langsung (harus membagi nilai selisih dengan rasio selisih).'
   },
+
+  // 🔥🔥🔥 UPGRADE STRUKTUR ESAI MATEMATIKA 🔥🔥🔥
   { 
     id: 26, mapel: 'Matematika', type: 'esai', 
-    teks: 'Pabrik tahu tempe "Makmur" mencatat hasil produksinya. Pada bulan Januari, pabrik menghasilkan 40 kuintal. Pada bulan Februari, produksi menurun 25% akibat cuaca buruk. Di bulan Maret, produksi kembali naik sebanyak 10 kuintal dari bulan Februari. \n\nJelaskan langkah logismu untuk mencari TOTAL produksi tahu tempe selama tiga bulan tersebut!', 
-    keywords: ['10', '30|tiga puluh', '40|empat puluh', '110|seratus sepuluh', 'kurang', 'tambah'], 
-    explanation: 'Langkah 1: Cari produksi Februari. Penurunan 25% dari 40 = 10. Jadi Februari = 40 - 10 = 30 kuintal. Langkah 2: Cari produksi Maret. Naik 10 kuintal dari Feb = 30 + 10 = 40 kuintal. Langkah 3: Total 3 bulan = Jan (40) + Feb (30) + Mar (40) = 110 kuintal.' 
+    teks: 'Pabrik tahu tempe "Makmur" mencatat hasil produksinya. Pada bulan Januari menghasilkan 40 kuintal. Pada bulan Februari, produksi menurun 25% akibat cuaca buruk. Di bulan Maret, produksi kembali naik sebanyak 10 kuintal dari bulan Februari. \n\nJelaskan langkah logismu untuk mencari TOTAL produksi tahu tempe selama tiga bulan tersebut!', 
+    keywords: [
+      { kata: ['110', 'seratus sepuluh'], wajib: true, bobot: 40 },
+      { kata: ['30', 'tiga puluh'], wajib: true, bobot: 30 },
+      { kata: ['40', 'empat puluh'], wajib: false, bobot: 15 },
+      { kata: ['tambah', 'kurang', 'total'], wajib: false, bobot: 15 }
+    ], 
+    explanation: 'Feb: 40 - (25%x40) = 30. Mar: 30 + 10 = 40. Total = 40 + 30 + 40 = 110 kuintal.',
+    difficulty: 'medium', skill: 'analisis',
+    insight: 'Banyak siswa langsung mengalikan persentase lalu menjumlahkan tanpa mengurangi produksi awal Februari terlebih dahulu.'
   },
   { 
     id: 27, mapel: 'Matematika', type: 'esai', 
-    teks: 'Sebuah kardus paket besar memiliki panjang 50 cm, lebar 40 cm, dan tinggi 30 cm. Kardus ini akan diisi penuh dengan kotak teh celup berbentuk kubus yang panjang sisinya 15 cm. \n\nJika dihitung menggunakan volume, 60.000 / 3.375 seolah bisa menampung 17 kotak. Namun nyatanya maksimal hanya muat 12 kotak teh. Jelaskan secara logika dimensi matematika, mengapa hanya muat 12 kotak?', 
-    keywords: ['panjang', 'lebar', 'tinggi', 'sisa', 'tidak muat|terpotong', 'utuh', 'dimensi|ukuran'], 
-    explanation: 'Kita tidak bisa hanya membagi volume karena kotak teh tidak bisa dipotong. Secara dimensi: Panjang 50cm hanya muat 3 kotak (3x15=45cm, sisa 5cm). Lebar 40cm hanya muat 2 kotak (2x15=30cm, sisa 10cm). Tinggi 30cm muat 2 kotak pas. Jadi total yang masuk utuh hanyalah: 3 x 2 x 2 = 12 kotak teh.' 
+    teks: 'Sebuah kardus paket memiliki panjang 50 cm, lebar 40 cm, dan tinggi 30 cm. Kardus ini akan diisi kotak teh berbentuk kubus bersisi 15 cm. \n\nJika dihitung menggunakan volume total (60.000 / 3.375), seolah bisa menampung 17 kotak. Namun nyatanya di dunia nyata maksimal hanya muat 12 kotak. Jelaskan secara logika dimensi (panjang, lebar, tinggi), mengapa hanya muat 12 kotak?', 
+    keywords: [
+      { kata: ['dimensi', 'ukuran', 'panjang', 'lebar', 'tinggi'], wajib: true, bobot: 30 },
+      { kata: ['tidak muat', 'terpotong', 'dibelah'], wajib: true, bobot: 40 },
+      { kata: ['utuh', 'sisa', 'ruang'], wajib: false, bobot: 30 }
+    ], 
+    explanation: 'Kotak teh benda padat (tidak bisa dipotong). Panjang 50cm sisa 5cm (muat 3). Lebar 40cm sisa 10cm (muat 2). Tinggi 30cm pas (muat 2). 3x2x2 = 12 kotak utuh.',
+    difficulty: 'hard', skill: 'logika',
+    insight: 'Soal jebakan (HOTS tertinggi). Kebanyakan siswa terjebak rumus matematis buta tanpa membayangkan implementasi fisik benda 3D yang tidak bisa "dicairkan".'
   },
   { 
     id: 28, mapel: 'Matematika', type: 'esai', 
-    teks: 'Ibu membuat sebuah martabak spesial. Ia memberikan 1/3 bagian untuk kakak, dan 1/4 bagian untuk tetangga. Setelah dihitung, sisa martabak milik Ibu yang belum dipotong adalah 10 potong. \n\nJelaskan cara mencari tahu berapa jumlah total potongan martabak Ibu mula-mula!', 
-    keywords: ['disamakan|samakan penyebut', '12', '7/12', '5/12', '24|dua puluh empat'], 
-    explanation: 'Langkah 1: Hitung bagian yang sudah diberikan. 1/3 + 1/4 = 4/12 + 3/12 = 7/12 bagian. Langkah 2: Hitung sisa pecahan Ibu. 1 (utuh) - 7/12 = 5/12 bagian. Langkah 3: 5/12 bagian ini setara dengan 10 potong. Maka total potongan keseluruhan = (12/5) x 10 = 24 potong.' 
+    teks: 'Ibu memberikan 1/3 bagian martabak untuk kakak, dan 1/4 bagian untuk tetangga. Setelah dihitung, sisa martabak milik Ibu yang belum dipotong adalah 10 potong. \n\nJelaskan cara mencari tahu berapa jumlah total potongan martabak Ibu mula-mula!', 
+    keywords: [
+      { kata: ['24', 'dua puluh empat'], wajib: true, bobot: 40 },
+      { kata: ['5/12', 'sisa', '7/12'], wajib: true, bobot: 30 },
+      { kata: ['disamakan', 'samakan', 'penyebut'], wajib: false, bobot: 30 }
+    ], 
+    explanation: 'Diberikan: 1/3 + 1/4 = 7/12. Sisa: 1 - 7/12 = 5/12. Jika 5/12 = 10 potong, maka total keseluruhan (12/12) adalah (12/5) x 10 = 24 potong.',
+    difficulty: 'hard', skill: 'pecahan',
+    insight: 'Kesulitan terbesar siswa adalah membalikkan logika dari pecahan sisa menjadi nilai bilangan asli awal.'
   },
   { 
     id: 29, mapel: 'Matematika', type: 'esai', 
-    teks: 'Di pusat perbelanjaan, Toko A menuliskan promosi "Diskon 50%", sedangkan Toko B menuliskan promosi "Diskon 30% + 20%". \n\nJika sebuah sepatu harganya sama persis di kedua toko (misal Rp100.000), toko manakah yang memberikan harga bayar LEBIH MURAH bagi pembeli? Jelaskan bukti perhitungan matematikamu!', 
-    keywords: ['toko a', '50.000', 'bertingkat|dua kali', '70.000', '14.000', '56.000', 'lebih murah'], 
-    explanation: 'Toko A lebih murah. Di Toko A: Diskon langsung 50% dari Rp100.000 = potongan Rp50.000, bayar Rp50.000. Di Toko B (diskon bertingkat): Diskon 30% dari Rp100.000 = sisa bayar Rp70.000. Lalu didiskon lagi 20% dari angka Rp70.000 (20% x 70rb = 14rb). Sisa bayar akhir = 70.000 - 14.000 = Rp56.000. Harga Rp50.000 lebih murah daripada Rp56.000.' 
+    teks: 'Di mal, Toko A promosi "Diskon 50%", sedangkan Toko B promosi "Diskon 30% + 20%". \n\nJika sepatu harganya sama (misal Rp100.000), toko manakah yang memberikan harga bayar LEBIH MURAH? Buktikan perhitunganmu!', 
+    keywords: [
+      { kata: ['toko a'], wajib: true, bobot: 40 },
+      { kata: ['50.000', '50 ribu'], wajib: true, bobot: 20 },
+      { kata: ['bertingkat', 'dua kali', '56.000'], wajib: true, bobot: 40 }
+    ], 
+    explanation: 'Toko A: diskon 50rb = bayar 50rb. Toko B (bertingkat): Diskon 30% dari 100rb = bayar 70rb. Diskon lagi 20% dari 70rb (14rb) = bayar 56rb. Toko A lebih murah.',
+    difficulty: 'medium', skill: 'logika',
+    insight: 'Ilusi angka promosi mal. Siswa awam akan langsung menjumlah 30+20=50, menganggap nilainya sama, padahal diskon bertingkat dikenakan pada sisa harga.'
   },
   { 
     id: 30, mapel: 'Matematika', type: 'esai', 
-    teks: 'Pak Haji Rahmat memiliki simpanan emas sebanyak 100 gram yang telah disimpan lebih dari 1 tahun (mencapai nisab dan haul). Harga emas saat ini adalah Rp1.000.000 per gram. Zakat maal (harta) untuk emas yang wajib dikeluarkan adalah 2,5%.\n\nJelaskan langkah menghitung besaran uang (nominal) zakat yang wajib dikeluarkan oleh Pak Haji Rahmat!', 
-    keywords: ['total|seluruh', '100.000.000|100 juta', 'kali|dikali 2,5%', '2.500.000|2,5 juta'], 
-    explanation: 'Langkah 1: Hitung total nilai harta emas. 100 gram x Rp1.000.000 = Rp100.000.000. Langkah 2: Hitung wajib zakat 2,5% dari total harta. 2,5/100 x 100.000.000 = Rp2.500.000. Jadi zakat yang wajib dikeluarkan adalah Rp2.500.000.' 
+    teks: 'Pak Rahmat memiliki simpanan emas sebanyak 100 gram (mencapai haul). Harga emas saat ini adalah Rp1.000.000 per gram. Zakat maal untuk emas yang wajib dikeluarkan adalah 2,5%.\n\nJelaskan langkah menghitung besaran uang (nominal) zakat yang wajib dikeluarkan oleh Pak Rahmat!', 
+    keywords: [
+      { kata: ['2.500.000', '2,5 juta', '2.5 juta'], wajib: true, bobot: 50 },
+      { kata: ['100.000.000', '100 juta'], wajib: true, bobot: 30 },
+      { kata: ['kali', 'dikali', 'persen'], wajib: false, bobot: 20 }
+    ], 
+    explanation: 'Total harta = 100 x 1.000.000 = Rp100.000.000. Zakat = 2,5% x 100.000.000 = Rp2.500.000.',
+    difficulty: 'easy', skill: 'analisis',
+    insight: 'Hanya operasi matematika dasar, kesalahan umumnya murni di kelebihan/kekurangan angka nol.'
   }
 ];
 
@@ -1673,6 +1781,89 @@ let state = {
   direction: 'right',
   submitted: false
 };
+
+/**
+ * =========================================================================
+ * 🧠 FUNGSI PENILAIAN CERDAS (SMART GRADER)
+ * =========================================================================
+ */
+function gradeEssay(userAnswer, question) {
+  // Pengecekan dasar jika jawaban kosong
+  if (!userAnswer || typeof userAnswer !== 'string') {
+    return { score: 0, feedback: 'Jawaban kosong.', insight: question.insight };
+  }
+
+  // Membersihkan tanda baca dan multiple space
+  const cleanAnswer = userAnswer.toLowerCase().replace(/[^\w\s]/gi, ' ').replace(/\s+/g, ' ').trim();
+  const wordCount = cleanAnswer === '' ? 0 : cleanAnswer.split(' ').length;
+
+  // 🔥 4. VALIDASI JAWABAN ESAI: Minimal 5 kata (Cegah jawaban terlalu singkat)
+  if (wordCount < 5) {
+    return {
+      score: 0,
+      feedback: `Skor 0. Jawaban terlalu pendek (${wordCount} kata). Ketik minimal 5 kata untuk menjelaskan alasanmu sesuai standar TKA.`,
+      insight: question.insight
+    };
+  }
+
+  let score = 0;
+  let matchedKeywordsCount = 0;
+  let hasMandatory = false;
+  let isMandatoryMissing = false;
+
+  // Evaluasi menggunakan array of object keywords baru
+  question.keywords.forEach(kw => {
+    if (kw.wajib) hasMandatory = true;
+
+    // Cek apakah ada satupun kata dalam array kw.kata yang di-mention user
+    const isMatch = kw.kata.some(k => {
+      // Menggunakan boundary \b agar lebih presisi (misal: "air" tidak memicu "berair")
+      const regex = new RegExp(`\\b${k.toLowerCase()}\\b`, 'i');
+      return regex.test(cleanAnswer);
+    });
+
+    if (isMatch) {
+      score += kw.bobot;
+      matchedKeywordsCount++;
+    } else if (kw.wajib) {
+      isMandatoryMissing = true;
+    }
+  });
+
+  // 🔥 6. PENALTI NGASAL: Jika hanya nembak 1 keyword, cap score di 30
+  if (matchedKeywordsCount === 1) {
+    score = Math.min(score, 30);
+  }
+
+  // 🔥 5. PENILAIAN CERDAS: Jika jawaban panjang tapi keyword WAJIB meleset, penalti parah
+  if (hasMandatory && isMandatoryMissing && matchedKeywordsCount > 1) {
+    score = Math.min(score, 40); 
+  }
+
+  // Normalisasi skor akhir maksimal 100
+  score = Math.min(score, 100);
+
+  // Menyusun Feedback
+  let feedback = `Skor kamu: ${score}. `;
+  if (isMandatoryMissing && matchedKeywordsCount > 0) {
+    feedback += "Jawabanmu belum tepat karena meleset dari inti permasalahan/kata kunci wajib. ";
+  } else if (score >= 90) {
+    feedback += "Luar biasa! Analisis pemecahan masalahmu sangat komprehensif. ";
+  } else if (matchedKeywordsCount === 1) {
+    feedback += "Jawabanmu terdeteksi sangat kurang. Harap jelaskan dengan argumentasi yang lebih utuh. ";
+  }
+
+  return {
+    score: score,
+    feedback: feedback.trim(),
+    insight: question.insight // 🔥 7. INSIGHT WAJIB DITAMPILKAN
+  };
+}
+
+// Untuk keperluan export/module
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { BANK_SOAL, gradeEssay };
+}
 
 /* ============================================================
    MANAJEMEN SESSION LOKAL & AUTO SAVE
