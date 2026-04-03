@@ -1383,45 +1383,214 @@ applyRippleEffect();
    DATA: BANK SOAL (DENGAN EXPLANATION & KEYWORDS)
    ============================================================ */
 const BANK_SOAL = [
-  { id: 1, mapel: 'Bahasa Indonesia', type: 'pg', teks: 'Bacalah kalimat berikut!\n\n"Para siswa MI Panatasan rajin belajar setiap hari agar dapat meraih prestasi yang membanggakan."\n\nGagasan pokok dari kalimat di atas adalah…', opsi: ['Para siswa rajin belajar setiap hari', 'Para siswa MI Panatasan', 'Meraih prestasi yang membanggakan', 'Para siswa belajar agar meraih prestasi'], jawaban: 3, explanation: 'Gagasan pokok adalah ide utama. Di sini, fokus utamanya adalah menjelaskan tujuan utama yaitu para siswa belajar agar meraih prestasi.' },
-  { id: 2, mapel: 'Bahasa Indonesia', type: 'pg', teks: 'Perhatikan kalimat berikut!\n\n"Ibu memasak sayur lodeh untuk makan siang kami."\n\nSubjek dari kalimat tersebut adalah…', opsi: ['Memasak', 'Ibu', 'Sayur lodeh', 'Makan siang'], jawaban: 1, explanation: 'Subjek adalah pelaku tindakan dalam kalimat. Kata "Ibu" berperan sebagai pihak yang melakukan tindakan "memasak".' },
-  { id: 3, mapel: 'Bahasa Indonesia', type: 'pg', teks: 'Kata "berlari" jika diurai menjadi kata dasar dan imbuhan adalah…', opsi: ['Ber- + lari', 'Berlari (kata dasar)', 'Be- + rlari', 'Bel- + ari'], jawaban: 0, explanation: 'Kata dasar dari tindakan tersebut adalah "lari", yang kemudian mendapat awalan (prefiks) "ber-" sehingga menjadi "berlari".' },
-  { id: 101, mapel: 'Bahasa Indonesia', type: 'pg', teks: 'Antonim dari kata "Cepat" adalah...', opsi: ['Lambat', 'Keras', 'Jauh', 'Tinggi'], jawaban: 0, explanation: 'Antonim adalah lawan kata. Lawan dari bergerak dengan kecepatan tinggi (cepat) adalah bergerak pelan (lambat).' },
-  { id: 102, mapel: 'Bahasa Indonesia', type: 'pg', teks: 'Penulisan huruf kapital yang benar terdapat pada kalimat...', opsi: ['ayah pergi ke jakarta.', 'Ayah pergi ke Jakarta.', 'ayah pergi ke Jakarta.', 'Ayah Pergi Ke jakarta.'], jawaban: 1, explanation: 'Huruf kapital selalu digunakan pada huruf pertama awal kalimat ("Ayah") dan huruf pertama nama kota/tempat ("Jakarta").' },
-  { id: 103, mapel: 'Bahasa Indonesia', type: 'pg', teks: 'Sinonim dari kata "Pintar" adalah...', opsi: ['Pandai', 'Bodoh', 'Malas', 'Rajin'], jawaban: 0, explanation: 'Sinonim adalah padanan/persamaan kata. "Pintar" memiliki arti dan makna yang serupa dengan kata "pandai".' },
+  // --- BAHASA INDONESIA: LITERASI (PILIHAN GANDA) ---
+  { 
+    id: 1, mapel: 'Bahasa Indonesia', type: 'pg', 
+    teks: 'Bacalah teks berikut dengan saksama!\n\n"Sampah plastik yang dibuang sembarangan ke sungai tidak hanya menyebabkan aliran air tersumbat, tetapi juga meracuni biota air. Mikroplastik yang tertelan oleh ikan pada akhirnya akan masuk ke tubuh manusia yang mengonsumsinya. Oleh karena itu, pengurangan penggunaan plastik sekali pakai sangat mendesak dilakukan."\n\nIde pokok dari paragraf di atas adalah...', 
+    opsi: ['Sampah plastik menyebabkan aliran sungai tersumbat', 'Ikan di sungai menelan mikroplastik dari sampah', 'Dampak buruk sampah plastik dan perlunya pengurangan penggunaannya', 'Manusia terkena racun akibat makan ikan dari sungai'], 
+    jawaban: 2, 
+    explanation: 'Ide pokok adalah gagasan utama yang menjiwai seluruh paragraf. Teks tersebut membahas dua hal utama: dampak buruk plastik (banjir & meracuni ikan) dan kesimpulan/solusinya (pengurangan plastik). Opsi C merangkum keduanya dengan sempurna.' 
+  },
+  { 
+    id: 2, mapel: 'Bahasa Indonesia', type: 'pg', 
+    teks: '"Kemarau panjang tahun ini mengakibatkan banyak lahan pertanian di Desa Makmur mengalami gagal panen. Sumur-sumur warga mulai mengering, dan pasokan air bersih sangat bergantung pada bantuan pemerintah daerah."\n\nKesimpulan yang paling tepat dari teks tersebut adalah...', 
+    opsi: ['Warga Desa Makmur sangat malas menyiram tanaman saat kemarau.', 'Kemarau panjang menyebabkan krisis air dan gagal panen di Desa Makmur.', 'Pemerintah daerah gagal menyediakan air bersih bagi warga desa.', 'Sawah di Desa Makmur harus segera dijual karena gagal panen.'], 
+    jawaban: 1, 
+    explanation: 'Kesimpulan adalah intisari dari sebuah teks. Teks tersebut secara jelas memaparkan dua akibat dari kemarau panjang: gagal panen dan krisis air (sumur kering). Opsi B mencakup seluruh inti permasalahan.' 
+  },
+  { 
+    id: 3, mapel: 'Bahasa Indonesia', type: 'pg', 
+    teks: '"Budi selalu menjadi \'bintang lapangan\' setiap kali tim sepak bola sekolahnya bertanding. Kelincahannya menggiring bola sulit ditandingi lawan."\n\nMakna ungkapan "bintang lapangan" pada kalimat di atas adalah...', 
+    opsi: ['Pemain yang paling bersinar atau andalan', 'Pemain yang suka melihat bintang di lapangan', 'Pemain yang paling tinggi badannya', 'Orang yang memiliki banyak lapangan'], 
+    jawaban: 0, 
+    explanation: 'Ungkapan "bintang lapangan" adalah kiasan yang berarti pemain yang paling menonjol, berprestasi, atau menjadi andalan dalam suatu pertandingan.' 
+  },
+  { 
+    id: 4, mapel: 'Bahasa Indonesia', type: 'pg', 
+    teks: 'Pemerintah terus menggalakkan program reboisasi di lahan-lahan gundul sekitar hulu sungai untuk mencegah bencana longsor saat musim hujan tiba.\n\nSinonim dari kata "reboisasi" pada kalimat tersebut adalah...', 
+    opsi: ['Penebangan liar', 'Penghijauan kembali', 'Pembersihan sungai', 'Pembukaan lahan'], 
+    jawaban: 1, 
+    explanation: 'Reboisasi adalah proses penanaman kembali hutan atau lahan yang telah gundul. Sinonim yang paling tepat adalah penghijauan kembali.' 
+  },
+  { 
+    id: 5, mapel: 'Bahasa Indonesia', type: 'pg', 
+    teks: '"Pasar tradisional mulai ditinggalkan oleh sebagian masyarakat karena mereka lebih memilih berbelanja di pasar modern yang dinilai lebih nyaman."\n\nAntonim dari kata "modern" pada kalimat di atas adalah...', 
+    opsi: ['Canggih', 'Tradisional', 'Kotor', 'Mewah'], 
+    jawaban: 1, 
+    explanation: 'Antonim adalah lawan kata. Lawan dari kata modern (kini/terbaru) dalam konteks perkembangan adalah tradisional (bersifat turun-temurun/lama).' 
+  },
+  { 
+    id: 6, mapel: 'Bahasa Indonesia', type: 'pg', 
+    teks: 'Siswa kelas 6 sedang melakukan percobaan menanam biji kacang hijau. Kelompok A menaruh pot di tempat gelap, ... kelompok B menaruh pot di tempat yang terkena sinar matahari.\n\nKata hubung (konjungsi) yang tepat untuk melengkapi kalimat rumpang di atas adalah...', 
+    opsi: ['karena', 'sedangkan', 'sehingga', 'meskipun'], 
+    jawaban: 1, 
+    explanation: 'Kalimat tersebut membandingkan dua kondisi yang berbeda (Kelompok A di tempat gelap berlawanan dengan Kelompok B di tempat terang). Konjungsi perbandingan yang tepat adalah "sedangkan".' 
+  },
+  { 
+    id: 7, mapel: 'Bahasa Indonesia', type: 'pg', 
+    teks: 'Perhatikan kalimat acak berikut!\n1. Setelah itu, bilas dengan air bersih yang mengalir.\n2. Basahi tangan dengan air mengalir.\n3. Keringkan tangan menggunakan lap bersih atau tisu.\n4. Tuangkan sabun dan gosok kedua telapak tangan hingga ke sela-sela jari.\n\nUrutan yang benar agar menjadi petunjuk mencuci tangan yang logis adalah...', 
+    opsi: ['2 - 4 - 1 - 3', '2 - 1 - 4 - 3', '4 - 2 - 1 - 3', '2 - 4 - 3 - 1'], 
+    jawaban: 0, 
+    explanation: 'Logika urutan mencuci tangan: Basahi dulu (2), gunakan sabun & gosok (4), bilas sampai bersih (1), lalu keringkan (3).' 
+  },
+  { 
+    id: 8, mapel: 'Bahasa Indonesia', type: 'pg', 
+    teks: 'Penulisan ejaan dan tanda baca yang benar pada kalimat di bawah ini adalah...', 
+    opsi: ['ayah pergi ke Bandung, pada hari minggu.', 'Ayah pergi ke bandung pada hari Minggu.', 'Ayah pergi ke Bandung pada hari Minggu.', 'Ayah pergi ke Bandung, pada hari minggu.'], 
+    jawaban: 2, 
+    explanation: 'Huruf kapital digunakan di awal kalimat (Ayah), nama kota (Bandung), dan nama hari (Minggu). Tidak perlu ada koma sebelum "pada".' 
+  },
+  { 
+    id: 9, mapel: 'Bahasa Indonesia', type: 'pg', 
+    teks: 'Di sebuah hutan, hiduplah seekor semut dan belalang. Kelinci sering mengejek semut yang lambat. Suatu hari, semut menantang kelinci berlomba lari. Kelinci yang sombong tertidur di tengah jalan karena meremehkan semut. Akhirnya, semut yang tekun berhasil mencapai garis finis lebih dulu.\n\nPesan moral dari cerita fabel di atas adalah...', 
+    opsi: ['Kita harus rajin berolahraga agar bisa berlari cepat.', 'Kesombongan akan membawa kekalahan, sedangkan ketekunan membawa keberhasilan.', 'Semut adalah hewan yang lebih hebat daripada kelinci dalam hal apapun.', 'Sebaiknya jangan tidur di tengah jalan saat sedang berlomba lari.'], 
+    jawaban: 1, 
+    explanation: 'Pesan moral ditarik dari inti cerita. Kelinci kalah karena sifat sombongnya, sementara semut menang berkat ketekunannya.' 
+  },
+  { 
+    id: 10, mapel: 'Bahasa Indonesia', type: 'pg', 
+    teks: 'Bacalah teks ini!\n"Pagi itu udara sangat sejuk. Burung-burung berkicau bersahutan dari balik dahan pepohonan yang rindang. Embun masih menempel di ujung dedaunan, memantulkan cahaya matahari yang baru saja terbit."\n\nBerdasarkan isinya, teks di atas termasuk jenis karangan...', 
+    opsi: ['Persuasi', 'Eksposisi', 'Deskripsi', 'Argumentasi'], 
+    jawaban: 2, 
+    explanation: 'Teks tersebut menggambarkan keadaan suatu pagi dengan sangat rinci sehingga pembaca seolah bisa melihat dan merasakannya. Ini adalah ciri khas teks deskripsi.' 
+  },
+  { 
+    id: 11, mapel: 'Bahasa Indonesia', type: 'pg', 
+    teks: 'Ani tidak sengaja memecahkan vas bunga kesayangan ibu. Saat ditanya oleh ibu, Ani justru menuduh kucing peliharaannya yang menyenggol vas tersebut.\n\nSikap Ani mencerminkan ungkapan...', 
+    opsi: ['Cuci tangan', 'Kutu buku', 'Rendah hati', 'Banting tulang'], 
+    jawaban: 0, 
+    explanation: 'Ungkapan "cuci tangan" berarti tidak mau ikut campur atau lepas tanggung jawab atas kesalahan yang diperbuat dengan melimpahkannya pada pihak lain.' 
+  },
 
-  { id: 4, mapel: 'Matematika', type: 'pg', teks: 'Pak Hasan memiliki kebun yang panjangnya 24 meter dan lebarnya 15 meter. Ia ingin memasang pagar di sekeliling kebun tersebut. Berapa meter panjang pagar yang dibutuhkan Pak Hasan?', opsi: ['39 meter', '360 meter', '78 meter', '48 meter'], jawaban: 2, explanation: 'Untuk mencari panjang pagar, kita gunakan rumus Keliling Persegi Panjang = 2 x (panjang + lebar). Yaitu 2 x (24 + 15) = 2 x 39 = 78 meter.' },
-  { id: 5, mapel: 'Matematika', type: 'pg', teks: 'Sebuah toko buku menjual 3 lusin pensil. Kemudian pedagang membeli lagi 18 buah pensil. Berapa jumlah pensil seluruhnya?', opsi: ['36 buah', '52 buah', '54 buah', '60 buah'], jawaban: 2, explanation: '1 lusin sama dengan 12 buah. Maka 3 lusin = 3 x 12 = 36 buah. Ditambah dengan 18 buah lagi, totalnya menjadi 36 + 18 = 54 buah.' },
-  { id: 6, mapel: 'Matematika', type: 'pg', teks: 'Nilai rata-rata ulangan Matematika dari 5 siswa adalah 78. Jika 4 siswa mendapat nilai 75, 80, 82, dan 70, berapakah nilai siswa ke-5?', opsi: ['83', '84', '85', '86'], jawaban: 0, explanation: 'Total nilai 5 siswa = 5 x 78 = 390. Nilai 4 siswa yang diketahui = 75 + 80 + 82 + 70 = 307. Maka nilai siswa ke-5 adalah 390 - 307 = 83.' },
-  { id: 104, mapel: 'Matematika', type: 'pg', teks: 'Hasil dari 15 x 8 adalah...', opsi: ['110', '120', '130', '140'], jawaban: 1, explanation: 'Penjumlahan 15 sebanyak 8 kali, atau perkalian langsung 15 dikalikan 8 menghasilkan nilai 120.' },
-  { id: 105, mapel: 'Matematika', type: 'pg', teks: 'Bentuk desimal dari pecahan 1/4 adalah...', opsi: ['0.14', '0.25', '0.4', '0.5'], jawaban: 1, explanation: 'Pecahan 1/4 jika diubah ke desimal adalah dengan membagi 1 dengan 4. Hasilnya adalah 0.25.' },
-  { id: 106, mapel: 'Matematika', type: 'pg', teks: 'Sebuah segitiga memiliki alas 10 cm dan tinggi 6 cm. Luas segitiga tersebut adalah...', opsi: ['30 cm2', '60 cm2', '16 cm2', '32 cm2'], jawaban: 0, explanation: 'Rumus luas segitiga adalah 1/2 x alas x tinggi. Yaitu 1/2 x 10 cm x 6 cm = 5 x 6 = 30 cm².' },
+  // --- BAHASA INDONESIA: LITERASI (ESAI) ---
+  { 
+    id: 12, mapel: 'Bahasa Indonesia', type: 'esai', 
+    teks: 'Bacalah teks berikut!\n"Sarapan sangat penting bagi tubuh, terutama bagi pelajar. Dengan sarapan, tubuh mendapatkan energi untuk beraktivitas dan otak dapat berkonsentrasi lebih baik saat menerima pelajaran di kelas. Melewatkan sarapan dapat membuat tubuh lemas dan lesu."\n\nBuatlah 1 kalimat simpulan dari paragraf di atas menggunakan bahasamu sendiri!', 
+    keywords: ['sarapan', 'penting', 'energi', 'konsentrasi', 'tubuh', 'pelajar'], 
+    explanation: 'Simpulan yang benar harus merangkum sebab dan akibat. Contoh: Sarapan sangat penting bagi pelajar karena memberikan energi dan meningkatkan konsentrasi dalam belajar.' 
+  },
+  { 
+    id: 13, mapel: 'Bahasa Indonesia', type: 'esai', 
+    teks: 'Buatlah satu kalimat menggunakan kata "konservasi" yang berkaitan dengan pelestarian alam!', 
+    keywords: ['konservasi', 'alam', 'hutan', 'hewan', 'melindungi', 'menjaga', 'pelestarian'], 
+    explanation: 'Kalimat harus logis dan sesuai konteks. Contoh jawaban benar: "Pemerintah membuat area konservasi untuk melindungi badak bercula satu dari kepunahan."' 
+  },
+  { 
+    id: 14, mapel: 'Bahasa Indonesia', type: 'esai', 
+    teks: 'Sebutkan 3 unsur intrinsik (unsur pembangun dari dalam) pada sebuah cerita pendek atau dongeng!', 
+    keywords: ['tema', 'tokoh', 'penokohan', 'watak', 'alur', 'plot', 'latar', 'setting', 'amanat', 'pesan'], 
+    explanation: 'Unsur intrinsik cerita meliputi: Tema (ide pokok), Tokoh/Penokohan (karakter), Alur (jalan cerita), Latar (tempat/waktu), Sudut Pandang, dan Amanat (pesan moral).' 
+  },
+  { 
+    id: 15, mapel: 'Bahasa Indonesia', type: 'esai', 
+    teks: 'Sinta sering kali berbicara kasar kepada teman-temannya dan merasa dirinya paling pintar. Akibatnya, ia dijauhi oleh teman-teman sekelasnya.\n\nTuliskan satu peribahasa yang tepat untuk menggambarkan sifat Sinta!', 
+    keywords: ['besar kepala', 'tinggi hati', 'tong kosong nyaring bunyinya', 'sombong'], 
+    explanation: 'Sifat merasa paling pintar dan merendahkan orang lain bisa diibaratkan dengan ungkapan "besar kepala" atau peribahasa "Tinggi hati"."Tong kosong nyaring bunyinya" juga bisa diterima jika fokusnya pada orang yang banyak bicara tapi tidak berilmu.' 
+  },
 
-  { id: 7, mapel: 'IPA', type: 'pg', teks: 'Proses perubahan air menjadi uap air karena panas disebut…', opsi: ['Kondensasi', 'Evaporasi', 'Presipitasi', 'Infiltrasi'], jawaban: 1, explanation: 'Evaporasi adalah proses di mana air cair berubah menjadi gas (uap air) akibat energi panas dari matahari.' },
-  { id: 8, mapel: 'IPA', type: 'pg', teks: 'Berikut yang bukan merupakan planet dalam tata surya adalah…', opsi: ['Mars', 'Saturnus', 'Bulan', 'Uranus'], jawaban: 2, explanation: 'Bulan adalah satelit alami yang mengorbit mengelilingi Bumi, bukan sebuah planet yang mengorbit matahari langsung seperti Mars atau Saturnus.' },
-  { id: 9, mapel: 'IPA', type: 'pg', teks: 'Hewan berikut yang berkembang biak dengan cara melahirkan (vivipar) adalah…', opsi: ['Ayam', 'Penyu', 'Lumba-lumba', 'Buaya'], jawaban: 2, explanation: 'Lumba-lumba adalah hewan mamalia air yang berkembang biak dengan melahirkan (vivipar), sedangkan ayam, penyu, dan buaya bertelur (ovipar).' },
-  { id: 107, mapel: 'IPA', type: 'pg', teks: 'Tumbuhan bernapas menggunakan...', opsi: ['Insang', 'Paru-paru', 'Stomata', 'Kulit'], jawaban: 2, explanation: 'Tumbuhan bernapas (pertukaran gas oksigen dan karbon dioksida) menggunakan pori-paru kecil pada permukaan daunnya yang disebut stomata.' },
-  { id: 108, mapel: 'IPA', type: 'pg', teks: 'Cahaya matahari dapat merambat sampai ke bumi melalui ruang hampa. Perpindahan panas ini disebut...', opsi: ['Konduksi', 'Konveksi', 'Radiasi', 'Isolasi'], jawaban: 2, explanation: 'Radiasi adalah proses perpindahan energi panas dalam bentuk gelombang elektromagnetik tanpa memerlukan zat perantara (ruang hampa).' },
-  { id: 109, mapel: 'IPA', type: 'pg', teks: 'Bagian bunga yang berfungsi sebagai alat kelamin jantan adalah...', opsi: ['Putik', 'Mahkota', 'Kelopak', 'Benang Sari'], jawaban: 3, explanation: 'Benang sari menghasilkan serbuk sari sebagai alat kelamin jantan, sementara putik adalah alat kelamin betina bunga.' },
+  // --- MATEMATIKA: NUMERASI (PILIHAN GANDA) ---
+  { 
+    id: 16, mapel: 'Matematika', type: 'pg', 
+    teks: 'Ibu membawa uang Rp100.000 ke pasar. Ia membeli 3 kg ayam dengan harga Rp24.000 per kg, dan 2 liter minyak goreng dengan harga Rp14.000 per liter. Berapakah sisa uang Ibu sekarang?', 
+    opsi: ['Rp0', 'Rp10.000', 'Rp28.000', 'Rp62.000'], 
+    jawaban: 0, 
+    explanation: 'Total belanja ayam: 3 x Rp24.000 = Rp72.000. Total belanja minyak: 2 x Rp14.000 = Rp28.000. Total belanja keseluruhan = Rp72.000 + Rp28.000 = Rp100.000. Uang ibu Rp100.000, maka sisanya adalah Rp0 (habis).' 
+  },
+  { 
+    id: 17, mapel: 'Matematika', type: 'pg', 
+    teks: 'Andi memiliki tali sepanjang 3/4 meter. Tali tersebut ia potong sepanjang 1/2 meter untuk mengikat kardus. Berapa meter sisa tali Andi sekarang?', 
+    opsi: ['1/4 meter', '2/4 meter', '1/8 meter', '2/2 meter'], 
+    jawaban: 0, 
+    explanation: 'Operasi pengurangan pecahan: 3/4 - 1/2. Samakan penyebutnya menjadi 4. Nilai 1/2 sama dengan 2/4. Maka, 3/4 - 2/4 = 1/4 meter.' 
+  },
+  { 
+    id: 18, mapel: 'Matematika', type: 'pg', 
+    teks: 'Perbandingan kelereng Budi dan Iwan adalah 3 : 5. Jika jumlah kelereng mereka berdua adalah 40 butir, berapakah jumlah kelereng Iwan?', 
+    opsi: ['15 butir', '20 butir', '25 butir', '30 butir'], 
+    jawaban: 2, 
+    explanation: 'Jumlah rasio = 3 + 5 = 8. Untuk mencari kelereng Iwan (rasio 5) = (5 / 8) x 40. 40 dibagi 8 = 5. Lalu 5 x 5 = 25 butir.' 
+  },
+  { 
+    id: 19, mapel: 'Matematika', type: 'pg', 
+    teks: 'Sebuah peta memiliki skala 1 : 500.000. Jika jarak kota A ke kota B pada peta adalah 4 cm, maka jarak sebenarnya kedua kota tersebut adalah...', 
+    opsi: ['2 km', '20 km', '200 km', '2.000 km'], 
+    jawaban: 1, 
+    explanation: 'Jarak sebenarnya = Jarak pada peta x Skala = 4 cm x 500.000 = 2.000.000 cm. Ubah cm ke km dengan membagi 100.000. 2.000.000 / 100.000 = 20 km.' 
+  },
+  { 
+    id: 20, mapel: 'Matematika', type: 'pg', 
+    teks: 'Keluarga Pak RT mudik menggunakan mobil dengan kecepatan rata-rata 60 km/jam. Jika jarak kampung halaman adalah 150 km dan mereka berangkat pukul 07.00, pukul berapakah mereka akan tiba?', 
+    opsi: ['09.00', '09.30', '10.00', '10.30'], 
+    jawaban: 1, 
+    explanation: 'Waktu tempuh = Jarak / Kecepatan = 150 / 60 = 2,5 jam (2 jam 30 menit). Berangkat pukul 07.00 + 2 jam 30 menit = pukul 09.30.' 
+  },
+  { 
+    id: 21, mapel: 'Matematika', type: 'pg', 
+    teks: 'Sebuah taman berbentuk persegi panjang dengan ukuran panjang 10 meter dan lebar 8 meter. Di tengah taman tersebut terdapat kolam berbentuk persegi dengan sisi 4 meter. Berapakah luas taman yang ditanami rumput (luas taman dikurangi luas kolam)?', 
+    opsi: ['80 m²', '64 m²', '16 m²', '96 m²'], 
+    jawaban: 1, 
+    explanation: 'Luas total taman = panjang x lebar = 10 x 8 = 80 m². Luas kolam (persegi) = sisi x sisi = 4 x 4 = 16 m². Luas sisa yang ditanami rumput = 80 - 16 = 64 m².' 
+  },
+  { 
+    id: 22, mapel: 'Matematika', type: 'pg', 
+    teks: 'Sebuah kubus memiliki panjang rusuk 5 cm. Volume kubus tersebut adalah...', 
+    opsi: ['25 cm³', '100 cm³', '125 cm³', '150 cm³'], 
+    jawaban: 2, 
+    explanation: 'Volume kubus dirumuskan dengan s x s x s (rusuk dipangkat tiga). Volume = 5 x 5 x 5 = 125 cm³.' 
+  },
+  { 
+    id: 23, mapel: 'Matematika', type: 'pg', 
+    teks: 'Siswa kelas 6 mengikuti ulangan matematika. Lima siswa mendapat nilai: 80, 75, 90, 85, dan 70. Berapakah nilai rata-rata (mean) kelima siswa tersebut?', 
+    opsi: ['78', '80', '82', '85'], 
+    jawaban: 1, 
+    explanation: 'Rata-rata = Jumlah semua nilai / banyak siswa. Jumlah = 80+75+90+85+70 = 400. Rata-rata = 400 / 5 = 80.' 
+  },
+  { 
+    id: 24, mapel: 'Matematika', type: 'pg', 
+    teks: 'Dalam seminggu, toko alat tulis menjual pensil dengan rincian: Senin (10), Selasa (15), Rabu (10), Kamis (20), Jumat (15), Sabtu (25), Minggu (10). Modus dari data penjualan tersebut adalah...', 
+    opsi: ['10', '15', '20', '25'], 
+    jawaban: 0, 
+    explanation: 'Modus adalah data yang paling sering muncul. Angka 10 muncul 3 kali (Senin, Rabu, Minggu), lebih sering dibanding angka lain (15 muncul 2x, sisanya 1x).' 
+  },
+  { 
+    id: 25, mapel: 'Matematika', type: 'pg', 
+    teks: 'Perhatikan pola bilangan berikut: 2, 5, 9, 14, 20, ...\nAngka selanjutnya dari pola tersebut adalah...', 
+    opsi: ['25', '26', '27', '28'], 
+    jawaban: 2, 
+    explanation: 'Lihat selisih antar angka. 2 ke 5 (+3). 5 ke 9 (+4). 9 ke 14 (+5). 14 ke 20 (+6). Maka selisih berikutnya adalah +7. 20 + 7 = 27.' 
+  },
 
-  { id: 10, mapel: 'Pendidikan Agama Islam', type: 'pg', teks: 'Jumlah rakaat shalat Maghrib adalah…', opsi: ['2 rakaat', '3 rakaat', '4 rakaat', '5 rakaat'], jawaban: 1, explanation: 'Shalat fardhu Maghrib dikerjakan pada saat matahari terbenam dan wajib dikerjakan sebanyak 3 rakaat.' },
-  { id: 110, mapel: 'Pendidikan Agama Islam', type: 'pg', teks: 'Kitab suci yang diturunkan kepada Nabi Muhammad SAW adalah...', opsi: ['Taurat', 'Zabur', 'Injil', 'Al-Quran'], jawaban: 3, explanation: 'Al-Quran adalah kitab penyempurna dan penutup dari kitab-kitab sebelumnya, yang diturunkan kepada Nabi Muhammad SAW.' },
-  { id: 111, mapel: 'Pendidikan Agama Islam', type: 'pg', teks: 'Malaikat yang bertugas menyampaikan wahyu adalah...', opsi: ['Mikail', 'Israfil', 'Jibril', 'Izrail'], jawaban: 2, explanation: 'Malaikat Jibril adalah malaikat yang dipercaya oleh Allah SWT untuk menyampaikan wahyu kepada seluruh nabi dan rasul.' },
-  { id: 112, mapel: 'Pendidikan Agama Islam', type: 'pg', teks: 'Rukun Islam yang ketiga adalah...', opsi: ['Syahadat', 'Shalat', 'Zakat', 'Puasa'], jawaban: 2, explanation: 'Rukun Islam ada lima secara berurutan: Syahadat, Shalat, Zakat, Puasa (Ramadhan), dan Naik Haji bagi yang mampu.' },
-  { id: 113, mapel: 'Pendidikan Agama Islam', type: 'pg', teks: 'Nabi terakhir yang diutus oleh Allah SWT adalah...', opsi: ['Nabi Ibrahim', 'Nabi Musa', 'Nabi Isa', 'Nabi Muhammad'], jawaban: 3, explanation: 'Nabi Muhammad SAW diberi gelar Khatamun Nabiyyin, yang artinya penutup para nabi. Tidak ada lagi nabi setelah beliau.' },
-
-  { id: 11, mapel: 'Bahasa Indonesia', type: 'esai', teks: 'Tuliskan sebuah paragraf singkat (3–4 kalimat) yang menceritakan pengalamanmu belajar bersama teman-teman di sekolah!', keywords: ['teman', 'belajar', 'seru', 'senang', 'sekolah', 'baca', 'main'], explanation: 'Pengalaman belajar yang baik biasanya menceritakan kegiatan membaca, menulis, atau bermain bersama teman di sekolah dengan perasaan yang menyenangkan.' },
-  { id: 201, mapel: 'Bahasa Indonesia', type: 'esai', teks: 'Buatlah satu contoh kalimat majemuk setara dengan menggunakan konjungsi "dan"!', keywords: ['dan'], explanation: 'Kalimat majemuk setara dibentuk dengan menggabungkan dua klausa yang kedudukannya sama menggunakan kata penghubung (konjungsi) "dan". Contoh: Budi membaca buku dan Ani menggambar.' },
-  { id: 202, mapel: 'Bahasa Indonesia', type: 'esai', teks: 'Sebutkan 3 ciri-ciri puisi yang kamu ketahui!', keywords: ['bait', 'baris', 'larik', 'rima', 'sajak', 'irama'], explanation: 'Puisi adalah karya sastra dengan ciri khas seperti memiliki rima/sajak (persamaan bunyi akhir), disusun dalam bentuk bait, dan terdiri dari baris-baris (larik) yang indah.' },
-  { id: 12, mapel: 'Matematika', type: 'esai', teks: 'Ibu membeli 2 kg gula dengan harga Rp14.000 per kg dan 3 kg tepung dengan harga Rp8.000 per kg. Ibu membayar dengan uang Rp50.000.\n\nHitunglah kembalian yang diterima Ibu! Tuliskan caranya dengan lengkap.', keywords: ['28', '24', '52', 'kurang', '2000'], explanation: 'Biaya Gula = 2 x 14.000 = 28.000. Biaya Tepung = 3 x 8.000 = 24.000. Total Belanja = 28.000 + 24.000 = 52.000. Uang Ibu Rp50.000 ternyata kurang Rp2.000, sehingga tidak ada kembalian melainkan hutang.' },
-  { id: 203, mapel: 'Matematika', type: 'esai', teks: 'Sebuah persegi panjang memiliki keliling 40 cm. Jika panjangnya 12 cm, berapakah lebarnya?', keywords: ['8', '8 cm', 'delapan'], explanation: 'Rumus Keliling = 2 x (panjang + lebar). Maka 40 = 2 x (12 + lebar). Dibagi 2 menjadi 20 = 12 + lebar. Sehingga lebarnya adalah 20 - 12 = 8 cm.' },
-  { id: 204, mapel: 'Matematika', type: 'esai', teks: 'Jelaskan bagaimana cara mencari volume sebuah kubus, dan berikan satu contoh soal beserta jawabannya!', keywords: ['sisi', 'rusuk', 'pangkat 3', 's x s x s', 'r x r x r'], explanation: 'Volume kubus dicari dengan cara mengalikan panjang sisi (rusuk) sebanyak 3 kali secara berturut-turut (sisi x sisi x sisi). Contoh: Kubus dengan sisi 2 cm volumenya adalah 2x2x2 = 8 cm³.' },
-  { id: 13, mapel: 'IPA', type: 'esai', teks: 'Jelaskan dengan bahasamu sendiri apa yang dimaksud dengan rantai makanan, dan berikan satu contoh rantai makanan yang ada di sawah!', keywords: ['padi', 'tikus', 'ular', 'elang', 'makan', 'dimakan'], explanation: 'Rantai makanan adalah proses/peristiwa makan dan dimakan antar makhluk hidup dalam suatu ekosistem. Contoh yang paling umum di sawah adalah: Padi -> Tikus -> Ular -> Elang.' },
-  { id: 205, mapel: 'IPA', type: 'esai', teks: 'Sebutkan 3 macam gaya yang sering kita temui dalam kehidupan sehari-hari, beserta contohnya!', keywords: ['otot', 'gesek', 'pegas', 'magnet', 'gravitasi', 'listrik'], explanation: 'Gaya yang sering kita manfaatkan/temui antara lain: gaya otot (mendorong meja), gaya gesek (mengerem sepeda/sepatu lantai), dan gaya gravitasi (buah jatuh dari pohonnya).' },
-  { id: 206, mapel: 'IPA', type: 'esai', teks: 'Mengapa menjaga kelestarian hutan sangat penting bagi ketersediaan air bersih di bumi?', keywords: ['akar', 'menyerap', 'menyimpan', 'banjir', 'longsor', 'mata air', 'cadangan'], explanation: 'Akar pohon-pohon di hutan sangat penting karena berfungsi layaknya spons raksasa yang menyerap, menahan, dan menyimpan cadangan air hujan ke dalam tanah, sehingga mata air tetap mengalir saat kemarau dan mencegah banjir saat hujan.' },
-  { id: 14, mapel: 'Pendidikan Agama Islam', type: 'esai', teks: 'Sebutkan dan jelaskan 3 (tiga) perilaku terpuji (akhlakul karimah) yang harus dimiliki oleh seorang pelajar Muslim!', keywords: ['jujur', 'amanah', 'sopan', 'disiplin', 'hormat', 'patuh', 'tolong'], explanation: 'Perilaku terpuji pelajar contohnya adalah: Jujur (tidak menyontek saat ujian), Amanah (mengerjakan PR dengan baik), dan Disiplin (datang ke sekolah tepat waktu serta hormat pada guru).' },
-  { id: 15, mapel: 'Pendidikan Agama Islam', type: 'esai', teks: 'Apa yang kamu ketahui tentang Rukun Islam? Sebutkan kelima rukunnya dan jelaskan secara singkat salah satu di antaranya!', keywords: ['syahadat', 'shalat', 'zakat', 'puasa', 'haji'], explanation: 'Rukun Islam adalah pilar pondasi bagi seorang muslim. Ada lima yaitu: Mengucapkan Syahadat, Mendirikan Shalat, Menunaikan Zakat, Puasa di bulan Ramadhan, dan Ibadah Haji jika mampu.' },
-  { id: 207, mapel: 'Pendidikan Agama Islam', type: 'esai', teks: 'Tuliskan niat wudhu beserta artinya (bisa dengan tulisan latin jika tidak ada huruf hijaiyah)!', keywords: ['nawaitu', 'wudhu', 'hadas', 'kecil', 'lillahi', 'taala'], explanation: 'Niat wudhu adalah: "Nawaitul wudhu-a liraf\'il hadatsil asghari fardhan lillaahi ta\'aalaa" yang artinya "Saya niat berwudhu untuk menghilangkan hadas kecil, fardu karena Allah Ta\'ala."' }
+  // --- MATEMATIKA: NUMERASI (ESAI) ---
+  { 
+    id: 26, mapel: 'Matematika', type: 'esai', 
+    teks: 'Beni membeli sepasang sepatu seharga Rp150.000. Toko tersebut memberikan diskon sebesar 20%. Jika Beni membayar dengan selembar uang Rp100.000 dan selembar uang Rp50.000, berapakah uang kembalian yang diterima Beni?', 
+    keywords: ['30000', '30.000', 'tiga puluh ribu', '120.000', '120000', 'diskon'], 
+    explanation: 'Besar diskon = 20% x Rp150.000 = Rp30.000. Harga setelah diskon = Rp150.000 - Rp30.000 = Rp120.000. Uang Beni = Rp100.000 + Rp50.000 = Rp150.000. Uang kembalian = Rp150.000 - Rp120.000 = Rp30.000.' 
+  },
+  { 
+    id: 27, mapel: 'Matematika', type: 'esai', 
+    teks: 'Sebuah bak penampungan air berbentuk balok berukuran panjang 100 cm, lebar 50 cm, dan tinggi 60 cm. Bak tersebut diisi air dari keran hingga penuh selama 30 menit. \n\nBerapa liter/menit debit air yang mengalir dari keran tersebut? (Ingat: 1 liter = 1.000 cm³)', 
+    keywords: ['10', 'sepuluh', '300', '300000'], 
+    explanation: 'Volume bak = panjang x lebar x tinggi = 100 x 50 x 60 = 300.000 cm³. Ubah ke liter (bagi 1.000) = 300 liter. Debit = Volume / Waktu = 300 liter / 30 menit = 10 liter/menit.' 
+  },
+  { 
+    id: 28, mapel: 'Matematika', type: 'esai', 
+    teks: 'Seorang petani memiliki sebidang tanah seluas 2 hektar. Sebanyak 1/2 bagian ditanami padi, 1/4 bagian ditanami jagung, dan sisanya dibuat kolam ikan. \n\nBerapa hektar luas tanah yang digunakan untuk kolam ikan?', 
+    keywords: ['0.5', '1/2', 'setengah', '0,5', 'satu per dua'], 
+    explanation: 'Total tanah = 2 hektar. Bagian padi = 1/2 x 2 = 1 hektar. Bagian jagung = 1/4 x 2 = 0,5 hektar. Sisa untuk kolam = Total - (padi + jagung) = 2 - (1 + 0,5) = 2 - 1,5 = 0,5 hektar (atau 1/2 hektar).' 
+  },
+  { 
+    id: 29, mapel: 'Matematika', type: 'esai', 
+    teks: 'Perbandingan usia Ayah dan Andi adalah 5 : 2. Jika selisih usia mereka saat ini adalah 24 tahun, berapakah usia Andi?', 
+    keywords: ['16', 'enam belas', 'tahun', '3'], 
+    explanation: 'Kita tahu selisih umur adalah 24 tahun. Selisih rasio mereka adalah 5 - 2 = 3. Untuk mencari umur Andi (rasio 2), gunakan rumus: (Rasio Andi / Selisih Rasio) x Selisih Umur = (2 / 3) x 24 = 16 tahun.' 
+  },
+  { 
+    id: 30, mapel: 'Matematika', type: 'esai', 
+    teks: 'Pada sebuah acara, panitia menyiapkan 120 porsi makanan. Di pertengahan acara, makanan tersisa 15% dari total awal. Berapa porsi makanan yang telah habis dimakan oleh para tamu?', 
+    keywords: ['102', 'seratus dua', '85%', '18'], 
+    explanation: 'Sisa makanan 15%. Artinya makanan yang habis adalah 100% - 15% = 85%. Porsi yang habis = 85% x 120 porsi = (85/100) x 120 = 102 porsi. (Bisa juga dicari sisanya: 15% x 120 = 18 porsi. Lalu 120 - 18 = 102 porsi).' 
+  }
 ];
 
 let SOAL = []; 
