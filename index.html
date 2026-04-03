@@ -1441,16 +1441,9 @@ function applyRippleEffect() {
 }
 applyRippleEffect();
 
-/**
- * =========================================================================
- * 🚀 UPGRADE SISTEM PENILAIAN ESAI & BANK SOAL TKA CBT
- * =========================================================================
- * Update meliputi:
- * 1. Struktur keywords esai diubah menjadi array of objects (bobot & wajib).
- * 2. Penambahan atribut `difficulty`, `skill`, dan `insight` di semua soal.
- * 3. Logika grading cerdas: Anti-spam, minimal kata, dan validasi keyword wajib.
- */
-
+/* ============================================================
+   DATA: BANK SOAL HOTS (NEW STRUCTURE & UPGRADED)
+   ============================================================ */
 const BANK_SOAL = [
   // =========================================================================
   // BAHASA INDONESIA: LITERASI (11 PG + 4 ESAI)
@@ -1782,89 +1775,6 @@ let state = {
   submitted: false
 };
 
-/**
- * =========================================================================
- * 🧠 FUNGSI PENILAIAN CERDAS (SMART GRADER)
- * =========================================================================
- */
-function gradeEssay(userAnswer, question) {
-  // Pengecekan dasar jika jawaban kosong
-  if (!userAnswer || typeof userAnswer !== 'string') {
-    return { score: 0, feedback: 'Jawaban kosong.', insight: question.insight };
-  }
-
-  // Membersihkan tanda baca dan multiple space
-  const cleanAnswer = userAnswer.toLowerCase().replace(/[^\w\s]/gi, ' ').replace(/\s+/g, ' ').trim();
-  const wordCount = cleanAnswer === '' ? 0 : cleanAnswer.split(' ').length;
-
-  // 🔥 4. VALIDASI JAWABAN ESAI: Minimal 5 kata (Cegah jawaban terlalu singkat)
-  if (wordCount < 5) {
-    return {
-      score: 0,
-      feedback: `Skor 0. Jawaban terlalu pendek (${wordCount} kata). Ketik minimal 5 kata untuk menjelaskan alasanmu sesuai standar TKA.`,
-      insight: question.insight
-    };
-  }
-
-  let score = 0;
-  let matchedKeywordsCount = 0;
-  let hasMandatory = false;
-  let isMandatoryMissing = false;
-
-  // Evaluasi menggunakan array of object keywords baru
-  question.keywords.forEach(kw => {
-    if (kw.wajib) hasMandatory = true;
-
-    // Cek apakah ada satupun kata dalam array kw.kata yang di-mention user
-    const isMatch = kw.kata.some(k => {
-      // Menggunakan boundary \b agar lebih presisi (misal: "air" tidak memicu "berair")
-      const regex = new RegExp(`\\b${k.toLowerCase()}\\b`, 'i');
-      return regex.test(cleanAnswer);
-    });
-
-    if (isMatch) {
-      score += kw.bobot;
-      matchedKeywordsCount++;
-    } else if (kw.wajib) {
-      isMandatoryMissing = true;
-    }
-  });
-
-  // 🔥 6. PENALTI NGASAL: Jika hanya nembak 1 keyword, cap score di 30
-  if (matchedKeywordsCount === 1) {
-    score = Math.min(score, 30);
-  }
-
-  // 🔥 5. PENILAIAN CERDAS: Jika jawaban panjang tapi keyword WAJIB meleset, penalti parah
-  if (hasMandatory && isMandatoryMissing && matchedKeywordsCount > 1) {
-    score = Math.min(score, 40); 
-  }
-
-  // Normalisasi skor akhir maksimal 100
-  score = Math.min(score, 100);
-
-  // Menyusun Feedback
-  let feedback = `Skor kamu: ${score}. `;
-  if (isMandatoryMissing && matchedKeywordsCount > 0) {
-    feedback += "Jawabanmu belum tepat karena meleset dari inti permasalahan/kata kunci wajib. ";
-  } else if (score >= 90) {
-    feedback += "Luar biasa! Analisis pemecahan masalahmu sangat komprehensif. ";
-  } else if (matchedKeywordsCount === 1) {
-    feedback += "Jawabanmu terdeteksi sangat kurang. Harap jelaskan dengan argumentasi yang lebih utuh. ";
-  }
-
-  return {
-    score: score,
-    feedback: feedback.trim(),
-    insight: question.insight // 🔥 7. INSIGHT WAJIB DITAMPILKAN
-  };
-}
-
-// Untuk keperluan export/module
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { BANK_SOAL, gradeEssay };
-}
-
 /* ============================================================
    MANAJEMEN SESSION LOKAL & AUTO SAVE
    ============================================================ */
@@ -1935,103 +1845,6 @@ function resumeExam() {
   updateStats();
   
   history.pushState({examActive: true}, document.title, location.href);
-}
-
-
-/* ============================================================
-   GENERATOR BANK SOAL & RANDOMISASI
-   ============================================================ */
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
-
-function randomizeOptions() {
-  SOAL.forEach(s => {
-    if (s.type === 'pg') {
-      let mapped = s.opsi.map((opt, i) => ({ text: opt, isCorrect: i === s.jawaban }));
-      shuffleArray(mapped);
-      s.opsi = mapped.map(m => m.text);
-      s.jawaban = mapped.findIndex(m => m.isCorrect);
-    }
-  });
-}
-
-function generateExamQuestions(materiPilihan) {
-  // Pisahkan bank soal berdasarkan mapel dan tipe
-  let biPG = BANK_SOAL.filter(s => s.mapel === 'Bahasa Indonesia' && s.type === 'pg');
-  let biEsai = BANK_SOAL.filter(s => s.mapel === 'Bahasa Indonesia' && s.type === 'esai');
-  let mtkPG = BANK_SOAL.filter(s => s.mapel === 'Matematika' && s.type === 'pg');
-  let mtkEsai = BANK_SOAL.filter(s => s.mapel === 'Matematika' && s.type === 'esai');
-  
-  // Shuffle semua array di awal
-  shuffleArray(biPG);
-  shuffleArray(biEsai);
-  shuffleArray(mtkPG);
-  shuffleArray(mtkEsai);
-
-  let targetBiPG = 0, targetBiEsai = 0;
-  let targetMtkPG = 0, targetMtkEsai = 0;
-
-  // LOGIC DISTRIBUSI SOAL (Mapel & Tipe 21 PG + 9 Esai)
-  if (materiPilihan === 'Bahasa Indonesia') {
-    // Fokus Literasi: 21 BI (15 PG, 6 Esai) | 9 MTK (6 PG, 3 Esai)
-    targetBiPG = 15; targetBiEsai = 6;
-    targetMtkPG = 6; targetMtkEsai = 3;
-  } else if (materiPilihan === 'Matematika') {
-    // Fokus Numerasi: 9 BI (6 PG, 3 Esai) | 21 MTK (15 PG, 6 Esai)
-    targetBiPG = 6; targetBiEsai = 3;
-    targetMtkPG = 15; targetMtkEsai = 6;
-  } else {
-    // Seimbang: 15 BI (11 PG, 4 Esai) | 15 MTK (10 PG, 5 Esai)
-    targetBiPG = 11; targetBiEsai = 4;
-    targetMtkPG = 10; targetMtkEsai = 5;
-  }
-
-  // Ambil soal sesuai target
-  let selectedBiPG = biPG.slice(0, targetBiPG);
-  let selectedBiEsai = biEsai.slice(0, targetBiEsai);
-  let selectedMtkPG = mtkPG.slice(0, targetMtkPG);
-  let selectedMtkEsai = mtkEsai.slice(0, targetMtkEsai);
-
-  // FALLBACK (Jika soal di bank kurang, ambil silang dari mapel lain agar total tetap 30)
-  if (selectedBiPG.length < targetBiPG) {
-     let deficit = targetBiPG - selectedBiPG.length;
-     let mtkSisa = mtkPG.filter(x => !selectedMtkPG.includes(x));
-     selectedMtkPG.push(...mtkSisa.slice(0, deficit));
-  }
-  if (selectedMtkPG.length < targetMtkPG) {
-     let deficit = targetMtkPG - selectedMtkPG.length;
-     let biSisa = biPG.filter(x => !selectedBiPG.includes(x));
-     selectedBiPG.push(...biSisa.slice(0, deficit));
-  }
-  if (selectedBiEsai.length < targetBiEsai) {
-     let deficit = targetBiEsai - selectedBiEsai.length;
-     let mtkSisa = mtkEsai.filter(x => !selectedMtkEsai.includes(x));
-     selectedMtkEsai.push(...mtkSisa.slice(0, deficit));
-  }
-  if (selectedMtkEsai.length < targetMtkEsai) {
-     let deficit = targetMtkEsai - selectedMtkEsai.length;
-     let biSisa = biEsai.filter(x => !selectedBiEsai.includes(x));
-     selectedBiEsai.push(...biSisa.slice(0, deficit));
-  }
-
-  // Gabungkan menjadi array per mapel
-  let finalBI = [...selectedBiPG, ...selectedBiEsai];
-  let finalMTK = [...selectedMtkPG, ...selectedMtkEsai];
-
-  // Shuffle lagi di dalam mapel agar PG dan Esai bercampur secara acak (tidak berurutan tipe)
-  shuffleArray(finalBI);
-  shuffleArray(finalMTK);
-
-  // Gabungkan seluruh soal, susun urutan mapel agar UI Navigasi Sidebar rapi tidak terpecah-pecah
-  let hasil = [...finalBI, ...finalMTK];
-  SOAL = hasil.map(s => JSON.parse(JSON.stringify(s)));
-  
-  // Acak A B C D di setiap soal PG
-  randomizeOptions();
 }
 
 /* ============================================================
@@ -2388,37 +2201,6 @@ function generateExamQuestions(materiPilihan) {
 }
 
 /* ============================================================
-   UTIL
-   ============================================================ */
-function openSubmitModal() {
-  saveCurrentEssay();
-  updateStats();
-  const answered = SOAL.filter(s => hasAnswer(s.id)).length;
-  const remaining = SOAL.length - answered;
-  
-  showCustomModal({
-    type: 'confirm',
-    title: 'Kumpulkan Jawaban?',
-    message: 'Pastikan semua soal sudah kamu kerjakan. Jawaban yang belum diisi tidak bisa diubah setelah dikumpulkan.',
-    htmlContent: `
-      <div style="display:flex;gap:10px;margin-top:16px;">
-        <div style="flex:1;background:var(--gray-50);padding:12px;border-radius:10px;">
-          <div style="font-size:22px;font-weight:800;color:var(--blue-700);">${answered}</div>
-          <div style="font-size:11px;color:var(--gray-500);">Soal dijawab</div>
-        </div>
-        <div style="flex:1;background:var(--gray-50);padding:12px;border-radius:10px;">
-          <div style="font-size:22px;font-weight:800;color:${remaining > 0 ? 'var(--red-500)' : 'var(--blue-700)'};">${remaining}</div>
-          <div style="font-size:11px;color:var(--gray-500);">Belum dijawab</div>
-        </div>
-      </div>
-    `,
-    confirmText: 'Ya, Kumpulkan',
-    cancelText: 'Kembali',
-    onConfirm: doSubmit
-  });
-}
-
-/* ============================================================
    MODAL - USING NEW REUSABLE SYSTEM
    ============================================================ */
 function openSubmitModal() {
@@ -2455,70 +2237,102 @@ function openSubmitModal() {
 }
 
 /* ============================================================
-   🔥 FUNGSI AUTO GRADING ESAI (UPGRADED)
+   🔥 FUNGSI AUTO GRADING ESAI (NEW SMART GRADER)
    ============================================================ */
-function gradeEssay(answer, keywords) {
-  if (!answer || !answer.trim()) {
-    return { score: 0, status: '❌ Salah', cssClass: 'danger' };
-  }
-  if (!keywords || keywords.length === 0) {
-    return { score: 100, status: '✅ Diperiksa Manual', cssClass: 'info' }; 
+function gradeEssay(userAnswer, question) {
+  const keywords = question.keywords;
+  
+  // Pengecekan dasar jika jawaban kosong
+  if (!userAnswer || typeof userAnswer !== 'string' || userAnswer.trim() === '') {
+    return { 
+      score: 0, 
+      status: '❌ Kosong', 
+      cssClass: 'danger', 
+      found: [], 
+      missing: keywords.map(kw => kw.kata[0]), 
+      feedback: 'Kamu tidak mengisi jawaban apapun.', 
+      insight: question.insight 
+    };
   }
 
-  const normalizedAnswer = answer
-    .toLowerCase()
-    .replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, "")
-    .replace(/\s{2,}/g, " ")
-    .trim();
+  // Membersihkan tanda baca dan multiple space
+  const cleanAnswer = userAnswer.toLowerCase().replace(/[^\w\s]/gi, ' ').replace(/\s+/g, ' ').trim();
+  const wordCount = cleanAnswer === '' ? 0 : cleanAnswer.split(' ').length;
 
-  let matchScore = 0;
-  let totalWeight = 0;
+  // VALIDASI JAWABAN ESAI: Minimal 5 kata (Cegah jawaban terlalu singkat)
+  if (wordCount < 5) {
+    return {
+      score: 0,
+      status: '❌ Terlalu Pendek', 
+      cssClass: 'danger',
+      found: [],
+      missing: keywords.map(kw => kw.kata[0]),
+      feedback: `Jawaban terlalu pendek (${wordCount} kata). Ketik minimal 5 kata untuk menjelaskan alasanmu sesuai standar TKA.`,
+      insight: question.insight
+    };
+  }
+
+  let score = 0;
+  let matchedKeywordsCount = 0;
+  let hasMandatory = false;
+  let isMandatoryMissing = false;
+  
   let foundKws = [];
   let missingKws = [];
 
+  // Evaluasi menggunakan array of object keywords
   keywords.forEach(kw => {
-    // FITUR BARU: Sinonim (dipisahkan tanda |)
-    const synonyms = kw.split('|').map(s => s.trim().toLowerCase());
-    
-    // FITUR BARU: Typo tolerance (partial includes match)
-    const isMatch = synonyms.some(syn => {
-      // Cek exact atau partial jika panjang kata > 4
-      if (normalizedAnswer.includes(syn)) return true;
-      if (syn.length >= 4) {
-         // Potong akhiran/awalan ringan
-         const rootWord = syn.substring(0, syn.length - 1);
-         if (normalizedAnswer.includes(rootWord)) return true;
-      }
-      return false;
+    if (kw.wajib) hasMandatory = true;
+
+    // Cek apakah ada satupun kata (sinonim) dalam array kw.kata yang di-mention user
+    const isMatch = kw.kata.some(k => {
+      // Menggunakan boundary \b agar presisi
+      const regex = new RegExp(`\\b${k.toLowerCase()}\\b`, 'i');
+      return regex.test(cleanAnswer);
     });
 
-    // Bobot standar 1 per grup sinonim
-    const weight = 1;
-    totalWeight += weight;
-
     if (isMatch) {
-      matchScore += weight;
-      foundKws.push(synonyms[0]);
+      score += kw.bobot;
+      matchedKeywordsCount++;
+      foundKws.push(kw.kata[0]); // Simpan kata utama ke daftar found
     } else {
-      missingKws.push(synonyms[0]);
+      missingKws.push(kw.kata[0]); // Simpan kata utama ke daftar missing
+      if (kw.wajib) {
+        isMandatoryMissing = true;
+      }
     }
   });
 
-  const percentage = Math.min(100, Math.round((matchScore / totalWeight) * 100));
-  let status, cssClass;
-
-  if (percentage === 0) {
-    status = '❌ Salah';
-    cssClass = 'danger';
-  } else if (percentage < 100) {
-    status = '⚠️ Sebagian Benar';
-    cssClass = 'warning';
-  } else {
-    status = '✅ Benar';
-    cssClass = 'success';
+  // PENALTI NGASAL: Jika hanya nembak 1 keyword, cap score di 30
+  if (matchedKeywordsCount === 1) {
+    score = Math.min(score, 30);
   }
 
-  return { score: percentage, status, cssClass, found: foundKws, missing: missingKws };
+  // PENILAIAN CERDAS: Jika jawaban panjang tapi keyword WAJIB meleset, penalti
+  if (hasMandatory && isMandatoryMissing && matchedKeywordsCount > 1) {
+    score = Math.min(score, 40); 
+  }
+
+  // Normalisasi skor akhir maksimal 100
+  score = Math.min(score, 100);
+
+  // Status visual
+  let status, cssClass;
+  if (score === 0) { status = '❌ Salah'; cssClass = 'danger'; }
+  else if (score < 100) { status = '⚠️ Sebagian Benar'; cssClass = 'warning'; }
+  else { status = '✅ Benar'; cssClass = 'success'; }
+
+  // Menyusun Feedback
+  let feedback = `Skor akhir: ${score}. `;
+  if (isMandatoryMissing && matchedKeywordsCount > 0) {
+    feedback += "Jawabanmu belum tepat karena meleset dari inti permasalahan/kata kunci wajib.";
+  } else if (score >= 90) {
+    feedback += "Luar biasa! Analisis pemecahan masalahmu sangat komprehensif.";
+  } else if (matchedKeywordsCount === 1) {
+    feedback += "Jawabanmu terdeteksi sangat kurang. Harap jelaskan dengan argumentasi yang lebih utuh.";
+  }
+
+  return { score, status, cssClass, found: foundKws, missing: missingKws, feedback: feedback.trim(), insight: question.insight };
 }
 
 /* ============================================================
@@ -2547,8 +2361,8 @@ function explainPG(question, userAnsIdx) {
   `;
 }
 
-function explainEssay(answer, keywords, explanation) {
-  const grading = gradeEssay(answer, keywords);
+function explainEssay(answer, question) {
+  const grading = gradeEssay(answer, question);
   const percentage = grading.score;
   const found = grading.found || [];
   const missing = grading.missing || [];
@@ -2556,17 +2370,21 @@ function explainEssay(answer, keywords, explanation) {
   let statusStr, cssClass, icon, detailHtml = '';
 
   if (percentage === 0) {
-    statusStr = 'Sayang sekali, masih belum tepat'; cssClass = 'danger'; icon = '❌';
-    detailHtml = `<div>Jawabanmu tidak mengandung kata kunci/konsep utama yang diminta.</div>`;
+    statusStr = grading.status; cssClass = 'danger'; icon = '❌';
+    detailHtml = `<div><strong>Feedback:</strong> ${grading.feedback}</div>`;
   } else if (percentage < 100) {
-    statusStr = 'Sebagian Konsep Sudah Benar'; cssClass = 'warning'; icon = '⚠️';
+    statusStr = grading.status; cssClass = 'warning'; icon = '⚠️';
     detailHtml = `
-      <div><strong>Kamu sudah menyebutkan:</strong> <br/>${found.map(k => `<span class="keyword-tag found">${k}</span>`).join('')}</div>
+      <div><strong>Feedback:</strong> ${grading.feedback}</div>
+      <div style="margin-top: 6px;"><strong>Kamu sudah menyebutkan:</strong> <br/>${found.map(k => `<span class="keyword-tag found">${k}</span>`).join('')}</div>
       <div><strong>Namun belum mencakup:</strong> <br/>${missing.map(k => `<span class="keyword-tag missing">${k}</span>`).join('')}</div>
     `;
   } else {
-    statusStr = 'Tepat Sekali!'; cssClass = 'success'; icon = '✅';
-    detailHtml = `<div>Luar biasa! Jawabanmu mengandung semua poin penting secara komprehensif.</div>`;
+    statusStr = grading.status; cssClass = 'success'; icon = '✅';
+    detailHtml = `
+      <div><strong>Feedback:</strong> ${grading.feedback}</div>
+      <div style="margin-top: 6px;"><strong>Kata kunci ditemukan:</strong> <br/>${found.map(k => `<span class="keyword-tag found">${k}</span>`).join('')}</div>
+    `;
   }
 
   return `
@@ -2574,7 +2392,8 @@ function explainEssay(answer, keywords, explanation) {
       <div class="explanation-title">${icon} ${statusStr}</div>
       ${detailHtml}
       <div style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(0,0,0,0.1);">
-        <strong>Pembahasan Lengkap:</strong><br/> ${explanation || 'Tidak ada pembahasan untuk soal ini.'}
+        <strong>💡 Insight (Penyebab umum kesalahan):</strong><br/> <span style="color:var(--amber-700)">${grading.insight || '-'}</span><br/><br/>
+        <strong>Pembahasan Lengkap:</strong><br/> ${question.explanation || 'Tidak ada pembahasan untuk soal ini.'}
       </div>
     </div>
   `;
@@ -2626,7 +2445,7 @@ function showResult() {
   let esaiTotalScore = 0;
   esaiSoal.forEach(s => {
     const userAns = state.answers[s.id] || '';
-    const grading = gradeEssay(userAns, s.keywords);
+    const grading = gradeEssay(userAns, s); // Menggunakan fungsi baru
     esaiTotalScore += grading.score;
     mapelStats[s.mapel].scoreEarned += grading.score;
   });
@@ -2738,13 +2557,13 @@ function showResult() {
     revPG.appendChild(div);
   });
 
-  // REVIEW ESAI (DENGAN PENJELASAN INTERAKTIF)
+  // REVIEW ESAI (DENGAN PENJELASAN INTERAKTIF & SMART GRADER)
   const revEsai = $('review-esai');
   revEsai.innerHTML = '';
   
   esaiSoal.forEach((s, i) => {
     const userAns = state.answers[s.id] || '';
-    const grading = gradeEssay(userAns, s.keywords); 
+    const grading = gradeEssay(userAns, s); // Menggunakan fungsi baru
 
     const div = document.createElement('div');
     div.className = 'review-item';
@@ -2759,7 +2578,7 @@ function showResult() {
       </div>
       
       <!-- Inject Interactive Explanation Here -->
-      ${explainEssay(userAns, s.keywords, s.explanation)}
+      ${explainEssay(userAns, s)}
     `;
     revEsai.appendChild(div);
   });
