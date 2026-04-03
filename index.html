@@ -229,6 +229,13 @@ body {
 }
 .error-msg.show { display: block; }
 
+.form-hint {
+  font-size: 11.5px;
+  color: var(--gray-500);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
 .btn-primary {
   width: 100%;
   padding: 14px;
@@ -827,6 +834,42 @@ body {
 .essay-grade-badge.danger { background: var(--red-100); color: var(--red-600); border: 1px solid rgba(239,68,68,0.3); }
 
 /* ============================
+   🔥 FITUR BARU: ANALISIS & LEADERBOARD
+   ============================ */
+.analysis-box {
+  background: var(--blue-50);
+  border: 1px solid var(--blue-200);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-top: 20px;
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.analysis-box .icon { font-size: 28px; }
+.analysis-box h4 { font-size: 15px; font-weight: 800; color: var(--blue-900); margin-bottom: 4px; }
+.analysis-box p { font-size: 13.5px; color: var(--blue-700); line-height: 1.5; }
+
+.leaderboard-container {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.leaderboard-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; border-bottom: 1px solid var(--gray-200); padding-bottom: 12px; }
+.leaderboard-header h3 { font-size: 16px; font-weight: 800; color: var(--gray-900); display: flex; align-items: center; gap: 8px; }
+.lb-row { display: flex; align-items: center; padding: 10px 12px; border-radius: 8px; border-bottom: 1px solid var(--gray-100); }
+.lb-row:last-child { border-bottom: none; }
+.lb-row.is-me { background: var(--amber-50); border: 1px solid var(--amber-200); }
+.lb-rank { width: 32px; font-weight: 800; color: var(--gray-500); }
+.lb-row:nth-child(1) .lb-rank { color: #eab308; font-size: 16px; }
+.lb-row:nth-child(2) .lb-rank { color: #94a3b8; font-size: 15px; }
+.lb-row:nth-child(3) .lb-rank { color: #b45309; font-size: 15px; }
+.lb-name { flex: 1; font-weight: 600; color: var(--gray-800); font-size: 14px; }
+.lb-score { font-weight: 800; color: var(--blue-600); font-size: 15px; }
+.lb-time { font-size: 12px; color: var(--gray-500); margin-left: 12px; min-width: 60px; text-align: right; }
+
+/* ============================
    🔥 BOX PENJELASAN (UI BARU INTERAKTIF)
    ============================ */
 .explanation-box {
@@ -1045,14 +1088,13 @@ body {
       <div class="error-msg" id="err-nama">Nama tidak boleh kosong.</div>
     </div>
     <div class="form-group">
-      <label for="inp-materi">Materi yang Paling Dikuasai (Favorit)</label>
+      <label for="inp-materi">Preferensi Materi Ujian</label>
       <select class="form-input" id="inp-materi">
-        <option value="Acak">Acak (Semua Mapel Seimbang)</option>
-        <option value="Bahasa Indonesia">Bahasa Indonesia</option>
-        <option value="Matematika">Matematika</option>
-        <option value="IPA">Ilmu Pengetahuan Alam (IPA)</option>
-        <option value="Pendidikan Agama Islam">Pendidikan Agama Islam</option>
+        <option value="Seimbang">Distribusi Seimbang (Literasi & Numerasi)</option>
+        <option value="Bahasa Indonesia">Fokus Literasi (Bahasa Indonesia)</option>
+        <option value="Matematika">Fokus Numerasi (Matematika)</option>
       </select>
+      <div class="form-hint">Pilihan ini mempengaruhi distribusi soal yang akan ditampilkan.</div>
     </div>
     <button class="btn-primary ripple-target" id="btn-login">
       Mulai Ujian &rarr;
@@ -1199,6 +1241,26 @@ body {
           <div class="val" id="rs-wrong">0</div>
           <div class="lbl">Salah (PG)</div>
         </div>
+      </div>
+      
+      <!-- FITUR BARU: Analisis Hasil -->
+      <div class="analysis-box" id="analysis-box" style="display:none; text-align: left;">
+        <div class="icon">💡</div>
+        <div>
+          <h4>Analisis Performa</h4>
+          <p id="analysis-text">Menganalisis hasil ujianmu...</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FITUR BARU: Leaderboard -->
+    <div class="leaderboard-container">
+      <div class="leaderboard-header">
+        <h3>🏆 Top 10 Leaderboard CBT</h3>
+      </div>
+      <div id="leaderboard-list">
+        <!-- LB Rows injected here -->
       </div>
     </div>
 
@@ -1590,7 +1652,20 @@ const BANK_SOAL = [
     teks: 'Pada sebuah acara, panitia menyiapkan 120 porsi makanan. Di pertengahan acara, makanan tersisa 15% dari total awal. Berapa porsi makanan yang telah habis dimakan oleh para tamu?', 
     keywords: ['102', 'seratus dua', '85%', '18'], 
     explanation: 'Sisa makanan 15%. Artinya makanan yang habis adalah 100% - 15% = 85%. Porsi yang habis = 85% x 120 porsi = (85/100) x 120 = 102 porsi. (Bisa juga dicari sisanya: 15% x 120 = 18 porsi. Lalu 120 - 18 = 102 porsi).' 
-  }
+  },
+  // --- TAMBAHAN UNTUK MEMENUHI 70% DISTRIBUSI ---
+  { id: 1001, mapel: 'Bahasa Indonesia', type: 'pg', teks: 'Imbuhan "me-" pada kata "mendarat" bermakna...', opsi: ['Menuju ke', 'Berada di', 'Mencari', 'Menjadi'], jawaban: 0, explanation: 'Kata "mendarat" berarti menuju ke darat.' },
+  { id: 1002, mapel: 'Bahasa Indonesia', type: 'pg', teks: 'Sikap yang diungkapkan dengan "ringan tangan" adalah...', opsi: ['Suka memukul', 'Suka menolong', 'Sombong', 'Pemalas'], jawaban: 1, explanation: '"Ringan tangan" merupakan ungkapan yang berarti suka menolong atau membantu orang lain.' },
+  { id: 1003, mapel: 'Bahasa Indonesia', type: 'pg', teks: 'Surat resmi biasanya dilengkapi dengan kop surat yang berisi...', opsi: ['Nama teman', 'Tanda tangan', 'Identitas instansi', 'Pesan pribadi'], jawaban: 2, explanation: 'Kop surat atau kepala surat berisi identitas lengkap instansi atau lembaga pengirim surat.' },
+  { id: 1004, mapel: 'Bahasa Indonesia', type: 'pg', teks: 'Lawan kata dari "tradisional" adalah...', opsi: ['Kuno', 'Modern', 'Sederhana', 'Mewah'], jawaban: 1, explanation: 'Tradisional berarti sikap kuno, sedangkan modern berarti terbaru atau mutakhir.' },
+  { id: 1005, mapel: 'Bahasa Indonesia', type: 'esai', teks: 'Sebutkan 3 jenis kalimat majemuk!', keywords: ['setara', 'bertingkat', 'campuran'], explanation: 'Ada beberapa jenis kalimat majemuk, di antaranya adalah kalimat majemuk setara, kalimat majemuk bertingkat, dan kalimat majemuk campuran.' },
+  { id: 1006, mapel: 'Bahasa Indonesia', type: 'esai', teks: 'Apa pengertian dari paragraf deduktif?', keywords: ['awal', 'depan', 'utama', 'umum', 'ide pokok'], explanation: 'Paragraf deduktif adalah paragraf yang ide pokok atau gagasan utamanya berada di awal kalimat.' },
+  { id: 1007, mapel: 'Matematika', type: 'pg', teks: 'Hasil dari 250 : 5 + 15 adalah...', opsi: ['65', '55', '50', '45'], jawaban: 0, explanation: 'Kerjakan pembagian dulu: 250 : 5 = 50. Lalu 50 + 15 = 65.' },
+  { id: 1008, mapel: 'Matematika', type: 'pg', teks: 'FPB dari 12 dan 18 adalah...', opsi: ['2', '3', '4', '6'], jawaban: 3, explanation: 'Faktor 12 = 1, 2, 3, 4, 6, 12. Faktor 18 = 1, 2, 3, 6, 9, 18. Faktor persekutuan terbesar adalah 6.' },
+  { id: 1009, mapel: 'Matematika', type: 'pg', teks: 'Berapakah 20% dari 50.000?', opsi: ['5.000', '10.000', '15.000', '20.000'], jawaban: 1, explanation: '(20/100) x 50.000 = 10.000.' },
+  { id: 1010, mapel: 'Matematika', type: 'pg', teks: 'Bentuk sederhana dari 16/24 adalah...', opsi: ['2/3', '3/4', '4/6', '1/2'], jawaban: 0, explanation: 'Bagi pembilang dan penyebut dengan FPB-nya yaitu 8. 16/8 = 2 dan 24/8 = 3. Jadi 2/3.' },
+  { id: 1011, mapel: 'Matematika', type: 'pg', teks: 'Sebuah persegi memiliki luas 81 cm². Panjang sisinya adalah...', opsi: ['8 cm', '9 cm', '10 cm', '11 cm'], jawaban: 1, explanation: 'Luas = s x s. √81 = 9 cm.' },
+  { id: 1012, mapel: 'Matematika', type: 'esai', teks: 'Sebutkan rumus luas lingkaran dan berikan keterangan setiap simbolnya!', keywords: ['pi', 'phi', 'r', 'jari-jari', 'luas'], explanation: 'Rumus luas lingkaran adalah L = π × r × r. L adalah Luas, π (phi) bernilai 22/7 atau 3,14, dan r adalah jari-jari lingkaran.' }
 ];
 
 let SOAL = []; 
@@ -1705,39 +1780,77 @@ function randomizeOptions() {
 }
 
 function generateExamQuestions(materiPilihan) {
-  let pgBank = BANK_SOAL.filter(s => s.type === 'pg');
-  let esaiBank = BANK_SOAL.filter(s => s.type === 'esai');
+  // Pisahkan bank soal berdasarkan mapel dan tipe
+  let biPG = BANK_SOAL.filter(s => s.mapel === 'Bahasa Indonesia' && s.type === 'pg');
+  let biEsai = BANK_SOAL.filter(s => s.mapel === 'Bahasa Indonesia' && s.type === 'esai');
+  let mtkPG = BANK_SOAL.filter(s => s.mapel === 'Matematika' && s.type === 'pg');
+  let mtkEsai = BANK_SOAL.filter(s => s.mapel === 'Matematika' && s.type === 'esai');
   
-  let targetPG = 21;
-  let targetEsai = 9;
-  let activePG = [];
-  let activeEsai = [];
+  // Shuffle semua array di awal
+  shuffleArray(biPG);
+  shuffleArray(biEsai);
+  shuffleArray(mtkPG);
+  shuffleArray(mtkEsai);
 
-  shuffleArray(pgBank);
-  shuffleArray(esaiBank);
+  let targetBiPG = 0, targetBiEsai = 0;
+  let targetMtkPG = 0, targetMtkEsai = 0;
 
-  if (materiPilihan !== 'Acak') {
-    let pgPrioritas = pgBank.filter(s => s.mapel === materiPilihan);
-    let pgLain = pgBank.filter(s => s.mapel !== materiPilihan);
-    activePG.push(...pgPrioritas.slice(0, 10)); // Memprioritaskan mapel pilihan jika tersedia
-    activePG.push(...pgLain.slice(0, targetPG - activePG.length));
-    
-    let esaiPrioritas = esaiBank.filter(s => s.mapel === materiPilihan);
-    let esaiLain = esaiBank.filter(s => s.mapel !== materiPilihan);
-    activeEsai.push(...esaiPrioritas.slice(0, 4)); // Memprioritaskan mapel pilihan jika tersedia
-    activeEsai.push(...esaiLain.slice(0, targetEsai - activeEsai.length));
+  // LOGIC DISTRIBUSI SOAL (Mapel & Tipe 21 PG + 9 Esai)
+  if (materiPilihan === 'Bahasa Indonesia') {
+    // Fokus Literasi: 21 BI (15 PG, 6 Esai) | 9 MTK (6 PG, 3 Esai)
+    targetBiPG = 15; targetBiEsai = 6;
+    targetMtkPG = 6; targetMtkEsai = 3;
+  } else if (materiPilihan === 'Matematika') {
+    // Fokus Numerasi: 9 BI (6 PG, 3 Esai) | 21 MTK (15 PG, 6 Esai)
+    targetBiPG = 6; targetBiEsai = 3;
+    targetMtkPG = 15; targetMtkEsai = 6;
   } else {
-    activePG = pgBank.slice(0, targetPG);
-    activeEsai = esaiBank.slice(0, targetEsai);
+    // Seimbang: 15 BI (11 PG, 4 Esai) | 15 MTK (10 PG, 5 Esai)
+    targetBiPG = 11; targetBiEsai = 4;
+    targetMtkPG = 10; targetMtkEsai = 5;
   }
 
-  // Catatan: Agar UI Sidebar (pengelompokan berdasarkan mapel) tidak hancur,
-  // hasil acakan (soal yang terpilih) tetap kita urutkan secara terstruktur berdasarkan mata pelajaran.
-  const order = ['Bahasa Indonesia', 'Matematika', 'IPA', 'Pendidikan Agama Islam'];
-  activePG.sort((a, b) => order.indexOf(a.mapel) - order.indexOf(b.mapel));
-  activeEsai.sort((a, b) => order.indexOf(a.mapel) - order.indexOf(b.mapel));
+  // Ambil soal sesuai target
+  let selectedBiPG = biPG.slice(0, targetBiPG);
+  let selectedBiEsai = biEsai.slice(0, targetBiEsai);
+  let selectedMtkPG = mtkPG.slice(0, targetMtkPG);
+  let selectedMtkEsai = mtkEsai.slice(0, targetMtkEsai);
 
-  SOAL = [...activePG, ...activeEsai].map(s => JSON.parse(JSON.stringify(s)));
+  // FALLBACK (Jika soal di bank kurang, ambil silang dari mapel lain agar total tetap 30)
+  if (selectedBiPG.length < targetBiPG) {
+     let deficit = targetBiPG - selectedBiPG.length;
+     let mtkSisa = mtkPG.filter(x => !selectedMtkPG.includes(x));
+     selectedMtkPG.push(...mtkSisa.slice(0, deficit));
+  }
+  if (selectedMtkPG.length < targetMtkPG) {
+     let deficit = targetMtkPG - selectedMtkPG.length;
+     let biSisa = biPG.filter(x => !selectedBiPG.includes(x));
+     selectedBiPG.push(...biSisa.slice(0, deficit));
+  }
+  if (selectedBiEsai.length < targetBiEsai) {
+     let deficit = targetBiEsai - selectedBiEsai.length;
+     let mtkSisa = mtkEsai.filter(x => !selectedMtkEsai.includes(x));
+     selectedMtkEsai.push(...mtkSisa.slice(0, deficit));
+  }
+  if (selectedMtkEsai.length < targetMtkEsai) {
+     let deficit = targetMtkEsai - selectedMtkEsai.length;
+     let biSisa = biEsai.filter(x => !selectedBiEsai.includes(x));
+     selectedBiEsai.push(...biSisa.slice(0, deficit));
+  }
+
+  // Gabungkan menjadi array per mapel
+  let finalBI = [...selectedBiPG, ...selectedBiEsai];
+  let finalMTK = [...selectedMtkPG, ...selectedMtkEsai];
+
+  // Shuffle lagi di dalam mapel agar PG dan Esai bercampur secara acak (tidak berurutan tipe)
+  shuffleArray(finalBI);
+  shuffleArray(finalMTK);
+
+  // Gabungkan seluruh soal, susun urutan mapel agar UI Navigasi Sidebar rapi tidak terpecah-pecah
+  let hasil = [...finalBI, ...finalMTK];
+  SOAL = hasil.map(s => JSON.parse(JSON.stringify(s)));
+  
+  // Acak A B C D di setiap soal PG
   randomizeOptions();
 }
 
@@ -1797,6 +1910,11 @@ function startExam() {
   
   history.pushState({examActive: true}, document.title, location.href);
   showToast('success', 'Ujian Dimulai', 'Selamat mengerjakan, semoga sukses!');
+
+  // FITUR BARU: Mode Serius (Fullscreen)
+  const elem = document.documentElement;
+  if (elem.requestFullscreen) { elem.requestFullscreen().catch(()=>{}); }
+  else if (elem.webkitRequestFullscreen) { elem.webkitRequestFullscreen().catch(()=>{}); }
 }
 
 /* ── TIMER ── */
@@ -2026,7 +2144,71 @@ function updateProgress() {
 }
 
 /* ============================================================
-   MODAL - USING NEW REUSABLE SYSTEM
+   GENERATOR BANK SOAL & RANDOMISASI
+   ============================================================ */
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+function randomizeOptions() {
+  SOAL.forEach(s => {
+    if (s.type === 'pg') {
+      let mapped = s.opsi.map((opt, i) => ({ text: opt, isCorrect: i === s.jawaban }));
+      shuffleArray(mapped);
+      s.opsi = mapped.map(m => m.text);
+      s.jawaban = mapped.findIndex(m => m.isCorrect);
+    }
+  });
+}
+
+function generateExamQuestions(materiPilihan) {
+  let pgBank = BANK_SOAL.filter(s => s.type === 'pg');
+  let esaiBank = BANK_SOAL.filter(s => s.type === 'esai');
+  
+  let targetPG = 21;
+  let targetEsai = 9;
+  let activePG = [];
+  let activeEsai = [];
+
+  shuffleArray(pgBank);
+  shuffleArray(esaiBank);
+
+  if (materiPilihan !== 'Acak') {
+    let pgPrioritas = pgBank.filter(s => s.mapel === materiPilihan);
+    let pgLain = pgBank.filter(s => s.mapel !== materiPilihan);
+    let takePG = Math.min(Math.round(targetPG * 0.65), pgPrioritas.length); // ~65% mapel favorit
+    activePG.push(...pgPrioritas.slice(0, takePG)); 
+    activePG.push(...pgLain.slice(0, targetPG - activePG.length));
+    
+    let esaiPrioritas = esaiBank.filter(s => s.mapel === materiPilihan);
+    let esaiLain = esaiBank.filter(s => s.mapel !== materiPilihan);
+    let takeEsai = Math.min(Math.round(targetEsai * 0.65), esaiPrioritas.length); // ~65% mapel favorit
+    activeEsai.push(...esaiPrioritas.slice(0, takeEsai)); 
+    activeEsai.push(...esaiLain.slice(0, targetEsai - activeEsai.length));
+  } else {
+    activePG = pgBank.slice(0, targetPG);
+    activeEsai = esaiBank.slice(0, targetEsai);
+  }
+
+  // Fallback distribusi: Jika bank kurang (tidak mungkin dgn data sekarang, tapi aman)
+  if (activePG.length < targetPG) console.warn("Peringatan: Stok soal PG kurang dari 21");
+  if (activeEsai.length < targetEsai) console.warn("Peringatan: Stok soal Esai kurang dari 9");
+
+  // Catatan: Agar UI Sidebar (pengelompokan berdasarkan mapel) tidak hancur,
+  // hasil acakan (soal yang terpilih) tetap kita urutkan secara terstruktur berdasarkan mata pelajaran.
+  const order = ['Bahasa Indonesia', 'Matematika', 'IPA', 'Pendidikan Agama Islam'];
+  activePG.sort((a, b) => order.indexOf(a.mapel) - order.indexOf(b.mapel));
+  activeEsai.sort((a, b) => order.indexOf(a.mapel) - order.indexOf(b.mapel));
+
+  SOAL = [...activePG, ...activeEsai].map(s => JSON.parse(JSON.stringify(s)));
+  randomizeOptions();
+}
+
+/* ============================================================
+   UTIL
    ============================================================ */
 function openSubmitModal() {
   saveCurrentEssay();
@@ -2057,7 +2239,43 @@ function openSubmitModal() {
 }
 
 /* ============================================================
-   🔥 FUNGSI AUTO GRADING ESAI
+   MODAL - USING NEW REUSABLE SYSTEM
+   ============================================================ */
+function openSubmitModal() {
+  saveCurrentEssay();
+  updateStats();
+  const answered = SOAL.filter(s => hasAnswer(s.id)).length;
+  const remaining = SOAL.length - answered;
+  
+  // FITUR BARU: Validasi & Peringatan keras jika ada soal kosong
+  const isWarning = remaining > 0;
+  
+  showCustomModal({
+    type: isWarning ? 'warning' : 'confirm',
+    title: isWarning ? 'Masih Ada Soal Kosong!' : 'Kumpulkan Jawaban?',
+    message: isWarning 
+      ? `Ada <strong>${remaining} soal</strong> yang belum kamu jawab. Sangat disarankan untuk mengisi semua jawaban sebelum mengumpulkan.` 
+      : 'Pastikan semua soal sudah kamu kerjakan. Jawaban yang belum diisi tidak bisa diubah setelah dikumpulkan.',
+    htmlContent: `
+      <div style="display:flex;gap:10px;margin-top:16px;">
+        <div style="flex:1;background:var(--gray-50);padding:12px;border-radius:10px;">
+          <div style="font-size:22px;font-weight:800;color:var(--blue-700);">${answered}</div>
+          <div style="font-size:11px;color:var(--gray-500);">Soal dijawab</div>
+        </div>
+        <div style="flex:1;background:var(--gray-50);padding:12px;border-radius:10px;">
+          <div style="font-size:22px;font-weight:800;color:${remaining > 0 ? 'var(--red-500)' : 'var(--blue-700)'};">${remaining}</div>
+          <div style="font-size:11px;color:var(--gray-500);">Belum dijawab</div>
+        </div>
+      </div>
+    `,
+    confirmText: isWarning ? 'Tetap Kumpulkan' : 'Ya, Kumpulkan',
+    cancelText: isWarning ? 'Cek Kembali' : 'Kembali',
+    onConfirm: doSubmit
+  });
+}
+
+/* ============================================================
+   🔥 FUNGSI AUTO GRADING ESAI (UPGRADED)
    ============================================================ */
 function gradeEssay(answer, keywords) {
   if (!answer || !answer.trim()) {
@@ -2073,12 +2291,40 @@ function gradeEssay(answer, keywords) {
     .replace(/\s{2,}/g, " ")
     .trim();
 
-  let matchCount = 0;
+  let matchScore = 0;
+  let totalWeight = 0;
+  let foundKws = [];
+  let missingKws = [];
+
   keywords.forEach(kw => {
-    if (normalizedAnswer.includes(kw.toLowerCase())) matchCount++;
+    // FITUR BARU: Sinonim (dipisahkan tanda |)
+    const synonyms = kw.split('|').map(s => s.trim().toLowerCase());
+    
+    // FITUR BARU: Typo tolerance (partial includes match)
+    const isMatch = synonyms.some(syn => {
+      // Cek exact atau partial jika panjang kata > 4
+      if (normalizedAnswer.includes(syn)) return true;
+      if (syn.length >= 4) {
+         // Potong akhiran/awalan ringan
+         const rootWord = syn.substring(0, syn.length - 1);
+         if (normalizedAnswer.includes(rootWord)) return true;
+      }
+      return false;
+    });
+
+    // Bobot standar 1 per grup sinonim
+    const weight = 1;
+    totalWeight += weight;
+
+    if (isMatch) {
+      matchScore += weight;
+      foundKws.push(synonyms[0]);
+    } else {
+      missingKws.push(synonyms[0]);
+    }
   });
 
-  const percentage = Math.min(100, Math.round((matchCount / keywords.length) * 100));
+  const percentage = Math.min(100, Math.round((matchScore / totalWeight) * 100));
   let status, cssClass;
 
   if (percentage === 0) {
@@ -2092,7 +2338,7 @@ function gradeEssay(answer, keywords) {
     cssClass = 'success';
   }
 
-  return { score: percentage, status, cssClass };
+  return { score: percentage, status, cssClass, found: foundKws, missing: missingKws };
 }
 
 /* ============================================================
@@ -2122,26 +2368,10 @@ function explainPG(question, userAnsIdx) {
 }
 
 function explainEssay(answer, keywords, explanation) {
-  const normalizedAnswer = (answer || "")
-    .toLowerCase()
-    .replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, "")
-    .replace(/\s{2,}/g, " ")
-    .trim();
-
-  let found = [];
-  let missing = [];
-
-  if (keywords && keywords.length > 0) {
-    keywords.forEach(kw => {
-      if (normalizedAnswer.includes(kw.toLowerCase())) {
-        found.push(kw);
-      } else {
-        missing.push(kw);
-      }
-    });
-  }
-
-  const percentage = keywords && keywords.length > 0 ? Math.round((found.length / keywords.length) * 100) : (answer.trim() ? 100 : 0);
+  const grading = gradeEssay(answer, keywords);
+  const percentage = grading.score;
+  const found = grading.found || [];
+  const missing = grading.missing || [];
   
   let statusStr, cssClass, icon, detailHtml = '';
 
@@ -2181,6 +2411,9 @@ function doSubmit() {
   clearSession(state.nama); 
   clearInterval(state.timerInterval);
   
+  // Exit Fullscreen if active
+  if (document.exitFullscreen) { document.exitFullscreen().catch(()=>{}); }
+
   showResult();
   showToast('success', 'Ujian Selesai', 'Terima kasih, jawabanmu sudah dikumpulkan.');
 }
@@ -2192,29 +2425,106 @@ function showResult() {
   const esaiSoal = SOAL.filter(s => s.type === 'esai');
   
   let correct = 0;
-  pgSoal.forEach(s => {
-    if (state.answers[s.id] === s.jawaban) correct++;
+  let mapelStats = {};
+  
+  // Inisialisasi statistik Mapel
+  SOAL.forEach(s => {
+    if (!mapelStats[s.mapel]) mapelStats[s.mapel] = { totalItems: 0, scoreEarned: 0 };
+    mapelStats[s.mapel].totalItems++;
   });
-  const wrong = pgSoal.length - correct;
-  const score = Math.round((correct / pgSoal.length) * 100);
+
+  // Hitung PG
+  pgSoal.forEach(s => {
+    const isCorrect = state.answers[s.id] === s.jawaban;
+    if (isCorrect) {
+      correct++;
+      mapelStats[s.mapel].scoreEarned += 100; // Tiap soal max 100
+    }
+  });
+
+  // Hitung Esai & Kumpulkan skor
+  let esaiTotalScore = 0;
+  esaiSoal.forEach(s => {
+    const userAns = state.answers[s.id] || '';
+    const grading = gradeEssay(userAns, s.keywords);
+    esaiTotalScore += grading.score;
+    mapelStats[s.mapel].scoreEarned += grading.score;
+  });
+
+  // FITUR BARU: Sistem Penilaian Profesional (Bobot: PG 60% - Esai 40%)
+  const rawScorePG = pgSoal.length > 0 ? (correct / pgSoal.length) * 100 : 0;
+  const rawScoreEsai = esaiSoal.length > 0 ? (esaiTotalScore / esaiSoal.length) : 0;
+  const finalWeightedScore = Math.round((rawScorePG * 0.60) + (rawScoreEsai * 0.40));
 
   $('result-name').textContent  = state.nama;
   $('result-kelas').textContent = 'Fokus Materi: ' + state.materi; 
   
-  // Menggunakan data dinamis agar sesuai dengan total soal
   $('rs-total').textContent = SOAL.length;
   document.querySelector('.tag.pg').textContent = `${pgSoal.length} Soal`;
   document.querySelector('.tag.essay').textContent = `${esaiSoal.length} Soal`;
 
-  $('result-score').textContent = score;
+  $('result-score').textContent = finalWeightedScore;
   $('rs-correct').textContent   = correct;
-  $('rs-wrong').textContent     = wrong;
+  $('rs-wrong').textContent     = pgSoal.length - correct;
 
   setTimeout(() => {
-    const fill = Math.round((score / 100) * 360);
+    const fill = Math.round((finalWeightedScore / 100) * 360);
     $('score-ring').style.background =
       `conic-gradient(rgba(255,255,255,.95) ${fill}deg, rgba(255,255,255,.15) ${fill}deg)`;
   }, 100);
+
+  // FITUR BARU: Analisis Mapel Terlemah
+  let weakestMapel = '';
+  let lowestPct = 101;
+  for (let m in mapelStats) {
+    let pct = Math.round((mapelStats[m].scoreEarned / (mapelStats[m].totalItems * 100)) * 100);
+    if (pct < lowestPct && mapelStats[m].totalItems > 0) {
+      lowestPct = pct;
+      weakestMapel = m;
+    }
+  }
+
+  const analysisBox = $('analysis-box');
+  const analysisText = $('analysis-text');
+  if (weakestMapel) {
+    analysisBox.style.display = 'flex';
+    if (finalWeightedScore >= 80) {
+      analysisText.innerHTML = `Luar biasa! Pemahamanmu secara umum sangat baik. Namun, kamu bisa meningkatkan lagi akurasi di materi <strong>${weakestMapel}</strong> (Skor: ${lowestPct}%). Pertahankan prestasimu!`;
+    } else {
+      analysisText.innerHTML = `Kamu perlu lebih banyak berlatih, terutama pada mata pelajaran <strong>${weakestMapel}</strong> karena ini merupakan area terlemahmu (Skor: ${lowestPct}%). Jangan menyerah, baca lagi pembahasannya di bawah!`;
+    }
+  }
+
+  // FITUR BARU: Multi User & Leaderboard Storage
+  const timeSpent = (60 * 60) - state.timer; // in seconds
+  let resultsArr = JSON.parse(localStorage.getItem('cbt_results') || '[]');
+  resultsArr.push({ nama: state.nama, skor: finalWeightedScore, waktu: timeSpent, ts: Date.now() });
+  
+  // Sort: Skor tinggi ke rendah, jika sama urutkan dari waktu tercepat
+  resultsArr.sort((a, b) => b.skor - a.skor || a.waktu - b.waktu);
+  
+  // Keep only Top 10
+  resultsArr = resultsArr.slice(0, 10);
+  localStorage.setItem('cbt_results', JSON.stringify(resultsArr));
+
+  // Render Leaderboard
+  const lbList = $('leaderboard-list');
+  lbList.innerHTML = '';
+  resultsArr.forEach((r, idx) => {
+    const isMe = r.ts === resultsArr.find(mr => mr.nama === state.nama && mr.skor === finalWeightedScore)?.ts;
+    const mins = Math.floor(r.waktu / 60);
+    const secs = r.waktu % 60;
+    const timeStr = `${mins}m ${secs}s`;
+    
+    lbList.innerHTML += `
+      <div class="lb-row ${isMe ? 'is-me' : ''}">
+        <div class="lb-rank">#${idx + 1}</div>
+        <div class="lb-name">${escHtml(r.nama)}${isMe ? ' (Kamu)' : ''}</div>
+        <div class="lb-score">${r.skor}</div>
+        <div class="lb-time">⏱️ ${timeStr}</div>
+      </div>
+    `;
+  });
 
   // REVIEW PG (DENGAN PENJELASAN INTERAKTIF)
   const revPG = $('review-pg');
@@ -2300,6 +2610,26 @@ $('btn-restart').addEventListener('click', () => {
 /* ============================================================
    🔥 CUSTOM RELOAD WARNING & NAVIGATION TRAP 
    ============================================================ */
+
+// FITUR BARU: Mode Ujian Serius (Deteksi keluar Tab/Aplikasi)
+let cheatWarningCount = 0;
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden && !state.submitted && state.nama && document.getElementById('screen-exam').classList.contains('active')) {
+    cheatWarningCount++;
+    showToast('error', '⚠️ Pelanggaran!', 'Sistem mendeteksi kamu keluar dari tab ujian. Aktivitas mencurigakan dicatat.');
+    
+    if (cheatWarningCount >= 3) {
+      showCustomModal({
+        type: 'danger',
+        title: 'Ujian Dihentikan Paksa!',
+        message: 'Kamu telah keluar dari halaman ujian lebih dari 3 kali. Sesuai aturan CBT Profesional, ujianmu otomatis dikumpulkan.',
+        confirmText: 'Lihat Hasil',
+        showCancel: false,
+        onConfirm: doSubmit
+      });
+    }
+  }
+});
 
 window.addEventListener('keydown', function(e) {
   const isRefreshKey = (e.key === 'F5') || (e.ctrlKey && e.key === 'r') || (e.ctrlKey && e.key === 'R');
