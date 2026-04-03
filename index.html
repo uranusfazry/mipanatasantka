@@ -1107,7 +1107,7 @@ body {
   <div class="exam-layout">
     <div class="question-card" id="question-card">
       <div class="question-header">
-        <div class="question-badge" id="q-badge">Soal 1 / 15</div>
+        <div class="question-badge" id="q-badge">Soal 1 / 30</div>
         <div class="question-mapel" id="q-mapel">Bahasa Indonesia</div>
         <div class="question-type-tag pg" id="q-type">Pilihan Ganda</div>
       </div>
@@ -1152,7 +1152,7 @@ body {
               <div class="stat-lbl">Dijawab</div>
             </div>
             <div class="stat-box green">
-              <div class="stat-val" id="stat-remaining">15</div>
+              <div class="stat-val" id="stat-remaining">30</div>
               <div class="stat-lbl">Belum</div>
             </div>
           </div>
@@ -1188,7 +1188,7 @@ body {
       <p id="result-kelas">Kelas –</p>
       <div class="result-stats-row">
         <div class="result-stat">
-          <div class="val" id="rs-total">15</div>
+          <div class="val" id="rs-total">30</div>
           <div class="lbl">Total Soal</div>
         </div>
         <div class="result-stat correct">
@@ -1205,7 +1205,7 @@ body {
     <div class="review-section">
       <div class="review-section-header">
         <h3>📝 Pembahasan – Pilihan Ganda</h3>
-        <span class="tag pg">10 Soal</span>
+        <span class="tag pg">21 Soal</span>
       </div>
       <div id="review-pg"></div>
     </div>
@@ -1213,7 +1213,7 @@ body {
     <div class="review-section">
       <div class="review-section-header">
         <h3>✏️ Pembahasan – Esai (Auto Grading)</h3>
-        <span class="tag essay">5 Soal</span>
+        <span class="tag essay">9 Soal</span>
       </div>
       <div id="review-esai"></div>
     </div>
@@ -1708,8 +1708,8 @@ function generateExamQuestions(materiPilihan) {
   let pgBank = BANK_SOAL.filter(s => s.type === 'pg');
   let esaiBank = BANK_SOAL.filter(s => s.type === 'esai');
   
-  let targetPG = 10;
-  let targetEsai = 5;
+  let targetPG = 21;
+  let targetEsai = 9;
   let activePG = [];
   let activeEsai = [];
 
@@ -1719,18 +1719,20 @@ function generateExamQuestions(materiPilihan) {
   if (materiPilihan !== 'Acak') {
     let pgPrioritas = pgBank.filter(s => s.mapel === materiPilihan);
     let pgLain = pgBank.filter(s => s.mapel !== materiPilihan);
-    activePG.push(...pgPrioritas.slice(0, 6)); 
+    activePG.push(...pgPrioritas.slice(0, 10)); // Memprioritaskan mapel pilihan jika tersedia
     activePG.push(...pgLain.slice(0, targetPG - activePG.length));
     
     let esaiPrioritas = esaiBank.filter(s => s.mapel === materiPilihan);
     let esaiLain = esaiBank.filter(s => s.mapel !== materiPilihan);
-    activeEsai.push(...esaiPrioritas.slice(0, 3));
+    activeEsai.push(...esaiPrioritas.slice(0, 4)); // Memprioritaskan mapel pilihan jika tersedia
     activeEsai.push(...esaiLain.slice(0, targetEsai - activeEsai.length));
   } else {
     activePG = pgBank.slice(0, targetPG);
     activeEsai = esaiBank.slice(0, targetEsai);
   }
 
+  // Catatan: Agar UI Sidebar (pengelompokan berdasarkan mapel) tidak hancur,
+  // hasil acakan (soal yang terpilih) tetap kita urutkan secara terstruktur berdasarkan mata pelajaran.
   const order = ['Bahasa Indonesia', 'Matematika', 'IPA', 'Pendidikan Agama Islam'];
   activePG.sort((a, b) => order.indexOf(a.mapel) - order.indexOf(b.mapel));
   activeEsai.sort((a, b) => order.indexOf(a.mapel) - order.indexOf(b.mapel));
@@ -2187,6 +2189,8 @@ function showResult() {
   showScreen('screen-result');
 
   const pgSoal = SOAL.filter(s => s.type === 'pg');
+  const esaiSoal = SOAL.filter(s => s.type === 'esai');
+  
   let correct = 0;
   pgSoal.forEach(s => {
     if (state.answers[s.id] === s.jawaban) correct++;
@@ -2196,6 +2200,12 @@ function showResult() {
 
   $('result-name').textContent  = state.nama;
   $('result-kelas').textContent = 'Fokus Materi: ' + state.materi; 
+  
+  // Menggunakan data dinamis agar sesuai dengan total soal
+  $('rs-total').textContent = SOAL.length;
+  document.querySelector('.tag.pg').textContent = `${pgSoal.length} Soal`;
+  document.querySelector('.tag.essay').textContent = `${esaiSoal.length} Soal`;
+
   $('result-score').textContent = score;
   $('rs-correct').textContent   = correct;
   $('rs-wrong').textContent     = wrong;
@@ -2241,7 +2251,6 @@ function showResult() {
   // REVIEW ESAI (DENGAN PENJELASAN INTERAKTIF)
   const revEsai = $('review-esai');
   revEsai.innerHTML = '';
-  const esaiSoal = SOAL.filter(s => s.type === 'esai');
   
   esaiSoal.forEach((s, i) => {
     const userAns = state.answers[s.id] || '';
