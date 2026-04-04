@@ -52,6 +52,7 @@ body {
   color: var(--gray-900);
   min-height: 100vh;
   line-height: 1.6;
+  /* AMANKAN OVERFLOW: Biar gak geser */
   overflow-x: hidden;
 }
 
@@ -68,6 +69,12 @@ body {
 .gap-4 { gap: 16px; }
 .w-full { width: 100%; }
 .text-center { text-align: center; }
+
+/* TAMBAH LOADING STATE */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
 
 /* ============================
    ANIMATIONS
@@ -115,10 +122,19 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--blue-300); border-radius: 6px; }
 
 /* ============================
-   SCREEN MANAGER
+   SCREEN MANAGER (FIX ANTI BLANK)
    ============================ */
-.screen { display: none; }
-.screen.active { display: flex; }
+.screen { 
+  display: none; 
+  min-height: 100vh;
+}
+.screen.active { 
+  display: flex; 
+}
+/* fallback biar gak blank saat JS belum diload sepenuhnya */
+body:not(.js-loaded) .screen {
+  display: block;
+}
 
 /* ============================
    ── LOGIN SCREEN ──
@@ -369,6 +385,8 @@ body {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   overflow: hidden;
+  /* ANIMASI HALUS SOAL */
+  transition: all 0.3s ease; 
 }
 .question-header {
   padding: 20px 28px;
@@ -403,6 +421,27 @@ body {
 .question-type-tag.esai { background:var(--amber-100);color:#92400e; }
 
 .question-body { padding: 28px; }
+
+/* TAMBAH ERROR STYLE */
+#error-soal {
+  padding: 12px;
+  background: #fee2e2;
+  border: 1px solid #dc2626;
+  border-radius: 8px;
+  color: #b91c1c;
+  margin-bottom: 12px;
+}
+
+/* TAMBAH SUPPORT ENTER DI SOAL */
+#q-text {
+  white-space: pre-line;
+}
+
+/* STABILKAN AREA SOAL (Biar gak hilang saat kosong render) */
+#q-options {
+  min-height: 120px;
+}
+
 .question-text {
   font-size: 16px;
   font-weight: 500;
@@ -1025,6 +1064,12 @@ body {
   .student-badge { display: none; }
   .result-stats-row { grid-template-columns: repeat(3,1fr); }
 }
+
+/* FIX MOBILE GRID */
+@media (max-width: 768px) {
+  .exam-layout { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 600px) {
   .login-card { padding: 32px 22px 28px; }
   .question-body { padding: 20px; }
