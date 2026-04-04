@@ -1856,3 +1856,57 @@ document.addEventListener('DOMContentLoaded', () => {
     showScreen('screen-login');
   }
 });
+
+/* ============================================================
+   🔥 SISTEM TKA (STIMULUS + GROUP) - APPENDED ONLY
+   ============================================================ */
+
+function shuffleArray(arr) {
+  return arr.sort(() => Math.random() - 0.5);
+}
+
+function generateSoalDariGroup(groupData) {
+  let hasil = [];
+  groupData.forEach(group => {
+    group.questions.forEach(q => {
+      hasil.push({
+        ...q,
+        stimulus: group.stimulus || null
+      });
+    });
+  });
+  return hasil;
+}
+
+async function loadSoal() {
+  try {
+    const res = await fetch('data/soal.json');
+    if (!res.ok) throw new Error("Fetch gagal");
+    const data = await res.json();
+
+    if (!Array.isArray(data)) throw new Error("Format salah");
+
+    const shuffled = shuffleArray(data);
+    const finalSoal = generateSoalDariGroup(shuffled);
+
+    BANK_SOAL = finalSoal;
+
+    console.log("✅ Mode TKA aktif");
+  } catch (err) {
+    console.warn("⚠️ Fallback ke BANK_SOAL lama");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadSoal().then(() => {
+    if (typeof startExam === "function") {
+      startExam();
+    }
+  });
+});
+
+function renderStimulus(soal) {
+  const el = document.getElementById("stimulus");
+  if (!el) return;
+  el.innerText = soal.stimulus || "";
+}
