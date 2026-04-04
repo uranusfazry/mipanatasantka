@@ -1858,84 +1858,125 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ============================================================
-   🔥 SISTEM TKA (STIMULUS + GROUP) - APPENDED ONLY
+   🔥 FINAL FIX: SISTEM TKA GROUPING (APPEND ONLY)
    ============================================================ */
 
-function shuffleArray(arr) {
-  return arr.sort(() => Math.random() - 0.5);
+// 1. INJEKSI CSS (Sesuai instruksi: \n jadi enter beneran & box stimulus rapi)
+if (!document.getElementById('tka-style')) {
+  const style = document.createElement('style');
+  style.id = 'tka-style';
+  style.innerHTML = `
+    #q-text { white-space: pre-line; line-height: 1.6; font-size: 16px; }
+    .stimulus-box { background: #f5f7fa; padding: 15px; margin-bottom: 15px; border-radius: 8px; font-size: 14.5px; line-height: 1.6; white-space: pre-line; border-left: 4px solid var(--blue-500); color: var(--blue-900); }
+  `;
+  document.head.appendChild(style);
 }
 
-function generateSoalDariGroup(groupData) {
+// 2. SHUFFLE PER GROUP (Bonus Level TKA 🔥)
+function shuffleSoalPerGroup(data) {
+  return data.sort(() => Math.random() - 0.5);
+}
+
+// 3. CONVERT DATA (Flattening JSON Group ke Format Lama)
+function convertSoal(data) {
   let hasil = [];
-  groupData.forEach(group => {
+  data.forEach(group => {
     group.questions.forEach(q => {
       hasil.push({
-        ...q,
-        stimulus: group.stimulus || null
+        id: q.id,
+        mapel: group.mapel,
+        type: q.type,
+        group_id: group.group_id,
+        stimulus: group.stimulus || null,
+        teks: q.teks,
+        opsi: q.opsi || [],
+        jawaban: q.jawaban,
+        explanation: q.explanation || "",
+        insight: q.insight || "",
+        keywords: q.keywords || []
       });
     });
   });
   return hasil;
 }
 
+// 4. LOAD DATA (Hybrid System)
 async function loadSoal() {
   try {
     const res = await fetch('data/soal.json');
     if (!res.ok) throw new Error("Fetch gagal");
-    const data = await res.json();
+    let data = await res.json();
 
-    if (!Array.isArray(data)) throw new Error("Format salah");
+    // 🔥 Shuffle per group dulu, baru convert
+    data = shuffleSoalPerGroup(data);
+    BANK_SOAL = convertSoal(data);
 
-    const shuffled = shuffleArray(data);
-    const finalSoal = generateSoalDariGroup(shuffled);
-
-    BANK_SOAL = finalSoal;
-
-    console.log("✅ Mode TKA aktif, soal dimuat:", BANK_SOAL.length);
+    console.log("✅ Soal TKA berhasil dimuat & diacak per Group");
   } catch (err) {
-    console.warn("⚠️ Fallback ke BANK_SOAL lama");
+    console.warn("⚠️ Gagal load JSON, pakai fallback BANK_SOAL bawaan");
   }
 }
 
-// 🔥 Pre-load data saat aplikasi dibuka (startExam dipanggil oleh tombol Login)
-document.addEventListener("DOMContentLoaded", () => {
-  loadSoal(); 
-});
+// Langsung panggil load soal secara asinkron
+loadSoal();
 
-function renderStimulus(soal) {
-  let el = document.getElementById("stimulus");
-  
-  // Jika div stimulus belum ada, otomatis buat dan sisipkan di atas q-text
-  if (!el) {
-    const style = document.createElement('style');
-    style.innerHTML = `
-      .stimulus-box {
-        background: #f5f7fa;
-        padding: 15px;
-        margin-bottom: 15px;
-        border-radius: 8px;
-        font-size: 14px;
-        line-height: 1.6;
-        white-space: pre-line; /* 🔥 Bikin enter beneran rapi sesuai instruksi */
-        border-left: 4px solid var(--blue-500);
-        color: var(--blue-900);
-      }
-    `;
-    document.head.appendChild(style);
+// 5. RENDER SOAL (FIX TOTAL 🔥)
+// Monkey Patching: Simpan renderQuestion lama ke variabel agar UI Sidebar & Timer tidak rusak
+const renderQuestionBawaan = renderQuestion;
 
-    el = document.createElement("div");
-    el.id = "stimulus";
-    el.className = "stimulus-box";
+renderQuestion = function() {
+  // Jalankan UI bawaan (opsi a b c d, textarea, dll)
+  renderQuestionBawaan();
+
+  // Ambil soal yang sedang aktif
+  const soal = SOAL[state.current];
+  if (!soal) return;
+
+  // 🔥 TAMPILKAN STIMULUS
+  let stimEl = document.getElementById("stimulus");
+  if (!stimEl) {
+    stimEl = document.createElement("div");
+    stimEl.id = "stimulus";
+    stimEl.className = "stimulus-box";
     const qText = document.getElementById("q-text");
-    if (qText) qText.parentNode.insertBefore(el, qText);
+    if (qText) qText.parentNode.insertBefore(stimEl, qText);
   }
 
-  // Tampilkan stimulus jika soal memilikinya
-  if (soal && soal.stimulus) {
-    el.innerText = soal.stimulus;
-    el.style.display = "block";
-  } else if (el) {
-    el.innerText = "";
-    el.style.display = "none";
+  if (soal.stimulus) {
+    stimEl.innerText = soal.stimulus;
+    stimEl.style.display = "block";
+  } else {
+    stimEl.innerText = "";
+    stimEl.style.display = "none";
   }
-}
+
+  // 🔥 TAMPILKAN TEKS (innerText bikin \n jadi enter beneran)
+  const qTextEl = document.getElementById("q-text");
+  if (qTextEl) {
+    qTextEl.innerText = soal.teks;
+  }
+};
+
+// 6. OVERRIDE GENERATE EXAM (Cegah grup pecah saat diacak)
+const generateExamQuestionsBawaan = generateExamQuestions;
+
+generateExamQuestions = function(materiPilihan) {
+  // Cek apakah data berasal dari JSON TKA (punya group_id atau stimulus)
+  if (BANK_SOAL.some(s => s.group_id !== undefined || s.stimulus)) {
+    // Mode TKA JSON Aktif! Jangan acak flat array agar grup tidak pecah.
+    SOAL = JSON.parse(JSON.stringify(BANK_SOAL));
+    
+    // Acak opsi (A, B, C, D) di dalam tiap soal PG saja
+    SOAL.forEach(s => {
+      if (s.type === 'pg' && s.opsi) {
+        let mapped = s.opsi.map((opt, i) => ({ text: opt, isCorrect: i === s.jawaban }));
+        mapped.sort(() => Math.random() - 0.5);
+        s.opsi = mapped.map(m => m.text);
+        s.jawaban = mapped.findIndex(m => m.isCorrect);
+      }
+    });
+  } else {
+    // Jika gagal load JSON, jalankan fallback bawaan
+    generateExamQuestionsBawaan(materiPilihan);
+  }
+};
