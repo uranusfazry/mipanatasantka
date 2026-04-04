@@ -875,26 +875,26 @@ let SOAL = [];
    ============================================================ */
 async function loadSoal() {
   try {
-    const response = await fetch('data/soal.json');
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    
-    // VALIDASI: Pastikan data JSON adalah array dan tidak kosong
+    const res = await fetch('data/soal.json');
+
+    if (!res.ok) throw new Error("Gagal fetch");
+
+    const data = await res.json();
+
     if (!Array.isArray(data) || data.length === 0) {
-      throw new Error("Data JSON tidak valid atau kosong");
+      throw new Error("JSON kosong / invalid");
     }
 
-    // Override BANK_SOAL lama jika fetch berhasil dan data valid
     BANK_SOAL = data;
-    console.log("✅ Soal dari JSON digunakan");
-    console.log(`Berhasil memuat ${BANK_SOAL.length} soal dari JSON.`);
-  } catch (error) {
-    console.error("❌ Gagal memuat soal dari JSON:", error.message);
+
+    console.log("✅ Soal dari JSON digunakan:", BANK_SOAL.length);
+    showToast("success", "Soal Loaded", "Menggunakan soal dari JSON");
+
+  } catch (err) {
     console.warn("⚠️ Fallback ke BANK_SOAL default");
-    console.log(`Menggunakan ${BANK_SOAL.length} soal bawaan (fallback).`);
-    // BANK_SOAL tidak diubah, otomatis menggunakan data default
+    console.error(err);
+
+    showToast("warning", "Fallback", "Pakai soal default (internal)");
   }
 }
 
@@ -1641,7 +1641,7 @@ function showResult() {
     lbList.innerHTML += `
       <div class="lb-row ${isMe ? 'is-me' : ''}">
         <div class="lb-rank">#${idx + 1}</div>
-        <div class="lb-name">${escHtml(r.nama)}${isMe ? ' (Kamu)'}</div>
+        <div class="lb-name">${escHtml(r.nama)}${isMe ? ' (Kamu)' : ''}</div>
         <div class="lb-score">${r.skor}</div>
         <div class="lb-time">⏱️ ${timeStr}</div>
       </div>
