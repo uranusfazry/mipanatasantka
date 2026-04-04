@@ -164,47 +164,33 @@ function applyRippleEffect() {
 }
 applyRippleEffect();
 
+
 /* ============================================================
-   🔥 SISTEM PEMUATAN SOAL DARI JSON (URUTAN TETAP)
+   🔥 SISTEM PEMUATAN SOAL DARI FILE JS (SINKRON & AMAN)
    ============================================================ */
-
-// Function Convert Data (Flattening JSON Group ke array flat)
-function convertSoal(data) {
-  let hasil = [];
-  data.forEach(group => {
-    group.questions.forEach(q => {
-      hasil.push({
-        ...q,
-        mapel: group.mapel || q.mapel,
-        stimulus: group.stimulus || null,
-        group_id: group.group_id || null
-      });
-    });
-  });
-  return hasil;
-}
-
-// Function Load JSON (Tanpa Acak)
-async function loadSoal() {
+function loadSoal() {
   try {
-    const res = await fetch('data/soal.json');
-    if (!res.ok) throw new Error('Fetch gagal');
-    const data = await res.json();
+    // Mengecek apakah variabel 'soal' (dari soal.js) sudah termuat di Window
+    if (typeof soal === "undefined") {
+      throw new Error("soal.js tidak terbaca atau belum dimuat!");
+    }
 
-    if (!Array.isArray(data)) throw new Error('Format salah');
+    // Mengambil data secara langsung (Sinkron)
+    BANK_SOAL = [...soal];
 
-    // Langsung convert ke BANK_SOAL tanpa diacak
-    BANK_SOAL = convertSoal(data);
-
-    console.log("✅ Soal TKA berhasil dimuat sesuai urutan JSON");
+    console.log("✅ Soal berhasil dimuat (tanpa diacak)");
   } catch (err) {
-    console.warn("⚠️ Gagal memuat soal.json");
-    console.error(err);
+    console.error("❌ Gagal load soal:", err);
+
+    // Tampilkan fallback style di UI
+    const errBox = document.getElementById("error-soal");
+    if (errBox) errBox.style.display = "block";
   }
 }
 
-// Langsung panggil load soal secara asinkron saat halaman dimuat
+// Inisialisasi awal saat script dibaca
 loadSoal();
+
 
 /* ============================================================
    STATE
@@ -338,12 +324,13 @@ $('btn-login').addEventListener('click', () => {
     btnLogin.innerHTML = 'Memuat Soal...';
     btnLogin.style.pointerEvents = 'none';
 
-    // Memanggil loadSoal() lalu startExam()
-    loadSoal().then(() => {
-      btnLogin.innerHTML = originalText;
-      btnLogin.style.pointerEvents = 'auto';
-      startExam();
-    });
+    // 🔥 Panggil secara Sinkron sesuai revisi
+    loadSoal();
+    
+    // Kembalikan tombol dan langsung mulai ujian
+    btnLogin.innerHTML = originalText;
+    btnLogin.style.pointerEvents = 'auto';
+    startExam();
   }
 });
 
@@ -351,6 +338,13 @@ $('btn-login').addEventListener('click', () => {
    EXAM
    ============================================================ */
 function startExam() {
+  // 🔥 Validasi krusial sebelum masuk ruang ujian
+  if (!BANK_SOAL || BANK_SOAL.length === 0) {
+    console.error("❌ BANK_SOAL kosong");
+    alert("Soal gagal dimuat! Pastikan file soal.js sudah terhubung dengan benar.");
+    return;
+  }
+
   generateExamQuestions();
   saveSession(); 
 
@@ -472,6 +466,12 @@ function hasAnswer(soalId) {
 
 /* ── RENDER QUESTION ── */
 function renderQuestion() {
+  // 🔥 Validasi anti-error (soal undefined/hilang)
+  if (!SOAL[state.current]) {
+    console.error("Soal tidak ditemukan di index:", state.current);
+    return;
+  }
+
   const s = SOAL[state.current];
   const card = $('question-card');
 
@@ -617,12 +617,11 @@ function updateProgress() {
 }
 
 /* ============================================================
-   GENERATOR EXAM (TIDAK ACAK)
+   GENERATOR EXAM (TIDAK ACAK - URUTAN ASLI DARI SOAL.JS)
    ============================================================ */
 function generateExamQuestions() {
-  // Gunakan seluruh isi BANK_SOAL secara utuh tanpa ada pengacakan
-  // Urutan akan sama persis 100% seperti di soal.json
-  SOAL = JSON.parse(JSON.stringify(BANK_SOAL));
+  // Langsung menduplikat array agar state SOAL terlepas dari BANK_SOAL aslinya
+  SOAL = [...BANK_SOAL];
 }
 
 /* ============================================================
@@ -827,6 +826,19 @@ function doSubmit() {
 
   showResult();
   showToast('success', 'Ujian Selesai', 'Terima kasih, jawabanmu sudah dikumpulkan.');
+
+  // 🔥 RESET SOAL BARU SETELAH SUBMIT AGAR SIAP DIMAINKAN ULANG TANPA REFRESH
+  setTimeout(() => {
+    loadSoal();
+    generateExamQuestions();
+
+    state.answers = {};
+    state.current = 0;
+    state.timer = 60 * 60;
+    state.submitted = false;
+
+    showToast('info', 'Soal Baru Siap', 'Kamu bisa mulai ujian baru lagi kapan saja');
+  }, 1000);
 }
 
 function showResult() {
@@ -994,9 +1006,7 @@ $('btn-restart').addEventListener('click', () => {
     confirmText: 'Mulai Baru',
     cancelText: 'Batal',
     onConfirm: () => {
-      state.answers = {};
-      state.submitted = false;
-      state.current = 0;
+      // Tidak perlu set banyak state di sini, sudah ditangani setTimeout di dalam doSubmit()
       showScreen('screen-login');
       applyRippleEffect();
     }
