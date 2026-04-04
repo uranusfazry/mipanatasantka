@@ -5,7 +5,7 @@
     "type": "pg", 
     "difficulty": "medium", 
     "skill": "inferensi",
-    "teks": "Bacalah teks berikut dengan saksama!\n\n\"Desa Sukatani dulunya merupakan wilayah yang gersang dan sulit air. Namun, sejak Pak Kades menggerakkan warga untuk menanam pohon aren di sepanjang bukit, kondisi perlahan berubah. Kini, desa tersebut menjadi rimbun, air tanah kembali melimpah, dan warga bahkan mendapatkan penghasilan tambahan dari menjual gula aren.\"\n\nKesimpulan tersirat (yang tidak tertulis langsung) dari teks tersebut adalah...", 
+    "teks": "Bacalah teks berikut dengan saksama!\n\nDesa Sukatani dulunya merupakan wilayah yang gersang dan sulit air. Namun, sejak Pak Kades menggerakkan warga untuk menanam pohon aren di sepanjang bukit, kondisi perlahan berubah. Kini, desa tersebut menjadi rimbun, air tanah kembali melimpah, dan warga bahkan mendapatkan penghasilan tambahan dari menjual gula aren.\n\nKesimpulan tersirat (yang tidak tertulis langsung) dari teks tersebut adalah...", 
     "opsi": [
       "Pohon aren dapat tumbuh di tanah yang gersang dan kurang air.", 
       "Warga desa Sukatani sekarang menjadi kaya raya karena gula aren.", 
@@ -22,7 +22,7 @@
     "type": "pg", 
     "difficulty": "easy", 
     "skill": "sebab-akibat",
-    "teks": "Berdasarkan teks \"Desa Sukatani\" pada soal sebelumnya, mengapa saat ini air tanah di desa tersebut kembali melimpah?", 
+    "teks": "Bacalah kembali teks berikut:\n\nDesa Sukatani dulunya merupakan wilayah yang gersang dan sulit air. Namun, sejak Pak Kades menggerakkan warga untuk menanam pohon aren di sepanjang bukit, kondisi perlahan berubah. Kini, desa tersebut menjadi rimbun, air tanah kembali melimpah, dan warga bahkan mendapatkan penghasilan tambahan dari menjual gula aren.\n\nMengapa saat ini air tanah di desa tersebut kembali melimpah?", 
     "opsi": [
       "Karena warga desa tidak lagi menggunakan air secara boros.", 
       "Karena akar pohon aren yang ditanam warga membantu menyerap dan menahan air hujan di dalam tanah.", 
