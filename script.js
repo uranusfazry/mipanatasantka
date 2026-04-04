@@ -1891,22 +1891,51 @@ async function loadSoal() {
 
     BANK_SOAL = finalSoal;
 
-    console.log("✅ Mode TKA aktif");
+    console.log("✅ Mode TKA aktif, soal dimuat:", BANK_SOAL.length);
   } catch (err) {
     console.warn("⚠️ Fallback ke BANK_SOAL lama");
   }
 }
 
+// 🔥 Pre-load data saat aplikasi dibuka (startExam dipanggil oleh tombol Login)
 document.addEventListener("DOMContentLoaded", () => {
-  loadSoal().then(() => {
-    if (typeof startExam === "function") {
-      startExam();
-    }
-  });
+  loadSoal(); 
 });
 
 function renderStimulus(soal) {
-  const el = document.getElementById("stimulus");
-  if (!el) return;
-  el.innerText = soal.stimulus || "";
+  let el = document.getElementById("stimulus");
+  
+  // Jika div stimulus belum ada, otomatis buat dan sisipkan di atas q-text
+  if (!el) {
+    const style = document.createElement('style');
+    style.innerHTML = `
+      .stimulus-box {
+        background: #f5f7fa;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        font-size: 14px;
+        line-height: 1.6;
+        white-space: pre-line; /* 🔥 Bikin enter beneran rapi sesuai instruksi */
+        border-left: 4px solid var(--blue-500);
+        color: var(--blue-900);
+      }
+    `;
+    document.head.appendChild(style);
+
+    el = document.createElement("div");
+    el.id = "stimulus";
+    el.className = "stimulus-box";
+    const qText = document.getElementById("q-text");
+    if (qText) qText.parentNode.insertBefore(el, qText);
+  }
+
+  // Tampilkan stimulus jika soal memilikinya
+  if (soal && soal.stimulus) {
+    el.innerText = soal.stimulus;
+    el.style.display = "block";
+  } else if (el) {
+    el.innerText = "";
+    el.style.display = "none";
+  }
 }
