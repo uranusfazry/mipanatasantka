@@ -1,241 +1,258 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Simulasi TKA – MI Panatasan</title>
-<!-- Memanggil file CSS Eksternal -->
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulasi TKA – MI Panatasan</title>
+  <!-- Memanggil file CSS Eksternal -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- ==============================
-     SCREEN 1: LOGIN
-     ============================== -->
-<div id="screen-login" class="screen active">
-  <div class="login-card anim-fade">
-    <div class="login-logo">
-      <img src="https://i.imghippo.com/files/fjL7781Prg.webp" alt="Logo MI Panatasan" />
-    </div>
-    <div class="login-title">Simulasi TKA</div>
-    <div class="login-sub">MI Panatasan &nbsp;·&nbsp; Kelas 6</div>
-
-    <div class="form-group">
-      <label for="inp-nama">Nama Lengkap</label>
-      <input class="form-input" id="inp-nama" type="text" placeholder="Masukkan nama lengkap kamu" autocomplete="off" />
-      <div class="error-msg" id="err-nama">Nama tidak boleh kosong.</div>
-    </div>
-    <div class="form-group">
-      <label for="inp-materi">Preferensi Materi Ujian</label>
-      <select class="form-input" id="inp-materi">
-        <option value="Seimbang">Distribusi Seimbang (Literasi & Numerasi)</option>
-        <option value="Bahasa Indonesia">Fokus Literasi (Bahasa Indonesia)</option>
-        <option value="Matematika">Fokus Numerasi (Matematika)</option>
-      </select>
-      <div class="form-hint">Pilihan ini mempengaruhi distribusi soal yang akan ditampilkan.</div>
-    </div>
-    <button class="btn-primary ripple-target" id="btn-login">
-      Mulai Ujian &rarr;
-    </button>
-
-    <div class="login-info">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-      <div>Pastikan nama diisi dengan benar. Sistem akan mengacak soal setiap ujian dimulai. Ujian berlangsung selama <strong>60 menit</strong>.</div>
-    </div>
-  </div>
-</div>
-
-<!-- ==============================
-     SCREEN 2: EXAM
-     ============================== -->
-<div id="screen-exam" class="screen">
-
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="topbar-brand">
-        <div class="topbar-logo">
-          <img src="https://i.imghippo.com/files/fjL7781Prg.webp" alt="Logo" />
-        </div>
-        <div class="topbar-title">
-          Simulasi TKA MI Panatasan
-          <span>Tes Kompetensi Akademik</span>
-        </div>
+  <!-- ==============================
+       SCREEN 1: LOGIN (ACTIVE DEFAULT)
+       Deskripsi: Halaman awal untuk memasukkan nama dan memilih paket ujian
+       ============================== -->
+  <div id="screen-login" class="screen active">
+    <div class="login-card anim-fade">
+      <div class="login-logo">
+        <img src="https://i.imghippo.com/files/fjL7781Prg.webp" alt="Logo MI Panatasan" />
       </div>
-      <div class="topbar-meta">
-        <div class="student-badge">
-          <div class="student-avatar" id="topbar-avatar">–</div>
-          <span class="student-name-badge" id="topbar-name">–</span>
-        </div>
-        <div class="timer-box" id="timer-box">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          <span class="timer-digits" id="timer-display">60:00</span>
-        </div>
-      </div>
-    </div>
-  </header>
+      <div class="login-title">Simulasi TKA</div>
+      <div class="login-sub">MI Panatasan &nbsp;·&nbsp; Kelas 6</div>
 
-  <div class="progress-wrap">
-    <div class="progress-inner">
-      <span class="progress-label">Progres</span>
-      <div class="progress-bar-bg">
-        <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
+      <div class="form-group">
+        <label for="inp-nama">Nama Lengkap</label>
+        <input class="form-input" id="inp-nama" type="text" placeholder="Masukkan nama lengkap kamu" autocomplete="off" />
+        <div class="error-msg" id="err-nama">Nama tidak boleh kosong.</div>
       </div>
-      <span class="progress-pct" id="progress-pct">0%</span>
+      <div class="form-group">
+        <label for="inp-materi">Preferensi Materi Ujian</label>
+        <select class="form-input" id="inp-materi">
+          <option value="Seimbang">Distribusi Seimbang (Literasi & Numerasi)</option>
+          <option value="Bahasa Indonesia">Fokus Literasi (Bahasa Indonesia)</option>
+          <option value="Matematika">Fokus Numerasi (Matematika)</option>
+        </select>
+        <div class="form-hint">Pilihan ini mempengaruhi distribusi soal yang akan ditampilkan.</div>
+      </div>
+      <button class="btn-primary ripple-target" id="btn-login">
+        Mulai Ujian &rarr;
+      </button>
+
+      <div class="login-info">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <!-- PERBAIKAN: Teks soal diacak dihilangkan -->
+        <div>Pastikan nama diisi dengan benar. Soal akan ditampilkan secara berurutan sesuai paket ujian. Ujian berlangsung selama <strong>60 menit</strong>.</div>
+      </div>
     </div>
   </div>
 
-  <div class="exam-layout">
-    <div class="question-card" id="question-card">
-      <div class="question-header">
-        <div class="question-badge" id="q-badge">Soal 1 / 30</div>
-        <div class="question-mapel" id="q-mapel">Bahasa Indonesia</div>
-        <div class="question-type-tag pg" id="q-type">Pilihan Ganda</div>
+  <!-- ==============================
+       SCREEN 2: EXAM (HIDDEN DEFAULT)
+       Deskripsi: Halaman utama ujian, navigasi soal, dan timer
+       ============================== -->
+  <div id="screen-exam" class="screen">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="topbar-brand">
+          <div class="topbar-logo">
+            <img src="https://i.imghippo.com/files/fjL7781Prg.webp" alt="Logo" />
+          </div>
+          <div class="topbar-title">
+            Simulasi TKA MI Panatasan
+            <span>Tes Kompetensi Akademik</span>
+          </div>
+        </div>
+        <div class="topbar-meta">
+          <div class="student-badge">
+            <div class="student-avatar" id="topbar-avatar">–</div>
+            <span class="student-name-badge" id="topbar-name">–</span>
+          </div>
+          <div class="timer-box" id="timer-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span class="timer-digits" id="timer-display">60:00</span>
+          </div>
+        </div>
       </div>
-      <div class="question-body">
-        <!-- 🌟 ELEMEN BARU UNTUK STIMULUS TKA -->
-        <div id="stimulus" style="background: var(--blue-50); padding: 16px; border-radius: 8px; margin-bottom: 20px; font-size: 14.5px; color: var(--blue-900); display: none; line-height: 1.6; border-left: 4px solid var(--blue-500);"></div>
-        
-        <div class="question-text" id="q-text"></div>
-        <div id="q-options"></div>
-      </div>
-      <div class="question-footer">
-        <button class="btn-nav btn-prev ripple-target" id="btn-prev">
-          <svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-          Sebelumnya
-        </button>
-        <div style="flex:1"></div>
-        <button class="btn-nav btn-next ripple-target" id="btn-next">
-          Selanjutnya
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-        <button class="btn-nav btn-submit hidden ripple-target" id="btn-submit-footer">
-          <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 012-2h11"/></svg>
-          Selesai
-        </button>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-inner">
+        <span class="progress-label">Progres</span>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
+        </div>
+        <span class="progress-pct" id="progress-pct">0%</span>
       </div>
     </div>
 
-    <aside class="sidebar">
-      <div class="sidebar-card">
-        <div class="sidebar-header">
-          <h3>Navigasi Soal</h3>
-          <p>Klik nomor untuk berpindah soal</p>
+    <div class="exam-layout">
+      <div class="question-card" id="question-card">
+        <div class="question-header">
+          <div class="question-badge" id="q-badge">Soal 1 / 30</div>
+          <div class="question-mapel" id="q-mapel">Bahasa Indonesia</div>
+          <div class="question-type-tag pg" id="q-type">Pilihan Ganda</div>
         </div>
-        <div class="sidebar-body">
-          <div id="nav-grid"></div>
+        <div class="question-body">
+          
+          <!-- PERBAIKAN: FALLBACK MESSAGE JIKA SOAL GAGAL DIMUAT -->
+          <div id="error-soal" style="display:none; color:red; font-weight:bold; margin-bottom: 15px;">
+            ⚠️ Soal gagal dimuat. Pastikan file soal.js tersedia.
+          </div>
 
-          <div class="sidebar-legend">
-            <div class="legend-item"><div class="legend-dot unanswered"></div>Belum dijawab</div>
-            <div class="legend-item"><div class="legend-dot active"></div>Sedang dibuka</div>
-            <div class="legend-item"><div class="legend-dot answered"></div>Sudah dijawab</div>
-          </div>
-          <div class="sidebar-stats">
-            <div class="stat-box">
-              <div class="stat-val" id="stat-answered">0</div>
-              <div class="stat-lbl">Dijawab</div>
-            </div>
-            <div class="stat-box green">
-              <div class="stat-val" id="stat-remaining">30</div>
-              <div class="stat-lbl">Belum</div>
-            </div>
-          </div>
-          <button class="btn-finish ripple-target" id="btn-finish">
+          <!-- 🌟 ELEMEN BARU UNTUK STIMULUS TKA -->
+          <div id="stimulus" style="background: var(--blue-50); padding: 16px; border-radius: 8px; margin-bottom: 20px; font-size: 14.5px; color: var(--blue-900); display: none; line-height: 1.6; border-left: 4px solid var(--blue-500);"></div>
+          
+          <div class="question-text" id="q-text"></div>
+          <div id="q-options"></div>
+        </div>
+        <div class="question-footer">
+          <button class="btn-nav btn-prev ripple-target" id="btn-prev">
+            <svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+            Sebelumnya
+          </button>
+          <div style="flex:1"></div>
+          <button class="btn-nav btn-next ripple-target" id="btn-next">
+            Selanjutnya
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button class="btn-nav btn-submit hidden ripple-target" id="btn-submit-footer">
             <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 012-2h11"/></svg>
-            Selesai & Kumpulkan
+            Selesai
           </button>
         </div>
       </div>
-    </aside>
-  </div>
-</div>
 
-<!-- ==============================
-     SCREEN 3: RESULT
-     ============================== -->
-<div id="screen-result" class="screen">
-  <div class="result-topbar">
-    <div>
-      <h2>Hasil Ujian – Simulasi TKA</h2>
-      <span>MI Panatasan &nbsp;·&nbsp; Kelas 6</span>
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-header">
+            <h3>Navigasi Soal</h3>
+            <p>Klik nomor untuk berpindah soal</p>
+          </div>
+          <div class="sidebar-body">
+            <!-- ID WAJIB: grid navigasi nomor soal -->
+            <div id="nav-grid"></div>
+
+            <div class="sidebar-legend">
+              <div class="legend-item"><div class="legend-dot unanswered"></div>Belum dijawab</div>
+              <div class="legend-item"><div class="legend-dot active"></div>Sedang dibuka</div>
+              <div class="legend-item"><div class="legend-dot answered"></div>Sudah dijawab</div>
+            </div>
+            <div class="sidebar-stats">
+              <div class="stat-box">
+                <div class="stat-val" id="stat-answered">0</div>
+                <div class="stat-lbl">Dijawab</div>
+              </div>
+              <div class="stat-box green">
+                <div class="stat-val" id="stat-remaining">30</div>
+                <div class="stat-lbl">Belum</div>
+              </div>
+            </div>
+            <button class="btn-finish ripple-target" id="btn-finish">
+              <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 012-2h11"/></svg>
+              Selesai & Kumpulkan
+            </button>
+          </div>
+        </div>
+      </aside>
     </div>
   </div>
-  <div class="result-container anim-fade">
 
-    <div class="result-hero">
-      <div class="score-ring-wrap">
-        <div class="score-ring" id="score-ring">
-          <div class="score-number" id="result-score">0</div>
-        </div>
-      </div>
-      <h2 id="result-name">–</h2>
-      <p id="result-kelas">Kelas –</p>
-      <div class="result-stats-row">
-        <div class="result-stat">
-          <div class="val" id="rs-total">30</div>
-          <div class="lbl">Total Soal</div>
-        </div>
-        <div class="result-stat correct">
-          <div class="val" id="rs-correct">0</div>
-          <div class="lbl">Benar (PG)</div>
-        </div>
-        <div class="result-stat wrong">
-          <div class="val" id="rs-wrong">0</div>
-          <div class="lbl">Salah (PG)</div>
-        </div>
-      </div>
-      
-      <!-- FITUR BARU: Analisis Hasil -->
-      <div class="analysis-box" id="analysis-box" style="display:none; text-align: left;">
-        <div class="icon">💡</div>
-        <div>
-          <h4>Analisis Performa</h4>
-          <p id="analysis-text">Menganalisis hasil ujianmu...</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- FITUR BARU: Leaderboard -->
-    <div class="leaderboard-container">
-      <div class="leaderboard-header">
-        <h3>🏆 Top 10 Leaderboard CBT</h3>
-      </div>
-      <div id="leaderboard-list">
-        <!-- LB Rows injected here -->
+  <!-- ==============================
+       SCREEN 3: RESULT (HIDDEN DEFAULT)
+       Deskripsi: Halaman skor akhir, leaderboard, dan pembahasan
+       ============================== -->
+  <div id="screen-result" class="screen">
+    <div class="result-topbar">
+      <div>
+        <h2>Hasil Ujian – Simulasi TKA</h2>
+        <span>MI Panatasan &nbsp;·&nbsp; Kelas 6</span>
       </div>
     </div>
+    <div class="result-container anim-fade">
 
-    <div class="review-section">
-      <div class="review-section-header">
-        <h3>📝 Pembahasan – Pilihan Ganda</h3>
-        <span class="tag pg">0 Soal</span>
+      <div class="result-hero">
+        <div class="score-ring-wrap">
+          <div class="score-ring" id="score-ring">
+            <div class="score-number" id="result-score">0</div>
+          </div>
+        </div>
+        <h2 id="result-name">–</h2>
+        <p id="result-kelas">Kelas –</p>
+        <div class="result-stats-row">
+          <div class="result-stat">
+            <div class="val" id="rs-total">30</div>
+            <div class="lbl">Total Soal</div>
+          </div>
+          <div class="result-stat correct">
+            <div class="val" id="rs-correct">0</div>
+            <div class="lbl">Benar (PG)</div>
+          </div>
+          <div class="result-stat wrong">
+            <div class="val" id="rs-wrong">0</div>
+            <div class="lbl">Salah (PG)</div>
+          </div>
+        </div>
+        
+        <!-- FITUR BARU: Analisis Hasil -->
+        <div class="analysis-box" id="analysis-box" style="display:none; text-align: left;">
+          <div class="icon">💡</div>
+          <div>
+            <h4>Analisis Performa</h4>
+            <p id="analysis-text">Menganalisis hasil ujianmu...</p>
+          </div>
+        </div>
       </div>
-      <div id="review-pg"></div>
-    </div>
 
-    <div class="review-section">
-      <div class="review-section-header">
-        <h3>✏️ Pembahasan – Esai (Auto Grading)</h3>
-        <span class="tag essay">0 Soal</span>
+      <!-- FITUR BARU: Leaderboard -->
+      <div class="leaderboard-container">
+        <div class="leaderboard-header">
+          <h3>🏆 Top 10 Leaderboard CBT</h3>
+        </div>
+        <div id="leaderboard-list">
+          <!-- LB Rows injected here -->
+        </div>
       </div>
-      <div id="review-esai"></div>
-    </div>
 
-    <button class="btn-primary ripple-target" id="btn-restart" style="margin-top: 24px; display: flex; align-items: center; justify-content: center; gap: 8px;">
-      <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.5;"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-      Mulai Ujian Baru (Acak Ulang)
-    </button>
+      <div class="review-section">
+        <div class="review-section-header">
+          <h3>📝 Pembahasan – Pilihan Ganda</h3>
+          <span class="tag pg">0 Soal</span>
+        </div>
+        <div id="review-pg"></div>
+      </div>
+
+      <div class="review-section">
+        <div class="review-section-header">
+          <h3>✏️ Pembahasan – Esai (Auto Grading)</h3>
+          <span class="tag essay">0 Soal</span>
+        </div>
+        <div id="review-esai"></div>
+      </div>
+
+      <button class="btn-primary ripple-target" id="btn-restart" style="margin-top: 24px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.5;"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+        <!-- PERBAIKAN: Menghilangkan teks "Acak Ulang" agar konsisten dengan konsep berurutan -->
+        Mulai Ujian Baru
+      </button>
+    </div>
   </div>
-</div>
 
-<!-- ==============================
-     🔥 DYNAMIC UI CONTAINERS (MODAL & TOAST)
-     ============================== -->
-<div id="modal-container"></div>
-<div id="toast-container" class="toast-container"></div>
+  <!-- ==============================
+       🔥 DYNAMIC UI CONTAINERS (MODAL & TOAST)
+       ============================== -->
+  <div id="modal-container"></div>
+  <div id="toast-container" class="toast-container"></div>
 
-<!-- Memanggil file JS Eksternal -->
-<script src="script.js"></script>
+  <!-- ==============================
+       🚀 SCRIPTS
+       PERBAIKAN: Urutan file, penambahan defer, dan pemisahan file soal
+       ============================== -->
+  <!-- WAJIB: Data soal dimuat terlebih dahulu -->
+  <script src="soal.js" defer></script>
+  
+  <!-- LALU: Logika aplikasi (script.js) -->
+  <script src="script.js" defer></script>
 
 </body>
 </html>
