@@ -873,28 +873,20 @@ let SOAL = [];
 /* ============================================================
    🔥 SISTEM HYBRID ASINKRON (MEMUAT SOAL TKA DARI JSON)
    ============================================================ */
+let RAW_DATA_JSON = null;
+let GROUPS = []; // Menampung referensi grup agar bisa dipakai render soal
 
-// 1. Function Shuffle Group
+// 1. Function Shuffle Murni untuk Array
 function shuffleArray(arr) {
-  return arr.sort(() => Math.random() - 0.5);
+  let array = [...arr];
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
 
-// 2. Function Generate Soal (Flattening Grup ke Flat Array)
-function generateSoalDariGroup(groupData) {
-  let hasil = [];
-  groupData.forEach(group => {
-    group.questions.forEach(q => {
-      hasil.push({
-        ...q,
-        mapel: group.mapel || q.mapel, // Ambil mapel dari grup jika ada
-        stimulus: group.stimulus || null
-      });
-    });
-  });
-  return hasil;
-}
-
-// 3. Function Load JSON Hybrid
+// 2. Load JSON
 async function loadSoal() {
   try {
     const res = await fetch('data/soal.json');
@@ -903,15 +895,8 @@ async function loadSoal() {
 
     if (!Array.isArray(data)) throw new Error('Format salah');
 
-    // Acak urutan grup stimulus
-    const shuffledGroup = shuffleArray(data);
-    
-    // Ekstrak jadi soal satuan yang nyambung dengan stimulus
-    const finalSoal = generateSoalDariGroup(shuffledGroup);
-
-    BANK_SOAL = finalSoal;
-
-    console.log("✅ Soal TKA dari JSON digunakan");
+    RAW_DATA_JSON = data;
+    console.log("✅ Soal TKA dari JSON berhasil dimuat");
   } catch (err) {
     console.warn("⚠️ Fallback ke soal lama");
     console.error(err);
@@ -942,6 +927,7 @@ function saveSession() {
     nama: state.nama,
     materi: state.materi,
     soal: SOAL,
+    groups: GROUPS, // Simpan state grouping
     jawaban: state.answers,
     timer: state.timer,
     current: state.current
@@ -972,6 +958,10 @@ function loadSession(nama) {
     state.nama = parsed.nama;
     state.materi = parsed.materi || 'Acak';
     SOAL = parsed.soal;
+    GROUPS = parsed.groups || []; // Memulihkan group
+    // Untuk fallback ke compatibility mode JSON
+    if (GROUPS.length > 0) RAW_DATA_JSON = GROUPS;
+
     state.answers = parsed.jawaban || {};
     state.timer = parsed.timer;
     state.current = parsed.current || 0;
@@ -1046,7 +1036,7 @@ $('btn-login').addEventListener('click', () => {
     btnLogin.innerHTML = 'Memuat Soal...';
     btnLogin.style.pointerEvents = 'none';
 
-    // 🔥 ALUR BARU: Memanggil loadSoal() lalu startExam()
+    // Memanggil loadSoal() lalu startExam()
     loadSoal().then(() => {
       btnLogin.innerHTML = originalText;
       btnLogin.style.pointerEvents = 'auto';
@@ -1201,19 +1191,38 @@ function renderQuestion() {
     typeTag.className   = 'question-type-tag esai';
   }
 
-  // 🌟 RENDER STIMULUS JIKA ADA
-  const stimulusBox = document.getElementById("stimulus");
-  if (stimulusBox) {
-    if (s.stimulus) {
-      stimulusBox.innerHTML = escHtml(s.stimulus).replace(/\n/g, '<br/>');
-      stimulusBox.style.display = "block";
-    } else {
-      stimulusBox.innerHTML = "";
-      stimulusBox.style.display = "none";
-    }
+  // 🌟 LOGIC RENDER: AMBIL GROUP DAN SOAL (STIMULUS)
+  let currentGroup, currentQuestion;
+
+  if (RAW_DATA_JSON && s.groupIndex !== undefined && GROUPS.length > 0) {
+    currentGroup = GROUPS[s.groupIndex];
+    currentQuestion = currentGroup.questions[s.questionIndex];
+  } else {
+    // Fallback logic
+    currentGroup = { stimulus: s.stimulus };
+    currentQuestion = s;
   }
 
-  $('q-text').innerHTML = escHtml(s.teks).replace(/\n/g, '<br/>');
+  // Inject element CSS/HTML jika belum ada
+  let stimulusBox = document.getElementById("stimulus");
+  if (!stimulusBox) {
+    stimulusBox = document.createElement("div");
+    stimulusBox.id = "stimulus";
+    stimulusBox.className = "stimulus-box";
+    const qText = document.getElementById("q-text");
+    if (qText) qText.parentNode.insertBefore(stimulusBox, qText);
+  }
+
+  // TAMPILKAN: Stimulus muncul di atas teks soal
+  if (currentGroup.stimulus) {
+    stimulusBox.innerHTML = escHtml(currentGroup.stimulus).replace(/\n/g, '<br/>');
+    stimulusBox.style.display = "block";
+  } else {
+    stimulusBox.innerHTML = "";
+    stimulusBox.style.display = "none";
+  }
+
+  $('q-text').innerHTML = escHtml(currentQuestion.teks).replace(/\n/g, '<br/>');
 
   const opts = $('q-options');
   opts.innerHTML = '';
@@ -1321,61 +1330,96 @@ function updateProgress() {
 /* ============================================================
    GENERATOR BANK SOAL & RANDOMISASI
    ============================================================ */
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
-
-function randomizeOptions() {
-  SOAL.forEach(s => {
-    if (s.type === 'pg') {
-      let mapped = s.opsi.map((opt, i) => ({ text: opt, isCorrect: i === s.jawaban }));
-      shuffleArray(mapped);
-      s.opsi = mapped.map(m => m.text);
-      s.jawaban = mapped.findIndex(m => m.isCorrect);
-    }
-  });
-}
 
 function generateExamQuestions(materiPilihan) {
-  let pgBank = BANK_SOAL.filter(s => s.type === 'pg');
-  let esaiBank = BANK_SOAL.filter(s => s.type === 'esai');
-  
-  // SISTEM CBT PROFESIONAL: Ambil 30 soal acak dari total bank soal
-  // Proporsi standar TKA: 21 Pilihan Ganda, 9 Esai
-  let targetPG = 21;
-  let targetEsai = 9;
-  let activePG = [];
-  let activeEsai = [];
+  if (RAW_DATA_JSON) {
+    // 🌟 1. ACAK HANYA ARRAY UTAMA (GROUP / STIMULUS)
+    let groups = shuffleArray(RAW_DATA_JSON);
 
-  shuffleArray(pgBank);
-  shuffleArray(esaiBank);
+    // (Opsional) Filter grup bedasarkan mapel apabila diperlukan
+    if (materiPilihan !== 'Acak') {
+      let prioritas = groups.filter(g => g.mapel === materiPilihan);
+      let lain = groups.filter(g => g.mapel !== materiPilihan);
+      groups = [...prioritas, ...lain]; // Prioritaskan sesuai pilihan
+    }
 
-  if (materiPilihan !== 'Acak') {
-    let pgPrioritas = pgBank.filter(s => s.mapel === materiPilihan);
-    let pgLain = pgBank.filter(s => s.mapel !== materiPilihan);
-    let takePG = Math.min(Math.round(targetPG * 0.65), pgPrioritas.length); // ~65% mapel favorit
-    activePG.push(...pgPrioritas.slice(0, takePG)); 
-    activePG.push(...pgLain.slice(0, targetPG - activePG.length));
-    
-    let esaiPrioritas = esaiBank.filter(s => s.mapel === materiPilihan);
-    let esaiLain = esaiBank.filter(s => s.mapel !== materiPilihan);
-    let takeEsai = Math.min(Math.round(targetEsai * 0.65), esaiPrioritas.length); // ~65% mapel favorit
-    activeEsai.push(...esaiPrioritas.slice(0, takeEsai)); 
-    activeEsai.push(...esaiLain.slice(0, targetEsai - activeEsai.length));
+    GROUPS = groups;
+    SOAL = [];
+
+    // 🌟 2. ITERASI UNTUK PERTAHANKAN URUTAN (TIDAK MENGGUNAKAN flatMap())
+    for (let groupIndex = 0; groupIndex < groups.length; groupIndex++) {
+      let currentGroup = groups[groupIndex];
+
+      // 🌟 3. URUTAN QUESTION DALAM GRUP DIJAGA, TIDAK DIACAK
+      for (let questionIndex = 0; questionIndex < currentGroup.questions.length; questionIndex++) {
+        let currentQuestion = currentGroup.questions[questionIndex];
+
+        // Buat copy referensi agar JSON master tidak terubah
+        let qCopy = JSON.parse(JSON.stringify(currentQuestion));
+
+        // Acak opsi PG jika ada (Opsi Boleh diacak)
+        if (qCopy.type === 'pg' && qCopy.opsi) {
+          let mapped = qCopy.opsi.map((opt, i) => ({ text: opt, isCorrect: i === qCopy.jawaban }));
+          mapped = shuffleArray(mapped);
+          qCopy.opsi = mapped.map(m => m.text);
+          qCopy.jawaban = mapped.findIndex(m => m.isCorrect);
+        }
+
+        // Masukkan ke State Linear (untuk navigasi grid, progress, dll)
+        SOAL.push({
+          ...qCopy,
+          groupIndex: groupIndex,
+          questionIndex: questionIndex,
+          mapel: currentGroup.mapel || qCopy.mapel || 'Campuran'
+        });
+      }
+    }
   } else {
-    activePG = pgBank.slice(0, targetPG);
-    activeEsai = esaiBank.slice(0, targetEsai);
+    // ─── Fallback Menggunakan BANK_SOAL Lama ───
+    let pgBank = BANK_SOAL.filter(s => s.type === 'pg');
+    let esaiBank = BANK_SOAL.filter(s => s.type === 'esai');
+    
+    let targetPG = 21;
+    let targetEsai = 9;
+    let activePG = [];
+    let activeEsai = [];
+
+    pgBank = shuffleArray(pgBank);
+    esaiBank = shuffleArray(esaiBank);
+
+    if (materiPilihan !== 'Acak') {
+      let pgPrioritas = pgBank.filter(s => s.mapel === materiPilihan);
+      let pgLain = pgBank.filter(s => s.mapel !== materiPilihan);
+      let takePG = Math.min(Math.round(targetPG * 0.65), pgPrioritas.length);
+      activePG.push(...pgPrioritas.slice(0, takePG)); 
+      activePG.push(...pgLain.slice(0, targetPG - activePG.length));
+      
+      let esaiPrioritas = esaiBank.filter(s => s.mapel === materiPilihan);
+      let esaiLain = esaiBank.filter(s => s.mapel !== materiPilihan);
+      let takeEsai = Math.min(Math.round(targetEsai * 0.65), esaiPrioritas.length);
+      activeEsai.push(...esaiPrioritas.slice(0, takeEsai)); 
+      activeEsai.push(...esaiLain.slice(0, targetEsai - activeEsai.length));
+    } else {
+      activePG = pgBank.slice(0, targetPG);
+      activeEsai = esaiBank.slice(0, targetEsai);
+    }
+
+    const order = ['Bahasa Indonesia', 'Matematika'];
+    activePG.sort((a, b) => order.indexOf(a.mapel) - order.indexOf(b.mapel));
+    activeEsai.sort((a, b) => order.indexOf(a.mapel) - order.indexOf(b.mapel));
+
+    SOAL = [...activePG, ...activeEsai].map(s => JSON.parse(JSON.stringify(s)));
+    
+    // Acak opsi fallback
+    SOAL.forEach(s => {
+      if (s.type === 'pg') {
+        let mapped = s.opsi.map((opt, i) => ({ text: opt, isCorrect: i === s.jawaban }));
+        mapped = shuffleArray(mapped);
+        s.opsi = mapped.map(m => m.text);
+        s.jawaban = mapped.findIndex(m => m.isCorrect);
+      }
+    });
   }
-
-  const order = ['Bahasa Indonesia', 'Matematika'];
-  activePG.sort((a, b) => order.indexOf(a.mapel) - order.indexOf(b.mapel));
-  activeEsai.sort((a, b) => order.indexOf(a.mapel) - order.indexOf(b.mapel));
-
-  SOAL = [...activePG, ...activeEsai].map(s => JSON.parse(JSON.stringify(s)));
-  randomizeOptions();
 }
 
 /* ============================================================
@@ -1829,6 +1873,17 @@ window.addEventListener('popstate', (e) => {
    INIT & SESSION CHECK SAAT HALAMAN DIBUKA
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
+  // Injeksi CSS untuk perbaikan tampilan Stimulus (Group TKA)
+  if (!document.getElementById('tka-style')) {
+    const style = document.createElement('style');
+    style.id = 'tka-style';
+    style.innerHTML = `
+      #q-text { white-space: pre-line; line-height: 1.6; font-size: 16px; }
+      .stimulus-box { background: #f5f7fa; padding: 15px; margin-bottom: 15px; border-radius: 8px; font-size: 14.5px; line-height: 1.6; white-space: pre-line; border-left: 4px solid var(--blue-500); color: var(--blue-900); }
+    `;
+    document.head.appendChild(style);
+  }
+
   const lastUser = localStorage.getItem('cbt_last_user');
   
   if (lastUser && localStorage.getItem('cbt_session_' + lastUser)) {
@@ -1856,127 +1911,3 @@ document.addEventListener('DOMContentLoaded', () => {
     showScreen('screen-login');
   }
 });
-
-/* ============================================================
-   🔥 FINAL FIX: SISTEM TKA GROUPING (APPEND ONLY)
-   ============================================================ */
-
-// 1. INJEKSI CSS (Sesuai instruksi: \n jadi enter beneran & box stimulus rapi)
-if (!document.getElementById('tka-style')) {
-  const style = document.createElement('style');
-  style.id = 'tka-style';
-  style.innerHTML = `
-    #q-text { white-space: pre-line; line-height: 1.6; font-size: 16px; }
-    .stimulus-box { background: #f5f7fa; padding: 15px; margin-bottom: 15px; border-radius: 8px; font-size: 14.5px; line-height: 1.6; white-space: pre-line; border-left: 4px solid var(--blue-500); color: var(--blue-900); }
-  `;
-  document.head.appendChild(style);
-}
-
-// 2. SHUFFLE PER GROUP (Bonus Level TKA 🔥)
-function shuffleSoalPerGroup(data) {
-  return data.sort(() => Math.random() - 0.5);
-}
-
-// 3. CONVERT DATA (Flattening JSON Group ke Format Lama)
-function convertSoal(data) {
-  let hasil = [];
-  data.forEach(group => {
-    group.questions.forEach(q => {
-      hasil.push({
-        id: q.id,
-        mapel: group.mapel,
-        type: q.type,
-        group_id: group.group_id,
-        stimulus: group.stimulus || null,
-        teks: q.teks,
-        opsi: q.opsi || [],
-        jawaban: q.jawaban,
-        explanation: q.explanation || "",
-        insight: q.insight || "",
-        keywords: q.keywords || []
-      });
-    });
-  });
-  return hasil;
-}
-
-// 4. LOAD DATA (Hybrid System)
-async function loadSoal() {
-  try {
-    const res = await fetch('data/soal.json');
-    if (!res.ok) throw new Error("Fetch gagal");
-    let data = await res.json();
-
-    // 🔥 Shuffle per group dulu, baru convert
-    data = shuffleSoalPerGroup(data);
-    BANK_SOAL = convertSoal(data);
-
-    console.log("✅ Soal TKA berhasil dimuat & diacak per Group");
-  } catch (err) {
-    console.warn("⚠️ Gagal load JSON, pakai fallback BANK_SOAL bawaan");
-  }
-}
-
-// Langsung panggil load soal secara asinkron
-loadSoal();
-
-// 5. RENDER SOAL (FIX TOTAL 🔥)
-// Monkey Patching: Simpan renderQuestion lama ke variabel agar UI Sidebar & Timer tidak rusak
-const renderQuestionBawaan = renderQuestion;
-
-renderQuestion = function() {
-  // Jalankan UI bawaan (opsi a b c d, textarea, dll)
-  renderQuestionBawaan();
-
-  // Ambil soal yang sedang aktif
-  const soal = SOAL[state.current];
-  if (!soal) return;
-
-  // 🔥 TAMPILKAN STIMULUS
-  let stimEl = document.getElementById("stimulus");
-  if (!stimEl) {
-    stimEl = document.createElement("div");
-    stimEl.id = "stimulus";
-    stimEl.className = "stimulus-box";
-    const qText = document.getElementById("q-text");
-    if (qText) qText.parentNode.insertBefore(stimEl, qText);
-  }
-
-  if (soal.stimulus) {
-    stimEl.innerText = soal.stimulus;
-    stimEl.style.display = "block";
-  } else {
-    stimEl.innerText = "";
-    stimEl.style.display = "none";
-  }
-
-  // 🔥 TAMPILKAN TEKS (innerText bikin \n jadi enter beneran)
-  const qTextEl = document.getElementById("q-text");
-  if (qTextEl) {
-    qTextEl.innerText = soal.teks;
-  }
-};
-
-// 6. OVERRIDE GENERATE EXAM (Cegah grup pecah saat diacak)
-const generateExamQuestionsBawaan = generateExamQuestions;
-
-generateExamQuestions = function(materiPilihan) {
-  // Cek apakah data berasal dari JSON TKA (punya group_id atau stimulus)
-  if (BANK_SOAL.some(s => s.group_id !== undefined || s.stimulus)) {
-    // Mode TKA JSON Aktif! Jangan acak flat array agar grup tidak pecah.
-    SOAL = JSON.parse(JSON.stringify(BANK_SOAL));
-    
-    // Acak opsi (A, B, C, D) di dalam tiap soal PG saja
-    SOAL.forEach(s => {
-      if (s.type === 'pg' && s.opsi) {
-        let mapped = s.opsi.map((opt, i) => ({ text: opt, isCorrect: i === s.jawaban }));
-        mapped.sort(() => Math.random() - 0.5);
-        s.opsi = mapped.map(m => m.text);
-        s.jawaban = mapped.findIndex(m => m.isCorrect);
-      }
-    });
-  } else {
-    // Jika gagal load JSON, jalankan fallback bawaan
-    generateExamQuestionsBawaan(materiPilihan);
-  }
-};
