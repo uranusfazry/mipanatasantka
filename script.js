@@ -871,30 +871,50 @@ let BANK_SOAL = [
 let SOAL = []; 
 
 /* ============================================================
-   🔥 SISTEM HYBRID ASINKRON (MEMUAT SOAL DARI JSON)
+   🔥 SISTEM HYBRID ASINKRON (MEMUAT SOAL TKA DARI JSON)
    ============================================================ */
+
+// 1. Function Shuffle Group
+function shuffleArray(arr) {
+  return arr.sort(() => Math.random() - 0.5);
+}
+
+// 2. Function Generate Soal (Flattening Grup ke Flat Array)
+function generateSoalDariGroup(groupData) {
+  let hasil = [];
+  groupData.forEach(group => {
+    group.questions.forEach(q => {
+      hasil.push({
+        ...q,
+        mapel: group.mapel || q.mapel, // Ambil mapel dari grup jika ada
+        stimulus: group.stimulus || null
+      });
+    });
+  });
+  return hasil;
+}
+
+// 3. Function Load JSON Hybrid
 async function loadSoal() {
   try {
     const res = await fetch('data/soal.json');
-
-    if (!res.ok) throw new Error("Gagal fetch");
-
+    if (!res.ok) throw new Error('Fetch gagal');
     const data = await res.json();
 
-    if (!Array.isArray(data) || data.length === 0) {
-      throw new Error("JSON kosong / invalid");
-    }
+    if (!Array.isArray(data)) throw new Error('Format salah');
 
-    BANK_SOAL = data;
+    // Acak urutan grup stimulus
+    const shuffledGroup = shuffleArray(data);
+    
+    // Ekstrak jadi soal satuan yang nyambung dengan stimulus
+    const finalSoal = generateSoalDariGroup(shuffledGroup);
 
-    console.log("✅ Soal dari JSON digunakan:", BANK_SOAL.length);
-    showToast("success", "Soal Loaded", "Menggunakan soal dari JSON");
+    BANK_SOAL = finalSoal;
 
+    console.log("✅ Soal TKA dari JSON digunakan");
   } catch (err) {
-    console.warn("⚠️ Fallback ke BANK_SOAL default");
+    console.warn("⚠️ Fallback ke soal lama");
     console.error(err);
-
-    showToast("warning", "Fallback", "Pakai soal default (internal)");
   }
 }
 
@@ -1026,7 +1046,7 @@ $('btn-login').addEventListener('click', () => {
     btnLogin.innerHTML = 'Memuat Soal...';
     btnLogin.style.pointerEvents = 'none';
 
-    // 🔥 ALUR BARU: Memanggil loadSoal() sebelum startExam()
+    // 🔥 ALUR BARU: Memanggil loadSoal() lalu startExam()
     loadSoal().then(() => {
       btnLogin.innerHTML = originalText;
       btnLogin.style.pointerEvents = 'auto';
@@ -1179,6 +1199,18 @@ function renderQuestion() {
   } else {
     typeTag.textContent = 'Esai';
     typeTag.className   = 'question-type-tag esai';
+  }
+
+  // 🌟 RENDER STIMULUS JIKA ADA
+  const stimulusBox = document.getElementById("stimulus");
+  if (stimulusBox) {
+    if (s.stimulus) {
+      stimulusBox.innerHTML = escHtml(s.stimulus).replace(/\n/g, '<br/>');
+      stimulusBox.style.display = "block";
+    } else {
+      stimulusBox.innerHTML = "";
+      stimulusBox.style.display = "none";
+    }
   }
 
   $('q-text').innerHTML = escHtml(s.teks).replace(/\n/g, '<br/>');
