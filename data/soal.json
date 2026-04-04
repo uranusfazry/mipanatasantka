@@ -5,7 +5,7 @@
     "type": "pg",
     "difficulty": "medium",
     "skill": "inferensi",
-    "teks": "Perhatikan teks ini!\n\n\"Desa Sukatani dulunya merupakan wilayah yang gersang dan sulit air. Namun, sejak Pak Kades menggerakkan warga untuk menanam pohon aren di sepanjang bukit, kondisi perlahan berubah. Kini, desa tersebut menjadi rimbun, air tanah kembali melimpah, dan warga bahkan mendapatkan penghasilan tambahan dari menjual gula aren.\"\n\nKesimpulan tersirat (yang tidak tertulis langsung) dari teks tersebut adalah...",
+    "teks": "Bacalah teks berikut!\n\n\"Desa Sukatani dulunya merupakan wilayah yang gersang dan sulit air. Namun, sejak Pak Kades menggerakkan warga untuk menanam pohon aren di sepanjang bukit, kondisi perlahan berubah. Kini, desa tersebut menjadi rimbun, air tanah kembali melimpah, dan warga bahkan mendapatkan penghasilan tambahan dari menjual gula aren.\"\n\nKesimpulan tersirat (yang tidak tertulis langsung) dari teks tersebut adalah...",
     "opsi": [
       "Pohon aren dapat tumbuh di tanah yang gersang dan kurang air.",
       "Warga desa Sukatani sekarang menjadi kaya raya karena gula aren.",
@@ -158,7 +158,7 @@
     "type": "pg",
     "difficulty": "easy",
     "skill": "analisis",
-    "teks": "Perhatikan kalimat surat resmi ini!\n\"Dengan hormat, kami mengundang bapak/ibu wali murid untuk hadir pada acara pengambilan raport yang akan dilaksanakan pada Hari senin.\"\n\nKesalahan penggunaan huruf kapital pada kalimat tersebut terdapat pada kata...",
+    "teks": "Perhatikan kalimat surat resmi berikut!\n\"Dengan hormat, kami mengundang bapak/ibu wali murid untuk hadir pada acara pengambilan raport yang akan dilaksanakan pada Hari senin.\"\n\nKesalahan penggunaan huruf kapital pada kalimat tersebut terdapat pada kata...",
     "opsi": [
       "Hormat dan Hadir",
       "Bapak/ibu dan senin",
@@ -500,7 +500,7 @@
     "type": "pg",
     "difficulty": "medium",
     "skill": "ide pokok",
-    "teks": "Perhatikan paragraf ini!\n\nHutan mangrove memiliki peran yang sangat krusial bagi lingkungan pesisir pantai. Akar-akarnya yang kuat mampu menahan hempasan ombak sehingga mencegah terjadinya abrasi. Selain itu, kawasan mangrove juga menjadi habitat alami bagi berbagai jenis ikan, udang, dan kepiting untuk berkembang biak. Oleh karena itu, kelestarian hutan mangrove harus terus dijaga oleh semua pihak.\n\nIde pokok dari paragraf tersebut adalah...",
+    "teks": "Bacalah paragraf berikut!\n\nHutan mangrove memiliki peran yang sangat krusial bagi lingkungan pesisir pantai. Akar-akarnya yang kuat mampu menahan hempasan ombak sehingga mencegah terjadinya abrasi. Selain itu, kawasan mangrove juga menjadi habitat alami bagi berbagai jenis ikan, udang, dan kepiting untuk berkembang biak. Oleh karena itu, kelestarian hutan mangrove harus terus dijaga oleh semua pihak.\n\nIde pokok dari paragraf tersebut adalah...",
     "opsi": [
       "Akar mangrove sangat kuat menahan ombak.",
       "Mangrove adalah tempat hidup ikan dan kepiting.",
@@ -585,7 +585,7 @@
     "type": "pg",
     "difficulty": "medium",
     "skill": "inferensi",
-    "teks": "Perhatikan teks ini!\n\nAkhir-akhir ini, banyak anak sekolah dasar yang mengalami masalah obesitas (kegemukan ekstrim). Dokter spesialis anak menyebutkan bahwa salah satu pemicu utamanya adalah kebiasaan mengonsumsi makanan instan dan minuman kemasan yang tinggi gula, ditambah lagi dengan kurangnya aktivitas fisik karena terlalu lama bermain gawai.\n\nKesimpulan utama dari paragraf tersebut adalah...",
+    "teks": "Bacalah teks berikut!\n\nAkhir-akhir ini, banyak anak sekolah dasar yang mengalami masalah obesitas (kegemukan ekstrim). Dokter spesialis anak menyebutkan bahwa salah satu pemicu utamanya adalah kebiasaan mengonsumsi makanan instan dan minuman kemasan yang tinggi gula, ditambah lagi dengan kurangnya aktivitas fisik karena terlalu lama bermain gawai.\n\nKesimpulan utama dari paragraf tersebut adalah...",
     "opsi": [
       "Bermain gawai membuat anak menjadi lebih pintar.",
       "Makanan instan sangat disukai oleh anak-anak sekolah dasar.",
@@ -670,7 +670,7 @@
     "type": "pg",
     "difficulty": "hard",
     "skill": "logika",
-    "teks": "Dari kisah Cut Nyak Dien, kita belajar bahwa perjuangan tidak selalu dilakukan dengan kondisi fisik yang sempurna. Bagaimana kamu menerapkan nilai perjuangan ini dalam kehidupanmu sebagai seorang pelajar?",
+    "teks": "Pahlawan Cut Nyak Dien tetap gigih memimpin pasukan bergerilya melawan penjajah meskipun suaminya telah gugur dan kondisi fisiknya tidak lagi sempurna (rabun dan encok). Dari kisah tersebut, kita belajar bahwa perjuangan tidak selalu dilakukan dengan kondisi fisik prima. Bagaimana kamu menerapkan nilai keteladanan ini dalam kehidupanmu sebagai seorang pelajar?",
     "opsi": [
       "Berhenti sekolah jika merasa sakit ringan.",
       "Tetap rajin belajar dan mengerjakan tugas meskipun tidak memiliki fasilitas semewah teman-teman lain.",
@@ -1112,7 +1112,7 @@
     "type": "pg",
     "difficulty": "medium",
     "skill": "logika",
-    "teks": "Suhu di puncak Gunung Jayawijaya pada siang hari adalah 2°C di atas titik beku. Saat tengah malam, suhunya turun drastis menjadi 9°C di bawah titik beku. Berapakah selisih suhu antara siang hari dan tengah malam di puncak gunung tersebut?",
+    "teks": "Suhu di puncak Gunung Jayawijaya pada siang hari mencapai 2°C. Saat tengah malam, suhunya turun drastis menjadi -9°C. Berapakah selisih suhu antara siang hari dan tengah malam di puncak gunung tersebut?",
     "opsi": [
       "-7°C",
       "7°C",
@@ -1560,7 +1560,7 @@
     "type": "pg",
     "difficulty": "medium",
     "skill": "ide pokok",
-    "teks": "Perhatikan paragraf ini!\n\nSampah plastik menjadi ancaman serius bagi kelestarian laut. Ribuan hewan laut seperti penyu mati karena menelan kantong plastik yang dikira ubur-ubur. Mikroplastik juga mencemari rantai makanan hingga manusia. Untuk itu, pengurangan penggunaan plastik sekali pakai sangat mendesak dilakukan.\n\nIde pokok paragraf tersebut adalah...",
+    "teks": "Bacalah paragraf berikut!\n\nSampah plastik menjadi ancaman serius bagi kelestarian laut. Ribuan hewan laut seperti penyu mati karena menelan kantong plastik yang dikira ubur-ubur. Mikroplastik juga mencemari rantai makanan hingga manusia. Untuk itu, pengurangan penggunaan plastik sekali pakai sangat mendesak dilakukan.\n\nIde pokok paragraf tersebut adalah...",
     "opsi": [
       "Penyu laut mati menelan plastik.",
       "Bahaya sampah plastik bagi lingkungan laut.",
@@ -1628,7 +1628,7 @@
     "type": "pg",
     "difficulty": "hard",
     "skill": "logika",
-    "teks": "Pemerintah membangun waduk baru di hulu sungai. Waduk ini berfungsi menampung kelebihan air hujan. Apa dampak logis bagi desa di hilir (bawah) sungai saat musim hujan tiba?",
+    "teks": "Pemerintah membangun waduk baru di hulu sungai. Waduk ini berfungsi menampung kelebihan air hujan. Apa dampak logis bagi permukiman warga di daerah hilir sungai saat musim hujan tiba?",
     "opsi": [
       "Desa hilir akan mengalami kekeringan.",
       "Desa hilir menjadi tempat wisata air.",
@@ -1696,7 +1696,7 @@
     "type": "pg",
     "difficulty": "medium",
     "skill": "analisis",
-    "teks": "Perhatikan kalimat ini!\n\"adik membeli obat di apotek sehat waras bersama ibu.\"\nPenulisan huruf kapital yang benar untuk kalimat tersebut adalah...",
+    "teks": "Perhatikan kalimat berikut!\n\"adik membeli obat di apotek sehat waras bersama ibu.\"\nPenulisan huruf kapital yang benar untuk kalimat tersebut adalah...",
     "opsi": [
       "Adik membeli obat di apotek sehat waras bersama ibu.",
       "Adik membeli obat di Apotek Sehat Waras bersama Ibu.",
@@ -2178,7 +2178,7 @@
     "type": "pg",
     "difficulty": "medium",
     "skill": "analisis",
-    "teks": "Perhatikan kalimat ini!\n\"Karena hujan sangat deras, sehingga sungai meluap.\" Kalimat tersebut tidak efektif karena...",
+    "teks": "Perhatikan kalimat berikut!\n\"Karena hujan sangat deras, sehingga sungai meluap.\" Kalimat tersebut tidak efektif karena...",
     "opsi": [
       "Terlalu panjang",
       "Kurang subjek utama",
@@ -2212,7 +2212,7 @@
     "type": "pg",
     "difficulty": "easy",
     "skill": "analisis",
-    "teks": "Berikut adalah urutan struktur surat resmi yang benar dari atas ke bawah:",
+    "teks": "Urutan struktur penulisan surat resmi yang benar adalah...",
     "opsi": [
       "Kop surat, tanggal, nomor, lampiran, perihal, alamat tujuan.",
       "Tanggal, kop surat, perihal, nomor, lampiran.",
@@ -2229,7 +2229,7 @@
     "type": "pg",
     "difficulty": "medium",
     "skill": "sebab-akibat",
-    "teks": "Hutan yang ditebang liar di daerah pegunungan tidak mampu lagi menyerap air hujan. Dampak langsung dari peristiwa ini bagi daerah lereng di bawahnya adalah...",
+    "teks": "Hutan yang ditebang liar di daerah pegunungan tidak mampu lagi menyerap air hujan. Dampak langsung dari peristiwa ini bagi permukiman warga di kawasan lereng tersebut adalah...",
     "opsi": [
       "Tanah longsor dan banjir bandang",
       "Hujan menjadi lebih lebat",
@@ -2890,7 +2890,7 @@
     "type": "pg",
     "difficulty": "easy",
     "skill": "analisis",
-    "teks": "Penggunaan tanda tanya (?) yang paling tepat di bawah ini adalah...",
+    "teks": "Penggunaan tanda tanya (?) yang paling tepat terdapat pada kalimat...",
     "opsi": [
       "Kapan adik pulang sekolah?",
       "Tolong ambilkan buku itu?",
@@ -3018,7 +3018,7 @@
     "type": "pg",
     "difficulty": "medium",
     "skill": "inferensi",
-    "teks": "Anjing pemburu berlari mengejar mangsanya, namun rubah licik itu menyusup ke dalam lubang sempit di bawah akar beringin. Anjing pun hanya bisa menggonggong di luar. Masalah utama anjing tersebut adalah...",
+    "teks": "Anjing pemburu berlari mengejar mangsanya, namun rubah licik itu menyusup ke dalam celah sempit di sela-sela akar beringin raksasa. Anjing pun hanya bisa menggonggong di luar. Masalah utama yang dialami anjing tersebut adalah...",
     "opsi": [
       "Ia kalah cepat lari.",
       "Rubah membencinya.",
