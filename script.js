@@ -881,12 +881,19 @@ async function loadSoal() {
     }
     const data = await response.json();
     
-    // Override BANK_SOAL lama jika fetch berhasil
+    // VALIDASI: Pastikan data JSON adalah array dan tidak kosong
+    if (!Array.isArray(data) || data.length === 0) {
+      throw new Error("Data JSON tidak valid atau kosong");
+    }
+
+    // Override BANK_SOAL lama jika fetch berhasil dan data valid
     BANK_SOAL = data;
-    console.log("Soal dari JSON digunakan");
+    console.log("✅ Soal dari JSON digunakan");
+    console.log(`Berhasil memuat ${BANK_SOAL.length} soal dari JSON.`);
   } catch (error) {
-    console.warn("Gagal memuat soal dari JSON:", error.message);
-    console.log("Fallback ke BANK_SOAL default");
+    console.error("❌ Gagal memuat soal dari JSON:", error.message);
+    console.warn("⚠️ Fallback ke BANK_SOAL default");
+    console.log(`Menggunakan ${BANK_SOAL.length} soal bawaan (fallback).`);
     // BANK_SOAL tidak diubah, otomatis menggunakan data default
   }
 }
