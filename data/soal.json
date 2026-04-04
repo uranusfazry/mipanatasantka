@@ -1,0 +1,52 @@
+[
+  { 
+    "id": 1, 
+    "mapel": "Bahasa Indonesia", 
+    "type": "pg", 
+    "difficulty": "medium", 
+    "skill": "inferensi",
+    "teks": "Bacalah teks berikut dengan saksama!\n\n\"Desa Sukatani dulunya merupakan wilayah yang gersang dan sulit air. Namun, sejak Pak Kades menggerakkan warga untuk menanam pohon aren di sepanjang bukit, kondisi perlahan berubah. Kini, desa tersebut menjadi rimbun, air tanah kembali melimpah, dan warga bahkan mendapatkan penghasilan tambahan dari menjual gula aren.\"\n\nKesimpulan tersirat (yang tidak tertulis langsung) dari teks tersebut adalah...", 
+    "opsi": [
+      "Pohon aren dapat tumbuh di tanah yang gersang dan kurang air.", 
+      "Warga desa Sukatani sekarang menjadi kaya raya karena gula aren.", 
+      "Penghijauan lingkungan dapat membawa dampak positif bagi alam dan ekonomi warga.", 
+      "Pak Kades memaksa warganya menanam pohon aren agar bisa berjualan gula."
+    ], 
+    "jawaban": 2, 
+    "explanation": "Kesimpulan tersirat harus mewakili pesan utama bacaan tanpa mengulangi teks secara harfiah. Teks menunjukkan bahwa aksi penghijauan berhasil memperbaiki alam sekaligus memberikan keuntungan finansial.",
+    "insight": "Banyak siswa salah karena memilih jawaban yang tersurat di teks, bukan menarik kesimpulan secara keseluruhan (HOTS)."
+  },
+  { 
+    "id": 2, 
+    "mapel": "Bahasa Indonesia", 
+    "type": "pg", 
+    "difficulty": "easy", 
+    "skill": "sebab-akibat",
+    "teks": "Berdasarkan teks \"Desa Sukatani\" pada soal sebelumnya, mengapa saat ini air tanah di desa tersebut kembali melimpah?", 
+    "opsi": [
+      "Karena warga desa tidak lagi menggunakan air secara boros.", 
+      "Karena akar pohon aren yang ditanam warga membantu menyerap dan menahan air hujan di dalam tanah.", 
+      "Karena Pak Kades membuat sumur resapan yang besar di tengah desa.", 
+      "Karena warga menjual gula aren untuk membeli air bersih dari luar desa."
+    ], 
+    "jawaban": 1, 
+    "explanation": "Dalam konteks IPA (ekologi), pohon berperan penting dalam siklus air. Akarnya berfungsi menahan dan menyimpan air hujan.",
+    "insight": "Sebagian siswa salah mengira pembangunan fisik (sumur resapan) adalah penyebabnya, padahal teks berfokus pada fungsi ekologis pohon."
+  },
+  { 
+    "id": 12, 
+    "mapel": "Bahasa Indonesia", 
+    "type": "esai", 
+    "difficulty": "hard", 
+    "skill": "sebab-akibat",
+    "teks": "Warga desa bergotong royong membersihkan selokan setiap bulan. Mengapa menjaga kebersihan selokan di lingkungan tempat tinggal sangat berkaitan erat dengan kesehatan warga? Jelaskan alasan logismu!", 
+    "keywords": [
+      { "kata": ["nyamuk", "dbd", "demam berdarah"], "wajib": true, "bobot": 40 },
+      { "kata": ["penyakit", "bakteri", "kuman"], "wajib": true, "bobot": 30 },
+      { "kata": ["banjir", "genangan", "mampet"], "wajib": false, "bobot": 20 },
+      { "kata": ["kesehatan", "bersih"], "wajib": false, "bobot": 10 }
+    ], 
+    "explanation": "Selokan kotor/mampet = genangan air. Genangan = sarang nyamuk DBD & bakteri. Selokan bersih = genangan hilang = rantai penyakit terputus.",
+    "insight": "Banyak siswa salah karena hanya menjawab \"agar tidak banjir\" tanpa mengaitkannya secara logis dengan penyebab biologis (nyamuk/penyakit)."
+  }
+]
