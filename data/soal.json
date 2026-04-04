@@ -22,7 +22,7 @@
     "type": "pg",
     "difficulty": "easy",
     "skill": "sebab-akibat",
-    "teks": "Berdasarkan teks \"Desa Sukatani\" pada soal sebelumnya, mengapa saat ini air tanah di desa tersebut kembali melimpah?",
+    "teks": "Desa Sukatani yang dulunya gersang kini menjadi rimbun dan air tanahnya kembali melimpah sejak warga rutin menanam pohon aren di sepanjang bukit. Mengapa penanaman pohon dapat menyebabkan air tanah di desa tersebut kembali melimpah?",
     "opsi": [
       "Karena warga desa tidak lagi menggunakan air secara boros.",
       "Karena akar pohon aren yang ditanam warga membantu menyerap dan menahan air hujan di dalam tanah.",
@@ -39,7 +39,7 @@
     "type": "pg",
     "difficulty": "easy",
     "skill": "analisis",
-    "teks": "\"Setelah berhasil membangun bisnis kerajinan anyaman bambu, Bu Rina menjadi buah bibir di kampungnya. Meskipun pesanan datang dari luar negeri, ia tetap ramah dan mau mengajarkan keterampilannya kepada ibu-ibu lain secara gratis.\"\n\nMakna ungkapan \"buah bibir\" pada teks di atas adalah...",
+    "teks": "\"Setelah berhasil membangun bisnis kerajinan anyaman bambu, Bu Rina menjadi buah bibir di kampungnya. Meskipun pesanan datang dari luar negeri, ia tetap ramah dan mau mengajarkan keterampilannya kepada ibu-ibu lain secara gratis.\"\n\nMakna ungkapan \"buah bibir\" pada teks tersebut adalah...",
     "opsi": [
       "Orang yang suka banyak bicara",
       "Orang yang selalu memakai lipstik",
@@ -107,7 +107,7 @@
     "type": "pg",
     "difficulty": "hard",
     "skill": "analisis",
-    "teks": "Bacalah informasi berikut!\nNyamuk *Aedes aegypti* memiliki ciri belang hitam-putih pada tubuhnya dan biasanya menggigit pada pagi hingga sore hari. Nyamuk ini berkembang biak di genangan air bersih. Sementara itu, nyamuk biasa (Culex) umumnya menggigit pada malam hari dan berkembang biak di air kotor atau selokan.\n\nBerdasarkan teks di atas, manakah pernyataan perbandingan yang paling tepat?",
+    "teks": "Bacalah informasi berikut!\nNyamuk *Aedes aegypti* memiliki ciri belang hitam-putih pada tubuhnya dan biasanya menggigit pada pagi hingga sore hari. Nyamuk ini berkembang biak di genangan air bersih. Sementara itu, nyamuk biasa (Culex) umumnya menggigit pada malam hari dan berkembang biak di air kotor atau selokan.\n\nBerdasarkan informasi tersebut, manakah pernyataan perbandingan yang paling tepat?",
     "opsi": [
       "Kedua nyamuk sama-sama berbahaya jika menggigit pada malam hari.",
       "Aedes aegypti menyukai air kotor, sedangkan nyamuk biasa menyukai air bersih.",
@@ -124,7 +124,7 @@
     "type": "pg",
     "difficulty": "medium",
     "skill": "logika",
-    "teks": "Berdasarkan teks tentang nyamuk pada soal sebelumnya, apa yang sebaiknya kamu lakukan jika melihat ban bekas yang terisi air hujan di halaman rumahmu?",
+    "teks": "Nyamuk pembawa penyakit *Aedes aegypti* diketahui sangat menyukai genangan air bersih untuk berkembang biak. Tindakan pencegahan apa yang sebaiknya dilakukan jika terdapat ban bekas yang terisi air hujan di halaman rumah?",
     "opsi": [
       "Dibiarkan saja karena air hujan sangat bersih dan segar.",
       "Segera membuang airnya dan mengubur atau mendaur ulang ban tersebut.",
@@ -158,7 +158,7 @@
     "type": "pg",
     "difficulty": "easy",
     "skill": "analisis",
-    "teks": "Perhatikan kalimat surat resmi berikut!\n\"Dengan hormat, kami mengundang bapak/ibu wali murid untuk hadir pada acara pengambilan raport yang akan dilaksanakan pada Hari senin.\"\n\nKesalahan penggunaan huruf kapital pada kalimat di atas terdapat pada kata...",
+    "teks": "Perhatikan kalimat surat resmi berikut!\n\"Dengan hormat, kami mengundang bapak/ibu wali murid untuk hadir pada acara pengambilan raport yang akan dilaksanakan pada Hari senin.\"\n\nKesalahan penggunaan huruf kapital pada kalimat tersebut terdapat pada kata...",
     "opsi": [
       "Hormat dan Hadir",
       "Bapak/ibu dan senin",
@@ -208,7 +208,7 @@
     "type": "esai",
     "difficulty": "medium",
     "skill": "analisis",
-    "teks": "Berdasarkan teks tentang \"Desa Sukatani\", jelaskan minimal 2 dampak positif penanaman pohon aren bagi desa tersebut, dilihat dari segi EKONOMI (keuangan) dan EKOLOGI (lingkungan)!",
+    "teks": "Kegiatan penghijauan seperti menanam pohon aren di wilayah perbukitan yang gersang terbukti membawa banyak perubahan positif bagi warga desa. Jelaskan minimal 2 dampak positif penanaman pohon bagi suatu desa, dilihat dari segi EKONOMI (keuangan) dan EKOLOGI (lingkungan)!",
     "keywords": [
       { "kata": ["air", "tanah", "hijau", "menyerap", "akar"], "wajib": true, "bobot": 50 },
       { "kata": ["gula", "uang", "penghasilan", "jual"], "wajib": true, "bobot": 50 }
@@ -271,7 +271,7 @@
     "type": "pg",
     "difficulty": "hard",
     "skill": "pecahan",
-    "teks": "Berdasarkan soal sebelumnya (ada 32 kantong beras), jika sebanyak 8 kantong telah dibagikan ke panti asuhan terdekat, berapa persentase sisa kantong beras yang belum dibagikan?",
+    "teks": "Panitia bantuan bencana berhasil mengumpulkan 32 kantong beras sumbangan. Jika sebanyak 8 kantong telah dibagikan ke panti asuhan terdekat, berapa persentase sisa kantong beras yang belum dibagikan?",
     "opsi": [
       "25%",
       "70%",
@@ -288,7 +288,7 @@
     "type": "pg",
     "difficulty": "easy",
     "skill": "analisis",
-    "teks": "Dari data sumbangan beras di atas (6A=25,5kg; 6B=30kg; 6C=24,5kg), berapakah rata-rata (mean) sumbangan beras dari setiap kelas?",
+    "teks": "Diketahui data sumbangan beras dari tiga kelas untuk korban bencana adalah sebagai berikut: Kelas 6A menyumbang 25,5 kg, Kelas 6B menyumbang 30 kg, dan Kelas 6C menyumbang 24,5 kg. Berapakah rata-rata (mean) sumbangan beras dari setiap kelas?",
     "opsi": [
       "24 kg",
       "25 kg",
@@ -517,7 +517,7 @@
     "type": "pg",
     "difficulty": "easy",
     "skill": "makna kata",
-    "teks": "Berdasarkan teks tentang \"Hutan Mangrove\" di atas, makna kata \"abrasi\" adalah...",
+    "teks": "Akar-akar pohon mangrove yang kuat mampu menahan hempasan ombak secara terus-menerus sehingga mencegah terjadinya abrasi di pesisir pantai. Berdasarkan konteks kalimat tersebut, makna kata \"abrasi\" adalah...",
     "opsi": [
       "Penanaman pohon kembali di wilayah yang gersang.",
       "Pengikisan tanah di pesisir pantai oleh gelombang air laut.",
@@ -534,7 +534,7 @@
     "type": "pg",
     "difficulty": "hard",
     "skill": "inferensi",
-    "teks": "Berdasarkan teks \"Hutan Mangrove\" tersebut, apa yang kemungkinan besar akan terjadi pada para nelayan tradisional jika hutan mangrove di daerah mereka ditebang habis untuk dijadikan pabrik?",
+    "teks": "Kawasan mangrove merupakan habitat alami bagi berbagai jenis ikan, udang, dan kepiting untuk berkembang biak secara aman. Apa yang kemungkinan besar akan terjadi pada kehidupan nelayan tradisional jika hutan mangrove di daerah pesisir ditebang habis untuk dijadikan wilayah pabrik?",
     "opsi": [
       "Penghasilan nelayan akan meningkat karena bisa bekerja di pabrik.",
       "Hasil tangkapan ikan dan udang nelayan akan menurun drastis.",
@@ -568,7 +568,7 @@
     "type": "pg",
     "difficulty": "easy",
     "skill": "analisis teks",
-    "teks": "Berdasarkan teks tentang \"Koperasi\" di atas, jika Budi bukan anggota koperasi namun sering berbelanja di sana, apakah Budi akan mendapatkan pembagian SHU di akhir tahun?",
+    "teks": "Sebuah koperasi sekolah menyepakati bahwa sebagian keuntungan bersihnya akan dikembalikan kepada para siswa yang terdaftar sebagai anggota dalam bentuk Sisa Hasil Usaha (SHU). Jika Budi bukan anggota koperasi namun sering berbelanja di sana, apakah Budi akan mendapatkan pembagian SHU di akhir tahun?",
     "opsi": [
       "Ya, karena Budi sering berbelanja di sana.",
       "Ya, karena Budi adalah siswa di sekolah tersebut.",
@@ -585,7 +585,7 @@
     "type": "pg",
     "difficulty": "medium",
     "skill": "inferensi",
-    "teks": "Bacalah teks berikut!\n\nAkhir-akhir ini, banyak anak sekolah dasar yang mengalami masalah obesitas (kegemukan ekstrim). Dokter spesialis anak menyebutkan bahwa salah satu pemicu utamanya adalah kebiasaan mengonsumsi makanan instan dan minuman kemasan yang tinggi gula, ditambah lagi dengan kurangnya aktivitas fisik karena terlalu lama bermain gawai.\n\nKesimpulan utama dari paragraf di atas adalah...",
+    "teks": "Bacalah teks berikut!\n\nAkhir-akhir ini, banyak anak sekolah dasar yang mengalami masalah obesitas (kegemukan ekstrim). Dokter spesialis anak menyebutkan bahwa salah satu pemicu utamanya adalah kebiasaan mengonsumsi makanan instan dan minuman kemasan yang tinggi gula, ditambah lagi dengan kurangnya aktivitas fisik karena terlalu lama bermain gawai.\n\nKesimpulan utama dari paragraf tersebut adalah...",
     "opsi": [
       "Bermain gawai membuat anak menjadi lebih pintar.",
       "Makanan instan sangat disukai oleh anak-anak sekolah dasar.",
@@ -602,7 +602,7 @@
     "type": "pg",
     "difficulty": "easy",
     "skill": "makna kata",
-    "teks": "Pada teks tentang obesitas di atas, terdapat kata \"pemicu\". Sinonim (persamaan makna) yang paling tepat untuk kata tersebut adalah...",
+    "teks": "Dokter spesialis anak menyebutkan bahwa salah satu pemicu utama obesitas adalah kebiasaan mengonsumsi makanan instan dan minuman kemasan. Sinonim (persamaan makna) yang paling tepat untuk kata \"pemicu\" pada kalimat tersebut adalah...",
     "opsi": [
       "Penyebab",
       "Penghalang",
@@ -619,7 +619,7 @@
     "type": "pg",
     "difficulty": "hard",
     "skill": "sebab-akibat",
-    "teks": "Andi adalah anak yang sangat suka minum es boba manis setiap pulang sekolah dan menghabiskan sore harinya dengan bermain *game* di sofa. Berdasarkan informasi pada teks medis sebelumnya, risiko apa yang mengintai kesehatan Andi di masa depan?",
+    "teks": "Kebiasaan mengonsumsi makanan instan serta minuman tinggi gula yang ditambah dengan kurangnya aktivitas fisik merupakan faktor utama masalah kesehatan pada anak. Andi adalah anak yang sangat suka minum teh boba manis setiap pulang sekolah dan menghabiskan waktunya berjam-jam bermain *game* di sofa. Risiko penyakit apa yang paling mengintai kesehatan Andi di masa depan?",
     "opsi": [
       "Andi akan memiliki banyak teman di dunia maya.",
       "Andi berisiko tinggi mengalami obesitas karena gula berlebih dan kurang gerak.",
@@ -636,7 +636,7 @@
     "type": "pg",
     "difficulty": "medium",
     "skill": "analisis",
-    "teks": "Cut Nyak Dien adalah salah satu pahlawan nasional dari Aceh. Walaupun suaminya telah gugur di medan perang, ia menolak untuk menyerah kepada penjajah Belanda. Ia memimpin pasukan bergerilya di hutan-hutan dengan kondisi mata yang mulai rabun dan penyakit encok, demi mempertahankan tanah kelahirannya.\n\nSifat keteladanan utama yang ditunjukkan oleh Cut Nyak Dien pada cerita di atas adalah...",
+    "teks": "Cut Nyak Dien adalah salah satu pahlawan nasional dari Aceh. Walaupun suaminya telah gugur di medan perang, ia menolak untuk menyerah kepada penjajah Belanda. Ia memimpin pasukan bergerilya di hutan-hutan dengan kondisi mata yang mulai rabun dan penyakit encok, demi mempertahankan tanah kelahirannya.\n\nSifat keteladanan utama yang ditunjukkan oleh Cut Nyak Dien pada cerita tersebut adalah...",
     "opsi": [
       "Cerdas dan pandai bersembunyi",
       "Pantang menyerah dan rela berkorban",
@@ -704,7 +704,7 @@
     "type": "pg",
     "difficulty": "medium",
     "skill": "analisis",
-    "teks": "Berdasarkan teks tentang hujan di atas, apa yang menyebabkan uap air di udara akhirnya jatuh kembali ke bumi sebagai rintik hujan?",
+    "teks": "Dalam siklus hidrologi, pemanasan air oleh sinar matahari menyebabkan air menguap ke udara dan berkumpul di langit membentuk awan. Apa kondisi fisik yang menyebabkan uap air di dalam awan tersebut akhirnya jatuh kembali ke bumi sebagai rintik hujan?",
     "opsi": [
       "Karena awan tertiup angin ke daratan.",
       "Karena sinar matahari terlalu panas.",
@@ -755,7 +755,7 @@
     "type": "pg",
     "difficulty": "medium",
     "skill": "analisis",
-    "teks": "Apa konflik (masalah utama) yang terjadi pada kutipan fabel Kancil dan burung puyuh di atas?",
+    "teks": "Dalam sebuah cerita fabel, seekor induk burung puyuh menangis panik karena telur-telurnya terjatuh ke dekat sungai yang sedang meluap, hingga akhirnya Kancil datang membuat rakit daun untuk menyelamatkannya. Apa konflik (masalah utama) yang terjadi pada cerita fabel tersebut?",
     "opsi": [
       "Kancil sangat takut dengan air sungai.",
       "Burung puyuh bertengkar dengan kancil di pinggir sungai.",
@@ -772,7 +772,7 @@
     "type": "pg",
     "difficulty": "easy",
     "skill": "makna kata",
-    "teks": "Dalam fabel tersebut, Kancil digambarkan bertindak dengan \"sigap\". Arti kata sigap yang paling tepat adalah...",
+    "teks": "Kancil segera berlari mencari daun talas yang lebar, merangkai ranting, dan dengan \"sigap\" menyelamatkan telur-telur burung puyuh sesaat sebelum tersapu arus sungai yang meluap. Arti kata \"sigap\" pada kalimat tersebut yang paling tepat adalah...",
     "opsi": [
       "Sangat lambat",
       "Cepat dan tangkas bertindak",
