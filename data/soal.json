@@ -48,7 +48,7 @@
           "Aspek olahraga dan aspek pariwisata"
         ],
         "jawaban": 1,
-        "explanation": "Teks menyebutkan dua manfaat: (1) lingkungan – mata air mengalir, sumur tidak kering, udara sejuk; (2) ekonomi – batang bambu dijual ke pengrajin untuk menambah penghasilan.",
+        "explanation": "Teks menyebutkan dua manfaat: (1) lingkungan \u2013 mata air mengalir, sumur tidak kering, udara sejuk; (2) ekonomi \u2013 batang bambu dijual ke pengrajin untuk menambah penghasilan.",
         "insight": "Siswa perlu memilah informasi dari teks ke dalam kategori yang tepat."
       },
       {
@@ -328,12 +328,12 @@
         "difficulty": "hard",
         "teks": "Di sebuah daerah gurun, suhu sangat panas sepanjang hari tetapi hampir tidak pernah terjadi hujan. Berdasarkan teks tentang siklus air, penjelasan yang paling logis untuk fenomena ini adalah...",
         "opsi": [
-          "Daerah gurun memiliki banyak sungai dan danau yang airnya tidak mau menguap.",
           "Di gurun tidak ada sumber air permukaan yang cukup untuk membentuk uap dan awan.",
+          "Daerah gurun memiliki banyak sungai dan danau yang airnya tidak mau menguap.",
           "Matahari di gurun terlalu panas sehingga awan yang terbentuk langsung menguap kembali.",
           "Angin di gurun terlalu kencang sehingga awan tidak bisa terbentuk dengan sempurna."
         ],
-        "jawaban": 1,
+        "jawaban": 0,
         "explanation": "Berdasarkan siklus air dalam teks, hujan terjadi dimulai dari evaporasi sumber air. Daerah gurun sangat kekurangan sumber air permukaan (laut, sungai, danau), sehingga tidak ada cukup uap air untuk membentuk awan dan menyebabkan hujan.",
         "insight": "Siswa harus membalik logika siklus air: jika tidak ada hujan meski panas, berarti sumber air (A) tidak ada, sehingga uap (B) tidak terbentuk dan awan (C) pun tidak ada."
       },
@@ -588,7 +588,7 @@
           "Menghindari bau tidak sedap yang berasal dari tempat sampah."
         ],
         "jawaban": 2,
-        "explanation": "Teks menyatakan bahwa pemilahan penting karena memudahkan pengolahan: organik → kompos, plastik → daur ulang, sehingga mengurangi volume sampah di TPA.",
+        "explanation": "Teks menyatakan bahwa pemilahan penting karena memudahkan pengolahan: organik \u2192 kompos, plastik \u2192 daur ulang, sehingga mengurangi volume sampah di TPA.",
         "insight": "Manfaat harus diambil dari informasi yang tersurat dalam teks, bukan dari pengetahuan umum semata."
       }
     ]
@@ -646,7 +646,7 @@
           { "kata": ["dimakan", "ikan", "termakan"], "wajib": true, "bobot": 30 },
           { "kata": ["manusia", "dikonsumsi", "masuk tubuh"], "wajib": true, "bobot": 40 }
         ],
-        "explanation": "Rantai kejadian: Plastik dibuang ke laut → hancur menjadi mikroplastik → tidak sengaja dimakan ikan → manusia menangkap dan memakan ikan tersebut → mikroplastik masuk ke tubuh manusia → memicu gangguan kesehatan.",
+        "explanation": "Rantai kejadian: Plastik dibuang ke laut \u2192 hancur menjadi mikroplastik \u2192 tidak sengaja dimakan ikan \u2192 manusia menangkap dan memakan ikan tersebut \u2192 mikroplastik masuk ke tubuh manusia \u2192 memicu gangguan kesehatan.",
         "insight": "Siswa sering hanya menjawab 'ikan mati' tanpa meneruskan logika rantai makanan hingga dampaknya kembali ke manusia."
       }
     ]
@@ -679,13 +679,13 @@
         "teks": "Berdasarkan cerita, peribahasa yang paling sesuai dengan karakter Rani adalah...",
         "opsi": [
           "Bagai air di atas daun talas",
-          "Tangan mencencang bahu memikul",
+          "Berat sama dipikul, ringan sama dijinjing",
           "Rajin pangkal pandai, hemat pangkal kaya",
           "Berakit-rakit ke hulu, berenang-renang ke tepian"
         ],
         "jawaban": 1,
-        "explanation": "Peribahasa 'tangan mencencang bahu memikul' bermakna setiap perbuatan harus kita tanggung sendiri akibatnya. Namun konteks yang paling dekat dengan suka menolong adalah 'ringan tangan' (ungkapan). Di antara pilihan, 'tangan mencencang bahu memikul' adalah yang paling berkaitan dengan tindakan nyata seseorang.",
-        "insight": "Perlu pemilihan peribahasa yang paling sesuai konteks kisah."
+        "explanation": "Peribahasa 'Berat sama dipikul, ringan sama dijinjing' bermakna pekerjaan yang berat maupun ringan diselesaikan secara bersama-sama atau saling membantu. Sikap gotong royong dan tolong-menolong yang dilakukan Rani sangat cocok dengan peribahasa ini.",
+        "insight": "Perlu pemilihan peribahasa yang paling sesuai dengan konteks kisah membantu sesama."
       }
     ]
   },
@@ -706,7 +706,7 @@
           "40 kantong"
         ],
         "jawaban": 1,
-        "explanation": "Total beras = 28,5 + 35 + 26,5 = 90 kg. Jumlah kantong = 90 ÷ 2,5 = 36 kantong.",
+        "explanation": "Total beras = 28,5 + 35 + 26,5 = 90 kg. Jumlah kantong = 90 \u00f7 2,5 = 36 kantong.",
         "insight": "Siswa sering salah menjumlahkan desimal atau salah dalam operasi pembagian desimal."
       },
       {
@@ -722,7 +722,7 @@
           "34 kg"
         ],
         "jawaban": 1,
-        "explanation": "Total = 90 kg. Rata-rata = 90 ÷ 3 = 30 kg.",
+        "explanation": "Total = 90 kg. Rata-rata = 90 \u00f7 3 = 30 kg.",
         "insight": "Konsep rata-rata sederhana. Kesalahan umum pada akurasi penjumlahan total."
       },
       {
@@ -738,7 +738,7 @@
           "75%"
         ],
         "jawaban": 3,
-        "explanation": "Sisa kantong = 36 - 9 = 27 kantong. Persentase sisa = (27 ÷ 36) × 100% = 75%.",
+        "explanation": "Sisa kantong = 36 - 9 = 27 kantong. Persentase sisa = (27 \u00f7 36) \u00d7 100% = 75%.",
         "insight": "Siswa sering salah dengan menghitung persentase yang sudah dibagikan (25%), bukan yang tersisa (75%)."
       }
     ]
@@ -798,7 +798,7 @@
           "70 km"
         ],
         "jawaban": 2,
-        "explanation": "Jarak sebenarnya = 3 cm × 2.000.000 = 6.000.000 cm = 60 km.",
+        "explanation": "Jarak sebenarnya = 3 cm \u00d7 2.000.000 = 6.000.000 cm = 60 km.",
         "insight": "Siswa perlu ingat mengonversi dari cm ke km (dibagi 100.000)."
       },
       {
@@ -814,7 +814,7 @@
           "10.00"
         ],
         "jawaban": 1,
-        "explanation": "Jarak = 60 km. Kecepatan = 60 km/jam. Waktu = 60 ÷ 60 = 1 jam. Tiba = 08.00 + 1 jam = 09.00.",
+        "explanation": "Jarak = 60 km. Kecepatan = 60 km/jam. Waktu = 60 \u00f7 60 = 1 jam. Tiba = 08.00 + 1 jam = 09.00.",
         "insight": "Soal berlapis: harus menghitung jarak sebenarnya dari skala dulu, baru menerapkan rumus JKW."
       }
     ]
@@ -835,8 +835,8 @@
           "Rp70.000",
           "Rp75.000"
         ],
-        "jawaban": 1,
-        "explanation": "Harga buku pelajaran setelah diskon = Rp25.000 × (100%-20%) = Rp25.000 × 80% = Rp20.000. Total buku pelajaran = 3 × Rp20.000 = Rp60.000. Total buku tulis = 2 × Rp5.000 = Rp10.000. Total bayar = Rp60.000 + Rp10.000 = Rp70.000.",
+        "jawaban": 2,
+        "explanation": "Harga buku pelajaran setelah diskon = Rp25.000 \u00d7 (100%-20%) = Rp25.000 \u00d7 80% = Rp20.000. Total buku pelajaran = 3 \u00d7 Rp20.000 = Rp60.000. Total buku tulis = 2 \u00d7 Rp5.000 = Rp10.000. Total bayar = Rp60.000 + Rp10.000 = Rp70.000.",
         "insight": "Siswa perlu memperhatikan bahwa diskon HANYA berlaku untuk buku pelajaran, tidak untuk buku tulis."
       },
       {
@@ -866,7 +866,7 @@
         "type": "pg",
         "skill": "pecahan",
         "difficulty": "medium",
-        "teks": "Berapa liter volume air yang ada di dalam bak tersebut? (1 m³ = 1.000 liter)",
+        "teks": "Berapa liter volume air yang ada di dalam bak tersebut? (1 m\u00b3 = 1.000 liter)",
         "opsi": [
           "2.000 liter",
           "3.000 liter",
@@ -874,15 +874,15 @@
           "6.000 liter"
         ],
         "jawaban": 2,
-        "explanation": "Volume total = 3 × 2 × 1 = 6 m³ = 6.000 liter. Volume air = 2/3 × 6.000 = 4.000 liter.",
-        "insight": "Siswa sering lupa mengonversi m³ ke liter atau salah menghitung 2/3 dari volume total."
+        "explanation": "Volume total = 3 \u00d7 2 \u00d7 1 = 6 m\u00b3 = 6.000 liter. Volume air = 2/3 \u00d7 6.000 = 4.000 liter.",
+        "insight": "Siswa sering lupa mengonversi m\u00b3 ke liter atau salah menghitung 2/3 dari volume total."
       },
       {
         "id": 49,
         "type": "pg",
         "skill": "logika",
         "difficulty": "medium",
-        "teks": "Jika air dalam bak digunakan untuk mengisi kolam ikan berbentuk balok berukuran 2m × 1m × 1m, apakah air dalam bak cukup untuk mengisi kolam tersebut hingga penuh?",
+        "teks": "Jika air dalam bak digunakan untuk mengisi kolam ikan berbentuk balok berukuran 2m \u00d7 1m \u00d7 1m, apakah air dalam bak cukup untuk mengisi kolam tersebut hingga penuh?",
         "opsi": [
           "Ya, cukup dan masih ada sisa 2.000 liter.",
           "Ya, cukup dan masih ada sisa 1.000 liter.",
@@ -890,7 +890,7 @@
           "Tepat pas, tidak ada sisa dan tidak ada kekurangan."
         ],
         "jawaban": 0,
-        "explanation": "Volume kolam = 2 × 1 × 1 = 2 m³ = 2.000 liter. Air di bak = 4.000 liter. Sisa air = 4.000 - 2.000 = 2.000 liter. Jadi air cukup dengan sisa 2.000 liter.",
+        "explanation": "Volume kolam = 2 \u00d7 1 \u00d7 1 = 2 m\u00b3 = 2.000 liter. Air di bak = 4.000 liter. Sisa air = 4.000 - 2.000 = 2.000 liter. Jadi air cukup dengan sisa 2.000 liter.",
         "insight": "Siswa perlu menghitung volume kolam terlebih dahulu, lalu membandingkannya dengan volume air yang tersedia."
       }
     ]
@@ -912,7 +912,7 @@
           "49 ekor"
         ],
         "jawaban": 2,
-        "explanation": "Selisih rasio = 4 - 3 = 1 bagian = 6 ekor. Total rasio = 4 + 3 = 7 bagian. Total hewan = 7 × 6 = 42 ekor.",
+        "explanation": "Selisih rasio = 4 - 3 = 1 bagian = 6 ekor. Total rasio = 4 + 3 = 7 bagian. Total hewan = 7 \u00d7 6 = 42 ekor.",
         "insight": "Siswa perlu menemukan nilai satu bagian dari rasio berdasarkan selisih yang diketahui."
       },
       {
@@ -928,7 +928,7 @@
           "30 ekor"
         ],
         "jawaban": 1,
-        "explanation": "Satu bagian = 6 ekor. Kambing = 4 × 6 = 24 ekor.",
+        "explanation": "Satu bagian = 6 ekor. Kambing = 4 \u00d7 6 = 24 ekor.",
         "insight": "Setelah menemukan nilai satu bagian, siswa tinggal mengalikan dengan rasio kambing."
       }
     ]
@@ -988,7 +988,7 @@
           "Rp4.500.000"
         ],
         "jawaban": 1,
-        "explanation": "Makan = 1/3 × 5.400.000 = 1.800.000. Tabungan = 1/6 × 5.400.000 = 900.000. Total = 2.700.000. Sisa = 5.400.000 - 2.700.000 = 2.700.000.",
+        "explanation": "Makan = 1/3 \u00d7 5.400.000 = 1.800.000. Tabungan = 1/6 \u00d7 5.400.000 = 900.000. Total = 2.700.000. Sisa = 5.400.000 - 2.700.000 = 2.700.000.",
         "insight": "Siswa perlu menghitung dua pecahan terlebih dahulu lalu menjumlahkan sebelum mengurangi dari total."
       },
       {
@@ -1041,15 +1041,14 @@
         "difficulty": "hard",
         "teks": "Berapa luas jalan setapak tersebut?",
         "opsi": [
-          "105 m²",
-          "114 m²",
-          "130 m²",
-          "375 m²"
+          "105 m\u00b2",
+          "111 m\u00b2",
+          "130 m\u00b2",
+          "264 m\u00b2"
         ],
         "jawaban": 1,
-        "explanation": "Luas taman keseluruhan = 25 × 15 = 375 m². Ukuran dalam = (25 - 2×1,5) × (15 - 2×1,5) = 22 × 12 = 264 m². Luas jalan = 375 - 264 = 111... Koreksi: (25-3)×(15-3) = 22×12 = 264. Luas jalan = 375 - 264 = 111 m². Opsi terdekat = 114 m².",
-        "insight": "Kesalahan fatal: Siswa hanya mengurangi 1,5 meter di satu sisi, padahal jalan ada di kedua sisi (kiri-kanan dan atas-bawah), sehingga harus dikurangi 2 × 1,5 = 3 meter.",
-        "explanation_corrected": "Luas taman = 25×15 = 375 m². Panjang dalam = 25-(2×1,5) = 22 m. Lebar dalam = 15-(2×1,5) = 12 m. Luas dalam = 22×12 = 264 m². Luas jalan = 375-264 = 111 m². Opsi B (114 m²) paling dekat."
+        "explanation": "Luas taman keseluruhan = 25 \u00d7 15 = 375 m\u00b2. Panjang bagian dalam = 25 - (2 \u00d7 1,5) = 22 m. Lebar bagian dalam = 15 - (2 \u00d7 1,5) = 12 m. Luas bagian dalam = 22 \u00d7 12 = 264 m\u00b2. Luas jalan setapak = Luas total - Luas bagian dalam = 375 - 264 = 111 m\u00b2.",
+        "insight": "Kesalahan fatal: Siswa sering hanya mengurangi 1,5 meter di satu sisi, padahal jalan ada di kedua sisi (kiri-kanan dan atas-bawah), sehingga harus dikurangi 2 \u00d7 1,5 = 3 meter."
       },
       {
         "id": 58,
@@ -1058,20 +1057,20 @@
         "difficulty": "medium",
         "teks": "Berapa luas area taman yang tidak termasuk jalan setapak (area dalam)?",
         "opsi": [
-          "240 m²",
-          "256 m²",
-          "264 m²",
-          "270 m²"
+          "240 m\u00b2",
+          "256 m\u00b2",
+          "264 m\u00b2",
+          "270 m\u00b2"
         ],
         "jawaban": 2,
-        "explanation": "Area dalam (tanpa jalan setapak): Panjang = 25 - (2 × 1,5) = 22 m. Lebar = 15 - (2 × 1,5) = 12 m. Luas = 22 × 12 = 264 m².",
+        "explanation": "Area dalam (tanpa jalan setapak): Panjang = 25 - (2 \u00d7 1,5) = 22 m. Lebar = 15 - (2 \u00d7 1,5) = 12 m. Luas = 22 \u00d7 12 = 264 m\u00b2.",
         "insight": "Pengurangan lebar jalan harus dilakukan pada kedua sisi (atas-bawah dan kiri-kanan)."
       }
     ]
   },
   {
     "mapel": "Matematika",
-    "stimulus": "Perhatikan soal berikut!\n\nSuhu di puncak Gunung Lawu pada pagi hari adalah -3°C. Pada siang hari, suhu naik 8°C. Pada malam harinya, suhu kembali turun 11°C dari suhu siang.",
+    "stimulus": "Perhatikan soal berikut!\n\nSuhu di puncak Gunung Lawu pada pagi hari adalah -3\u00b0C. Pada siang hari, suhu naik 8\u00b0C. Pada malam harinya, suhu kembali turun 11\u00b0C dari suhu siang.",
     "questions": [
       {
         "id": 59,
@@ -1080,13 +1079,13 @@
         "difficulty": "medium",
         "teks": "Berapa suhu di puncak Gunung Lawu pada malam hari?",
         "opsi": [
-          "-6°C",
-          "-4°C",
-          "-2°C",
-          "0°C"
+          "-6\u00b0C",
+          "-4\u00b0C",
+          "-2\u00b0C",
+          "0\u00b0C"
         ],
         "jawaban": 0,
-        "explanation": "Suhu pagi = -3°C. Suhu siang = -3 + 8 = 5°C. Suhu malam = 5 - 11 = -6°C.",
+        "explanation": "Suhu pagi = -3\u00b0C. Suhu siang = -3 + 8 = 5\u00b0C. Suhu malam = 5 - 11 = -6\u00b0C.",
         "insight": "Operasi bilangan bulat dengan nilai negatif. Siswa perlu teliti dalam urutan perhitungan."
       },
       {
@@ -1096,13 +1095,13 @@
         "difficulty": "medium",
         "teks": "Berapa selisih suhu antara puncak Gunung Lawu pada siang hari dan malam hari?",
         "opsi": [
-          "9°C",
-          "10°C",
-          "11°C",
-          "14°C"
+          "9\u00b0C",
+          "10\u00b0C",
+          "11\u00b0C",
+          "14\u00b0C"
         ],
         "jawaban": 2,
-        "explanation": "Suhu siang = 5°C. Suhu malam = -6°C. Selisih = 5 - (-6) = 5 + 6 = 11°C.",
+        "explanation": "Suhu siang = 5\u00b0C. Suhu malam = -6\u00b0C. Selisih = 5 - (-6) = 5 + 6 = 11\u00b0C.",
         "insight": "Pengurangan yang melibatkan bilangan negatif: a - (-b) = a + b."
       }
     ]
@@ -1118,15 +1117,14 @@
         "difficulty": "hard",
         "teks": "Berapa nilai ujian matematika yang diperoleh Farid?",
         "opsi": [
-          "80",
           "88",
           "90",
+          "92",
           "94"
         ],
-        "jawaban": 3,
-        "explanation": "Total nilai 6 siswa = 6 × 78 = 468. Total nilai 7 siswa = 7 × 80 = 560. Nilai Farid = 560 - 468 = 92. Opsi terdekat = 94.",
-        "insight": "Teknik reverse engineering pada rumus rata-rata untuk mencari nilai individu tambahan.",
-        "explanation_corrected": "Total 6 siswa = 468. Total 7 siswa = 7×80 = 560. Nilai Farid = 560 - 468 = 92. Jawaban paling dekat adalah 94 jika ada opsi 92, namun berdasarkan pilihan jawaban yang tersedia, dipilih 94 sebagai jawaban terdekat."
+        "jawaban": 2,
+        "explanation": "Total nilai 6 siswa = 6 \u00d7 78 = 468. Total nilai 7 siswa = 7 \u00d7 80 = 560. Nilai Farid = 560 - 468 = 92.",
+        "insight": "Teknik reverse engineering pada rumus rata-rata untuk mencari nilai individu tambahan."
       },
       {
         "id": 62,
@@ -1139,7 +1137,7 @@
           { "kata": ["sangat tinggi", "besar sekali", "100", "150", "140"], "wajib": true, "bobot": 40 },
           { "kata": ["menarik", "mengangkat", "menaikkan"], "wajib": false, "bobot": 20 }
         ],
-        "explanation": "Total nilai 5 siswa = 5 × 84 = 420. Nilai 4 siswa = 4 × 70 = 280. Nilai siswa ke-5 = 420 - 280 = 140. Satu siswa dengan nilai sangat tinggi (140) menarik rata-rata kelompok ke atas meskipun 4 siswa lainnya hanya 70.",
+        "explanation": "Total nilai 5 siswa = 5 \u00d7 84 = 420. Nilai 4 siswa = 4 \u00d7 70 = 280. Nilai siswa ke-5 = 420 - 280 = 140. Satu siswa dengan nilai sangat tinggi (140) menarik rata-rata kelompok ke atas meskipun 4 siswa lainnya hanya 70.",
         "insight": "Konsep outlier (nilai pencilan) dalam statistika rata-rata. Satu nilai ekstrem bisa sangat mempengaruhi rata-rata."
       }
     ]
@@ -1159,14 +1157,14 @@
           { "kata": ["120", "jarak"], "wajib": true, "bobot": 30 },
           { "kata": ["1,2 jam", "72 menit", "1 jam 12 menit"], "wajib": true, "bobot": 30 }
         ],
-        "explanation": "Karena bergerak saling mendekat, kecepatan efektif digabung = 60 + 40 = 100 km/jam. Waktu berpapasan = Jarak ÷ Kecepatan total = 120 ÷ 100 = 1,2 jam = 1 jam 12 menit.",
+        "explanation": "Karena bergerak saling mendekat, kecepatan efektif digabung = 60 + 40 = 100 km/jam. Waktu berpapasan = Jarak \u00f7 Kecepatan total = 120 \u00f7 100 = 1,2 jam = 1 jam 12 menit.",
         "insight": "Prinsip papasan: dua kendaraan bergerak saling mendekat menggabungkan kecepatannya untuk menempuh jarak bersama."
       }
     ]
   },
   {
     "mapel": "Matematika",
-    "stimulus": "Perhatikan soal berikut!\n\nPak Rahman memiliki kebun berbentuk persegi panjang berukuran 18 m × 12 m. Di salah satu sudut kebun terdapat kolam ikan berbentuk persegi dengan panjang sisi 6 m. Sisa lahan kebun di luar kolam akan dijadikan taman bunga.",
+    "stimulus": "Perhatikan soal berikut!\n\nPak Rahman memiliki kebun berbentuk persegi panjang berukuran 18 m \u00d7 12 m. Di salah satu sudut kebun terdapat kolam ikan berbentuk persegi dengan panjang sisi 6 m. Sisa lahan kebun di luar kolam akan dijadikan taman bunga.",
     "questions": [
       {
         "id": 64,
@@ -1175,13 +1173,13 @@
         "difficulty": "medium",
         "teks": "Berapa luas lahan yang dijadikan taman bunga?",
         "opsi": [
-          "144 m²",
-          "180 m²",
-          "196 m²",
-          "216 m²"
+          "144 m\u00b2",
+          "180 m\u00b2",
+          "196 m\u00b2",
+          "216 m\u00b2"
         ],
         "jawaban": 1,
-        "explanation": "Luas kebun = 18 × 12 = 216 m². Luas kolam = 6 × 6 = 36 m². Luas taman bunga = 216 - 36 = 180 m².",
+        "explanation": "Luas kebun = 18 \u00d7 12 = 216 m\u00b2. Luas kolam = 6 \u00d7 6 = 36 m\u00b2. Luas taman bunga = 216 - 36 = 180 m\u00b2.",
         "insight": "Luas gabungan bangun datar: luas total dikurangi luas bagian yang tidak termasuk."
       },
       {
@@ -1197,7 +1195,7 @@
           "Rp1.200.000"
         ],
         "jawaban": 1,
-        "explanation": "Keliling kebun = 2 × (18 + 12) = 2 × 30 = 60 m. Biaya = 60 × Rp15.000 = Rp900.000.",
+        "explanation": "Keliling kebun = 2 \u00d7 (18 + 12) = 2 \u00d7 30 = 60 m. Biaya = 60 \u00d7 Rp15.000 = Rp900.000.",
         "insight": "Penggunaan rumus keliling persegi panjang, bukan luas."
       }
     ]
@@ -1219,7 +1217,7 @@
           "Rp95.000"
         ],
         "jawaban": 1,
-        "explanation": "Biaya galon = Rp5.000 (sekali beli). Biaya isi ulang = 4 × Rp18.000 = Rp72.000. Total = Rp5.000 + Rp72.000 = Rp77.000.",
+        "explanation": "Biaya galon = Rp5.000 (sekali beli). Biaya isi ulang = 4 \u00d7 Rp18.000 = Rp72.000. Total = Rp5.000 + Rp72.000 = Rp77.000.",
         "insight": "Siswa perlu membedakan biaya pembelian barang (sekali) dengan biaya operasional berulang."
       }
     ]
@@ -1240,8 +1238,8 @@
           "Rp1.500.000",
           "Rp3.000.000"
         ],
-        "jawaban": 1,
-        "explanation": "Total pendapatan = 240 × Rp12.500 = Rp3.000.000. Keuntungan = Rp3.000.000 - Rp1.500.000 = Rp1.500.000.",
+        "jawaban": 2,
+        "explanation": "Total pendapatan = 240 \u00d7 Rp12.500 = Rp3.000.000. Keuntungan = Rp3.000.000 - Rp1.500.000 = Rp1.500.000.",
         "insight": "Keuntungan = Pendapatan total - Biaya produksi total."
       },
       {
@@ -1257,7 +1255,7 @@
           "15 jam"
         ],
         "jawaban": 1,
-        "explanation": "Kecepatan produksi = 240 ÷ 8 = 30 mainan/jam. Waktu untuk 360 mainan = 360 ÷ 30 = 12 jam.",
+        "explanation": "Kecepatan produksi = 240 \u00f7 8 = 30 mainan/jam. Waktu untuk 360 mainan = 360 \u00f7 30 = 12 jam.",
         "insight": "Perbandingan senilai: semakin banyak mainan yang diproduksi, semakin lama waktu yang dibutuhkan."
       }
     ]
@@ -1278,8 +1276,8 @@
           "48 kursi",
           "52 kursi"
         ],
-        "jawaban": 2,
-        "explanation": "Pola aritmetika dengan nilai awal (a) = 8 dan beda (b) = 4. Rumus Un = a + (n-1)b. U10 = 8 + (10-1)×4 = 8 + 36 = 44 kursi.",
+        "jawaban": 1,
+        "explanation": "Pola aritmetika dengan nilai awal (a) = 8 dan beda (b) = 4. Rumus Un = a + (n-1)b. U10 = 8 + (10-1)\u00d74 = 8 + 36 = 44 kursi.",
         "insight": "Penerapan rumus barisan aritmetika. Siswa perlu memastikan beda antar suku konsisten."
       },
       {
@@ -1337,36 +1335,36 @@
           { "kata": ["5/8", "0,625", "625 gram"], "wajib": true, "bobot": 40 },
           { "kata": ["kali", "kalikan", "faktor", "2,5"], "wajib": false, "bobot": 20 }
         ],
-        "explanation": "Faktor perkalian = 50 ÷ 20 = 2,5. Tepung = 2/5 × 2,5 = 1 kg. Gula = 1/4 × 2,5 = 5/8 kg = 625 gram.",
+        "explanation": "Faktor perkalian = 50 \u00f7 20 = 2,5. Tepung = 2/5 \u00d7 2,5 = 1 kg. Gula = 1/4 \u00d7 2,5 = 5/8 kg = 625 gram.",
         "insight": "Perbandingan senilai pada resep. Siswa perlu mencari faktor pengali dari perbandingan jumlah kue."
       }
     ]
   },
   {
     "mapel": "Matematika",
-    "stimulus": "Perhatikan soal berikut!\n\nSebuah kolam renang berbentuk persegi panjang berukuran 25 m × 10 m dengan kedalaman 1,5 m akan dikuras dan diisi ulang. Sebuah selang mengalirkan air dengan debit 500 liter per menit.",
+    "stimulus": "Perhatikan soal berikut!\n\nSebuah kolam renang berbentuk persegi panjang berukuran 25 m \u00d7 10 m dengan kedalaman 1,5 m akan dikuras dan diisi ulang. Sebuah selang mengalirkan air dengan debit 500 liter per menit.",
     "questions": [
       {
         "id": 73,
         "type": "pg",
         "skill": "analisis",
         "difficulty": "hard",
-        "teks": "Berapa lama waktu yang dibutuhkan untuk mengisi kolam hingga penuh? (1 m³ = 1.000 liter)",
+        "teks": "Berapa lama waktu yang dibutuhkan untuk mengisi kolam hingga penuh? (1 m\u00b3 = 1.000 liter)",
         "opsi": [
           "5 jam",
           "7,5 jam",
           "10 jam",
           "12,5 jam"
         ],
-        "jawaban": 1,
-        "explanation": "Volume kolam = 25 × 10 × 1,5 = 375 m³ = 375.000 liter. Waktu = 375.000 ÷ 500 = 750 menit = 12,5 jam.",
-        "insight": "Siswa sering lupa mengonversi m³ ke liter sebelum membagi dengan debit aliran."
+        "jawaban": 3,
+        "explanation": "Volume kolam = 25 \u00d7 10 \u00d7 1,5 = 375 m\u00b3 = 375.000 liter. Waktu = 375.000 \u00f7 500 = 750 menit = 12,5 jam.",
+        "insight": "Siswa sering lupa mengonversi m\u00b3 ke liter sebelum membagi dengan debit aliran."
       }
     ]
   },
   {
     "mapel": "Matematika",
-    "stimulus": "Perhatikan soal berikut!\n\nSebuah kardus berbentuk balok berukuran 60 cm × 40 cm × 30 cm. Kardus tersebut akan diisi penuh dengan kotak sabun berbentuk kubus bersisi 10 cm.",
+    "stimulus": "Perhatikan soal berikut!\n\nSebuah kardus berbentuk balok berukuran 60 cm \u00d7 40 cm \u00d7 30 cm. Kardus tersebut akan diisi penuh dengan kotak sabun berbentuk kubus bersisi 10 cm.",
     "questions": [
       {
         "id": 74,
@@ -1379,7 +1377,7 @@
           { "kata": ["6", "4", "3", "dimensi", "tiap sisi"], "wajib": true, "bobot": 30 },
           { "kata": ["dikali", "perkalian"], "wajib": false, "bobot": 20 }
         ],
-        "explanation": "Kotak benda padat, tidak bisa dipotong. Sepanjang 60 cm muat 60÷10 = 6 kotak. Selebar 40 cm muat 40÷10 = 4 kotak. Setinggi 30 cm muat 30÷10 = 3 kotak. Total = 6 × 4 × 3 = 72 kotak.",
+        "explanation": "Kotak benda padat, tidak bisa dipotong. Sepanjang 60 cm muat 60\u00f710 = 6 kotak. Selebar 40 cm muat 40\u00f710 = 4 kotak. Setinggi 30 cm muat 30\u00f710 = 3 kotak. Total = 6 \u00d7 4 \u00d7 3 = 72 kotak.",
         "insight": "Soal HOTS: menghitung banyak benda dalam wadah berdasarkan dimensi nyata, bukan hanya volume."
       }
     ]
@@ -1401,7 +1399,7 @@
           "30%"
         ],
         "jawaban": 0,
-        "explanation": "Modal total = Rp8.000.000 + Rp500.000 = Rp8.500.000. Keuntungan = Rp10.200.000 - Rp8.500.000 = Rp1.700.000. Persentase = (1.700.000 ÷ 8.500.000) × 100% = 20%.",
+        "explanation": "Modal total = Rp8.000.000 + Rp500.000 = Rp8.500.000. Keuntungan = Rp10.200.000 - Rp8.500.000 = Rp1.700.000. Persentase = (1.700.000 \u00f7 8.500.000) \u00d7 100% = 20%.",
         "insight": "Modal total harus mencakup semua pengeluaran (beli + perbaikan), bukan hanya harga beli."
       }
     ]
@@ -1421,8 +1419,8 @@
           { "kata": ["toko b", "5.610.000", "5,61 juta"], "wajib": true, "bobot": 40 },
           { "kata": ["bertingkat", "sisa harga", "lebih murah b"], "wajib": false, "bobot": 20 }
         ],
-        "explanation": "Toko A: diskon 25% = Rp1.875.000. Bayar = Rp7.500.000 - Rp1.875.000 = Rp5.625.000. Toko B: diskon 15% → bayar 85% = Rp6.375.000. Diskon lagi 12% dari Rp6.375.000 = Rp765.000. Bayar = Rp6.375.000 - Rp765.000 = Rp5.610.000. Toko B lebih murah.",
-        "insight": "Diskon bertingkat tidak bisa dijumlahkan langsung (15+12≠27). Diskon kedua dihitung dari harga setelah diskon pertama."
+        "explanation": "Toko A: diskon 25% = Rp1.875.000. Bayar = Rp7.500.000 - Rp1.875.000 = Rp5.625.000. Toko B: diskon 15% \u2192 bayar 85% = Rp6.375.000. Diskon lagi 12% dari Rp6.375.000 = Rp765.000. Bayar = Rp6.375.000 - Rp765.000 = Rp5.610.000. Toko B lebih murah.",
+        "insight": "Diskon bertingkat tidak bisa dijumlahkan langsung (15+12\u226027). Diskon kedua dihitung dari harga setelah diskon pertama."
       }
     ]
   },
@@ -1441,7 +1439,7 @@
           { "kata": ["berbalik", "kebalikan", "semakin singkat"], "wajib": true, "bobot": 30 },
           { "kata": ["16 orang", "16 pekerja"], "wajib": false, "bobot": 30 }
         ],
-        "explanation": "Kepala desa harus MENAMBAH pekerja. Ini adalah perbandingan berbalik nilai: waktu dipercepat (40→20 hari, dibagi 2), maka jumlah pekerja harus dikali 2 (8×2=16 orang). Dibutuhkan 16 pekerja, berarti perlu tambahan 8 pekerja lagi.",
+        "explanation": "Kepala desa harus MENAMBAH pekerja. Ini adalah perbandingan berbalik nilai: waktu dipercepat (40\u219220 hari, dibagi 2), maka jumlah pekerja harus dikali 2 (8\u00d72=16 orang). Dibutuhkan 16 pekerja, berarti perlu tambahan 8 pekerja lagi.",
         "insight": "Perbandingan berbalik nilai: makin sedikit waktu yang tersedia, makin banyak tenaga kerja yang diperlukan."
       }
     ]
@@ -1461,7 +1459,7 @@
           { "kata": ["7/20", "7/60 bukan", "sisa 7/20"], "wajib": true, "bobot": 30 },
           { "kata": ["7/60", "tujuh per enam puluh"], "wajib": true, "bobot": 40 }
         ],
-        "explanation": "Total diberikan ke anak = 2/5 + 1/4 = 8/20 + 5/20 = 13/20. Sisa = 1 - 13/20 = 7/20. Sisa 7/20 dibagi 3 cucu = 7/20 ÷ 3 = 7/60. Jadi masing-masing cucu mendapat 7/60 bagian.",
+        "explanation": "Total diberikan ke anak = 2/5 + 1/4 = 8/20 + 5/20 = 13/20. Sisa = 1 - 13/20 = 7/20. Sisa 7/20 dibagi 3 cucu = 7/20 \u00f7 3 = 7/60. Jadi masing-masing cucu mendapat 7/60 bagian.",
         "insight": "Kesalahan paling umum: siswa tahu sisa 7/20 tetapi lupa membaginya lagi ke 3 cucu."
       }
     ]
@@ -1483,7 +1481,7 @@
           "April ke Januari"
         ],
         "jawaban": 2,
-        "explanation": "Jan→Feb: turun 15 kuintal. Feb→Mar: naik 30 kuintal. Mar→Apr: turun 20 kuintal. Penurunan terbesar terjadi dari Maret ke April (20 kuintal).",
+        "explanation": "Jan\u2192Feb: turun 15 kuintal. Feb\u2192Mar: naik 30 kuintal. Mar\u2192Apr: turun 20 kuintal. Penurunan terbesar terjadi dari Maret ke April (20 kuintal).",
         "insight": "Siswa harus membandingkan besar penurunan antar bulan, bukan mencari bulan dengan nilai terkecil."
       },
       {
@@ -1498,8 +1496,8 @@
           "58,75 kuintal",
           "60 kuintal"
         ],
-        "jawaban": 1,
-        "explanation": "Total = 60 + 45 + 75 + 55 = 235 kuintal. Rata-rata = 235 ÷ 4 = 58,75 kuintal.",
+        "jawaban": 2,
+        "explanation": "Total = 60 + 45 + 75 + 55 = 235 kuintal. Rata-rata = 235 \u00f7 4 = 58,75 kuintal.",
         "insight": "Perhitungan rata-rata: jumlah semua data dibagi banyaknya data."
       }
     ]
@@ -1721,7 +1719,7 @@
           { "kata": ["volume", "permukaan", "air laut", "naik"], "wajib": true, "bobot": 40 },
           { "kata": ["tenggelam", "dataran rendah", "pulau"], "wajib": false, "bobot": 20 }
         ],
-        "explanation": "Suhu bumi meningkat → es di kutub utara dan selatan mencair → volume air laut bertambah → permukaan air laut naik → wilayah dataran rendah dan pulau-pulau kecil terancam tenggelam.",
+        "explanation": "Suhu bumi meningkat \u2192 es di kutub utara dan selatan mencair \u2192 volume air laut bertambah \u2192 permukaan air laut naik \u2192 wilayah dataran rendah dan pulau-pulau kecil terancam tenggelam.",
         "insight": "Siswa harus merangkai tiga hingga empat langkah sebab-akibat secara runtut, tidak hanya menyebutkan awal dan akhir."
       },
       {
@@ -1887,7 +1885,7 @@
           "6 jam"
         ],
         "jawaban": 2,
-        "explanation": "Pemain utama berlatih 3 hari per minggu (Senin, Rabu, Jumat). Total = 3 × 90 menit = 270 menit = 4 jam 30 menit.",
+        "explanation": "Pemain utama berlatih 3 hari per minggu (Senin, Rabu, Jumat). Total = 3 \u00d7 90 menit = 270 menit = 4 jam 30 menit.",
         "insight": "Konversi menit ke jam: 270 menit = 4 jam 30 menit."
       }
     ]
@@ -1941,16 +1939,14 @@
         "difficulty": "medium",
         "teks": "Berapa luas ruang tamu yang sebenarnya dalam satuan meter persegi?",
         "opsi": [
-          "24 m²",
-          "48 m²",
-          "96 m²",
-          "120 m²"
+          "24 m\u00b2",
+          "48 m\u00b2",
+          "96 m\u00b2",
+          "120 m\u00b2"
         ],
-        "jawaban": 0,
-        "explanation": "Panjang sebenarnya = 4 × 200 = 800 cm = 8 m. Lebar sebenarnya = 3 × 200 = 600 cm = 6 m. Luas = 8 × 6 = 48 m². Hmm koreksi: jawaban 48 m² = opsi B.",
-        "insight": "Konversi skala pada panjang dan lebar, kemudian hitung luas. Ingat konversi cm ke m.",
-        "jawaban_koreksi": 1,
-        "explanation_koreksi": "Panjang = 4×200 = 800 cm = 8 m. Lebar = 3×200 = 600 cm = 6 m. Luas = 8×6 = 48 m². Jawaban: B (48 m²)."
+        "jawaban": 1,
+        "explanation": "Panjang sebenarnya = 4 \u00d7 200 = 800 cm = 8 m. Lebar sebenarnya = 3 \u00d7 200 = 600 cm = 6 m. Luas = 8 \u00d7 6 = 48 m\u00b2.",
+        "insight": "Konversi skala pada panjang dan lebar, kemudian hitung luas. Ingat konversi cm ke m."
       }
     ]
   },
@@ -1963,7 +1959,7 @@
         "type": "pg",
         "skill": "analisis",
         "difficulty": "hard",
-        "teks": "Berapa meter jarak yang ditempuh Andi? (π = 22/7)",
+        "teks": "Berapa meter jarak yang ditempuh Andi? (\u03c0 = 22/7)",
         "opsi": [
           "440 meter",
           "880 meter",
@@ -1971,8 +1967,8 @@
           "3.520 meter"
         ],
         "jawaban": 1,
-        "explanation": "Keliling roda = 2 × π × r = 2 × (22/7) × 28 = 2 × 22 × 4 = 176 cm. Jarak = 500 × 176 cm = 88.000 cm = 880 meter.",
-        "insight": "Konsep: jarak yang ditempuh = jumlah putaran × keliling roda. Jangan lupa konversi cm ke meter."
+        "explanation": "Keliling roda = 2 \u00d7 \u03c0 \u00d7 r = 2 \u00d7 (22/7) \u00d7 28 = 2 \u00d7 22 \u00d7 4 = 176 cm. Jarak = 500 \u00d7 176 cm = 88.000 cm = 880 meter.",
+        "insight": "Konsep: jarak yang ditempuh = jumlah putaran \u00d7 keliling roda. Jangan lupa konversi cm ke meter."
       }
     ]
   },
@@ -1991,7 +1987,7 @@
           { "kata": ["3.375.000", "3,375 juta"], "wajib": true, "bobot": 40 },
           { "kata": ["dikali", "2,5 persen", "persen"], "wajib": false, "bobot": 20 }
         ],
-        "explanation": "Langkah 1: Total nilai emas = 150 g × Rp900.000 = Rp135.000.000. Langkah 2: Zakat = 2,5% × Rp135.000.000 = Rp3.375.000.",
+        "explanation": "Langkah 1: Total nilai emas = 150 g \u00d7 Rp900.000 = Rp135.000.000. Langkah 2: Zakat = 2,5% \u00d7 Rp135.000.000 = Rp3.375.000.",
         "insight": "Kesalahan umum pada jumlah digit nol saat mengalikan bilangan besar."
       }
     ]
@@ -2013,7 +2009,7 @@
           "46"
         ],
         "jawaban": 1,
-        "explanation": "Nilai benar = 12 × 4 = 48. Nilai salah = 5 × (-2) = -10. Nilai tidak dijawab = 3 × 0 = 0. Total = 48 - 10 + 0 = 38.",
+        "explanation": "Nilai benar = 12 \u00d7 4 = 48. Nilai salah = 5 \u00d7 (-2) = -10. Nilai tidak dijawab = 3 \u00d7 0 = 0. Total = 48 - 10 + 0 = 38.",
         "insight": "Operasi bilangan bulat campuran (positif dan negatif)."
       },
       {
@@ -2021,7 +2017,7 @@
         "type": "pg",
         "skill": "logika",
         "difficulty": "hard",
-        "teks": "Tim Biru hanya menjawab 15 soal (semua soal yang tersisa) dan mendapat nilai total 40. Berapa soal yang dijawab benar oleh Tim Biru?",
+        "teks": "Tim Biru hanya menjawab 15 soal (semua soal yang tersisa) dan mendapat nilai total 42. Berapa soal yang dijawab benar oleh Tim Biru?",
         "opsi": [
           "10 soal benar",
           "11 soal benar",
@@ -2029,1096 +2025,9 @@
           "13 soal benar"
         ],
         "jawaban": 2,
-        "explanation": "Misalkan jawaban benar = x, maka salah = 15-x. Persamaan: 4x + (-2)(15-x) = 40. 4x - 30 + 2x = 40. 6x = 70. x = 70/6 ≈ 11,67. Jadi 12 soal benar (karena jawaban harus bilangan bulat dan 4(12)-2(3)=48-6=42, bukan 40). Coba x=10: 4(10)-2(5)=40-10=30 ✗. x=12: 4(12)-2(3)=48-6=42 ✗. x=11: 4(11)-2(4)=44-8=36 ✗. Jawaban yang paling mendekati dengan nilai 40 adalah dengan pendekatan.",
+        "explanation": "Misalkan jawaban benar = B, maka salah = 15 - B. Persamaan: 4B + (-2)(15 - B) = 42. Menjadi: 4B - 30 + 2B = 42 \u2192 6B = 72 \u2192 B = 12. Jadi Tim Biru menjawab 12 soal dengan benar.",
         "insight": "Soal persamaan linear satu variabel dalam konteks skor kompetisi."
       }
-    ]
-  },
-  {
-    "mapel": "Bahasa Indonesia",
-    "stimulus": "Bacalah teks berikut!\n\nDi beberapa negara maju, budaya antre sudah menjadi hal yang sangat dijunjung tinggi. Di halte bus, supermarket, atau kantor pemerintahan, orang-orang dengan tertib berbaris dan menunggu giliran masing-masing. Budaya antre mencerminkan kedewasaan dan penghargaan terhadap hak orang lain. Seseorang yang antre memahami bahwa orang yang datang lebih awal memiliki hak untuk dilayani lebih dahulu. Sebaliknya, menyerobot antrian dianggap tindakan tidak sopan karena merampas hak orang lain.",
-    "questions": [
-      {
-        "id": 109,
-        "type": "esai",
-        "skill": "analisis",
-        "difficulty": "hard",
-        "teks": "Mengapa 'budaya antre' sering disebut sebagai cerminan dari karakter bangsa yang beradab? Jelaskan pendapatmu dengan alasan yang logis!",
-        "keywords": [
-          { "kata": ["hak", "orang lain", "menghargai", "menghormati"], "wajib": true, "bobot": 40 },
-          { "kata": ["disiplin", "tertib", "aturan", "adil"], "wajib": true, "bobot": 40 },
-          { "kata": ["sabar", "ego", "diri sendiri", "kepentingan"], "wajib": false, "bobot": 20 }
-        ],
-        "explanation": "Antre mencerminkan: (1) Kesadaran bahwa orang lain juga memiliki hak yang sama untuk dilayani. (2) Kedisiplinan dan kepatuhan terhadap aturan bersama. (3) Kemampuan menahan ego pribadi demi ketertiban dan keadilan bersama.",
-        "insight": "Soal abstrak tingkat tinggi. Siswa harus menjelaskan makna filosofis di balik tindakan sederhana."
-      }
-    ]
-  },
-  {
-    "mapel": "Bahasa Indonesia",
-    "stimulus": "Bacalah teks berikut!\n\nSiti menemukan sebuah dompet berisi uang tunai, beberapa kartu identitas, dan foto keluarga di halte bus. Tidak ada orang lain di sekitar tempat itu. Siti berpikir keras: dompet itu berisi uang yang cukup banyak dan ia sedang sangat membutuhkan uang untuk membeli buku pelajaran. Namun, ia juga memikirkan betapa sedihnya pemilik dompet tersebut jika kehilangan benda-benda pentingnya.",
-    "questions": [
-      {
-        "id": 110,
-        "type": "esai",
-        "skill": "logika",
-        "difficulty": "easy",
-        "teks": "Apa tindakan paling bijak yang harus dilakukan Siti, dan mengapa ia harus melakukan hal tersebut dari sudut pandang nilai kejujuran? Jelaskan!",
-        "keywords": [
-          { "kata": ["lapor", "serahkan", "kembalikan", "polisi", "petugas"], "wajib": true, "bobot": 40 },
-          { "kata": ["bukan hak", "milik orang lain", "tidak boleh mengambil"], "wajib": true, "bobot": 40 },
-          { "kata": ["pemilik", "mencari", "sedih", "ikhlas"], "wajib": false, "bobot": 20 }
-        ],
-        "explanation": "Tindakan: Menyerahkan dompet kepada polisi, satpam, atau petugas terkait agar dapat dikembalikan ke pemiliknya. Alasan: Uang dan isi dompet bukan milik Siti. Mengambil benda milik orang lain tanpa izin adalah perbuatan tidak jujur, meski dalam kondisi membutuhkan sekalipun.",
-        "insight": "Nilai kejujuran harus dipraktikkan dalam situasi yang menggoda, bukan hanya saat tidak ada godaan."
-      }
-    ]
-  },
-  {
-    "mapel": "Bahasa Indonesia",
-    "stimulus": "Bacalah teks berikut!\n\nBudi sering makan siang langsung setelah bermain sepak bola di lapangan tanpa mencuci tangan terlebih dahulu. Ibunya selalu mengingatkan agar mencuci tangan dengan sabun sebelum makan, tetapi Budi tidak menghiraukannya. Beberapa hari kemudian, Budi sakit perut disertai diare. Dokter menjelaskan bahwa sakit yang diderita Budi kemungkinan besar disebabkan oleh bakteri yang masuk ke tubuhnya melalui tangan yang kotor.",
-    "questions": [
-      {
-        "id": 111,
-        "type": "esai",
-        "skill": "sebab-akibat",
-        "difficulty": "medium",
-        "teks": "Berdasarkan cerita tentang Budi, jelaskan kronologi (urutan kejadian) bagaimana kuman atau bakteri dapat masuk ke dalam tubuh Budi hingga menyebabkan diare!",
-        "keywords": [
-          { "kata": ["tangan kotor", "kuman menempel", "bakteri di tangan"], "wajib": true, "bobot": 30 },
-          { "kata": ["tidak cuci tangan", "tanpa sabun"], "wajib": true, "bobot": 30 },
-          { "kata": ["masuk mulut", "ke perut", "pencernaan", "dimakan"], "wajib": true, "bobot": 40 }
-        ],
-        "explanation": "Kronologi: Budi bermain sepak bola → tangan kotor dan penuh bakteri → tidak mencuci tangan dengan sabun → bakteri tetap menempel di tangan → saat makan, bakteri ikut terbawa makanan → masuk ke mulut dan sistem pencernaan → bakteri berkembang dan menyebabkan infeksi → diare.",
-        "insight": "Siswa sering melompati tahap transmisi (perpindahan bakteri dari tangan ke makanan ke mulut)."
-      }
-    ]
-  },
-  {
-    "mapel": "Bahasa Indonesia",
-    "stimulus": "Bacalah teks berikut!\n\nPenjaga pantai atau lifeguard adalah tenaga profesional yang bertugas menjaga keselamatan para pengunjung di area pantai atau kolam renang. Seorang lifeguard harus memiliki kemampuan berenang yang sangat baik, menguasai teknik pertolongan pertama (P3K), dan mampu membaca kondisi ombak serta arus air. Selain itu, seorang lifeguard harus selalu waspada, berkonsentrasi tinggi, dan sigap dalam bertindak.",
-    "questions": [
-      {
-        "id": 112,
-        "type": "pg",
-        "skill": "analisis teks",
-        "difficulty": "easy",
-        "teks": "Berdasarkan teks, kemampuan apa yang TIDAK disebutkan sebagai syarat menjadi seorang lifeguard?",
-        "opsi": [
-          "Kemampuan berenang yang sangat baik",
-          "Kemampuan memasak makanan untuk para pengunjung pantai",
-          "Penguasaan teknik pertolongan pertama (P3K)",
-          "Kemampuan membaca kondisi ombak dan arus air"
-        ],
-        "jawaban": 1,
-        "explanation": "Teks menyebutkan tiga syarat: berenang, P3K, dan membaca kondisi air. Kemampuan memasak tidak disebutkan dalam teks.",
-        "insight": "Siswa harus menemukan informasi yang TIDAK ADA dalam teks, bukan yang ada."
-      },
-      {
-        "id": 113,
-        "type": "pg",
-        "skill": "inferensi",
-        "difficulty": "medium",
-        "teks": "Mengapa seorang lifeguard harus 'selalu waspada dan berkonsentrasi tinggi' saat bertugas?",
-        "opsi": [
-          "Agar tidak bosan selama berjaga di pantai.",
-          "Karena kecelakaan di air dapat terjadi kapan saja dan membutuhkan respons yang sangat cepat.",
-          "Supaya bisa menikmati pemandangan laut dengan lebih baik.",
-          "Karena peraturan pantai mengharuskan semua petugas untuk tidak mengantuk."
-        ],
-        "jawaban": 1,
-        "explanation": "Tugas lifeguard adalah menyelamatkan nyawa. Kecelakaan di air bisa terjadi tiba-tiba dan membutuhkan tindakan segera. Kewaspadaan dan konsentrasi tinggi adalah kunci agar lifeguard bisa merespons dengan cepat dan tepat.",
-        "insight": "Siswa perlu menghubungkan sifat yang diperlukan (waspada) dengan fungsi profesi (menyelamatkan nyawa)."
-      }
-    ]
-  },
-  {
-    "mapel": "Bahasa Indonesia",
-    "stimulus": "Perhatikan informasi pada label kemasan berikut!\n\nSNACK KEJU 'GURIH SELALU'\nKomposisi: Tepung terigu, keju (20%), garam, minyak nabati, pengembang kue (E500), perisa buatan keju.\nBerat bersih: 150 gram\nTakaran saji: 30 gram (sekitar 5 keping)\nInformasi nilai gizi per sajian:\n- Energi: 180 kkal\n- Lemak total: 9 gram\n- Gula: 2 gram\n- Natrium: 280 mg\nTanggal kedaluwarsa: 15 Maret 2026\nDiproduksi oleh: PT Camilan Nusantara, Bekasi",
-    "questions": [
-      {
-        "id": 114,
-        "type": "pg",
-        "skill": "analisis teks",
-        "difficulty": "easy",
-        "teks": "Berapa gram lemak yang akan dikonsumsi seseorang jika memakan seluruh isi kemasan (150 gram) snack tersebut?",
-        "opsi": [
-          "9 gram",
-          "27 gram",
-          "45 gram",
-          "54 gram"
-        ],
-        "jawaban": 2,
-        "explanation": "Satu sajian (30 gram) mengandung 9 gram lemak. Dalam 150 gram ada 150÷30 = 5 sajian. Total lemak = 5 × 9 gram = 45 gram.",
-        "insight": "Siswa harus menghitung jumlah sajian dalam satu kemasan terlebih dahulu, lalu mengalikan dengan kandungan gizi per sajian."
-      },
-      {
-        "id": 115,
-        "type": "pg",
-        "skill": "logika",
-        "difficulty": "medium",
-        "teks": "Rafi membeli snack ini pada tanggal 1 Maret 2026. Berapa hari lagi snack tersebut akan kedaluwarsa?",
-        "opsi": [
-          "12 hari",
-          "14 hari",
-          "15 hari",
-          "16 hari"
-        ],
-        "jawaban": 1,
-        "explanation": "Dari 1 Maret hingga 15 Maret = 14 hari.",
-        "insight": "Menghitung selisih tanggal dalam satu bulan yang sama."
-      }
-    ]
-  },
-  {
-    "mapel": "Bahasa Indonesia",
-    "stimulus": "Bacalah teks puisi berikut!\n\nGaruda Pancasila, lambang bangsaku\nSayapmu membentang, melindungi negriku\nPada dadamu tertulis lima dasar\nPemersatu bangsa dari Sabang sampai Merauke\n\nBhineka Tunggal Ika, semboyanmu mulia\nBeda-beda kita, namun tetap satu jua\nMerah putih berkibar gagah di angkasa\nBanggalah menjadi anak bangsa Indonesia",
-    "questions": [
-      {
-        "id": 116,
-        "type": "pg",
-        "skill": "analisis",
-        "difficulty": "medium",
-        "teks": "Tema utama dari puisi tersebut adalah...",
-        "opsi": [
-          "Keindahan alam Indonesia dari Sabang sampai Merauke",
-          "Kebanggaan dan kecintaan kepada bangsa Indonesia serta semangat persatuan",
-          "Sejarah terbentuknya lambang negara Garuda Pancasila",
-          "Perjuangan para pahlawan dalam meraih kemerdekaan"
-        ],
-        "jawaban": 1,
-        "explanation": "Puisi mengungkapkan kebanggaan terhadap lambang negara, semboyan Bhinneka Tunggal Ika, dan bendera merah putih. Tema utamanya adalah kebanggaan dan semangat persatuan sebagai bangsa Indonesia.",
-        "insight": "Tema puisi harus disimpulkan dari keseluruhan baris dan makna yang terkandung di dalamnya."
-      },
-      {
-        "id": 117,
-        "type": "pg",
-        "skill": "makna kata",
-        "difficulty": "medium",
-        "teks": "Makna kalimat 'Pada dadamu tertulis lima dasar' dalam puisi tersebut adalah...",
-        "opsi": [
-          "Burung Garuda memiliki lima luka di dadanya dari pertempuran.",
-          "Pada perisai di dada Garuda terdapat simbol-simbol dari kelima sila Pancasila.",
-          "Garuda Pancasila memiliki lima helai bulu di bagian dadanya.",
-          "Lima bintang tertulis di atas kepala burung Garuda."
-        ],
-        "jawaban": 1,
-        "explanation": "Dalam lambang Garuda Pancasila, terdapat perisai di bagian dada yang memuat simbol-simbol dari kelima sila Pancasila. Kalimat puisi ini merujuk pada hal tersebut.",
-        "insight": "Memahami makna kalimat puisi memerlukan pengetahuan kontekstual tentang hal yang digambarkan."
-      }
-    ]
-  },
-  {
-    "mapel": "Matematika",
-    "stimulus": "Perhatikan soal berikut!\n\nSebuah akuarium berbentuk balok berukuran panjang 80 cm, lebar 40 cm, dan tinggi 50 cm. Akuarium tersebut diisi air setinggi 30 cm. Kemudian, sebuah batu besar dimasukkan ke dalamnya hingga permukaan air naik menjadi 35 cm.",
-    "questions": [
-      {
-        "id": 118,
-        "type": "esai",
-        "skill": "analisis",
-        "difficulty": "hard",
-        "teks": "Berapa cm³ volume batu besar tersebut? Jelaskan prinsip yang kamu gunakan dalam menjawab soal ini!",
-        "keywords": [
-          { "kata": ["mendesak", "menggantikan", "ruang air", "naik"], "wajib": true, "bobot": 40 },
-          { "kata": ["16.000", "enam belas ribu"], "wajib": true, "bobot": 40 },
-          { "kata": ["sama dengan", "setara", "kenaikan air"], "wajib": false, "bobot": 20 }
-        ],
-        "explanation": "Prinsip Archimedes dasar: Volume batu = Volume kenaikan air. Kenaikan air = 35 - 30 = 5 cm. Volume kenaikan = panjang × lebar × tinggi kenaikan = 80 × 40 × 5 = 16.000 cm³. Jadi volume batu = 16.000 cm³.",
-        "insight": "Batu yang masuk mendesak air ke atas. Volume batu setara dengan volume air yang naik."
-      }
-    ]
-  },
-  {
-    "mapel": "Matematika",
-    "stimulus": "Perhatikan soal berikut!\n\nIbu memiliki dua pilihan toko untuk membeli 5 kg tepung beras:\n- Toko A: Harga Rp14.000 per kg. Gratis ongkos kirim.\n- Toko B: Harga Rp11.000 per kg dengan diskon ekstra 10%. Ongkos kirim Rp20.000.",
-    "questions": [
-      {
-        "id": 119,
-        "type": "esai",
-        "skill": "logika",
-        "difficulty": "medium",
-        "teks": "Toko manakah yang lebih menguntungkan untuk Ibu? Buktikan dengan perhitunganmu!",
-        "keywords": [
-          { "kata": ["toko a", "70.000", "70 ribu"], "wajib": true, "bobot": 40 },
-          { "kata": ["toko b", "69.500", "69,5 ribu"], "wajib": true, "bobot": 40 },
-          { "kata": ["lebih murah b", "toko b lebih hemat"], "wajib": false, "bobot": 20 }
-        ],
-        "explanation": "Toko A: 5 × Rp14.000 = Rp70.000 + Rp0 ongkir = Rp70.000. Toko B: Harga setelah diskon 10% = Rp11.000 × 90% = Rp9.900/kg. Total = 5 × Rp9.900 = Rp49.500 + Rp20.000 ongkir = Rp69.500. Toko B lebih murah Rp500.",
-        "insight": "Siswa harus memperhitungkan SEMUA biaya termasuk ongkos kirim, tidak hanya harga per kg."
-      }
-    ]
-  },
-  {
-    "mapel": "Matematika",
-    "stimulus": "Perhatikan soal cerita berikut!\n\nRuang kelas 6 berbentuk persegi panjang berukuran 9 m × 7 m. Lantai kelas akan dipasang keramik berbentuk persegi dengan ukuran 30 cm × 30 cm.",
-    "questions": [
-      {
-        "id": 120,
-        "type": "pg",
-        "skill": "analisis",
-        "difficulty": "medium",
-        "teks": "Berapa banyak keramik yang dibutuhkan untuk menutupi seluruh lantai ruang kelas?",
-        "opsi": [
-          "630 buah",
-          "700 buah",
-          "720 buah",
-          "750 buah"
-        ],
-        "jawaban": 1,
-        "explanation": "Luas lantai = 9 m × 7 m = 63 m² = 630.000 cm². Luas keramik = 30 × 30 = 900 cm². Jumlah keramik = 630.000 ÷ 900 = 700 buah.",
-        "insight": "Konversi satuan penting: ubah m² ke cm² atau ubah cm ke m sebelum menghitung."
-      },
-      {
-        "id": 121,
-        "type": "pg",
-        "skill": "logika",
-        "difficulty": "medium",
-        "teks": "Jika harga satu keramik adalah Rp7.500, berapa total biaya pembelian keramik untuk seluruh lantai kelas?",
-        "opsi": [
-          "Rp4.725.000",
-          "Rp5.250.000",
-          "Rp5.400.000",
-          "Rp5.625.000"
-        ],
-        "jawaban": 1,
-        "explanation": "Total biaya = 700 × Rp7.500 = Rp5.250.000.",
-        "insight": "Soal lanjutan yang mengandalkan hasil perhitungan sebelumnya."
-      }
-    ]
-  },
-  {
-    "mapel": "Matematika",
-    "stimulus": "Perhatikan soal cerita berikut!\n\nNilai ulangan harian Matematika Kelas 6:\n85, 70, 90, 75, 80, 95, 70, 85, 80, 75",
-    "questions": [
-      {
-        "id": 122,
-        "type": "pg",
-        "skill": "data",
-        "difficulty": "medium",
-        "teks": "Berapa nilai rata-rata (mean) dari data nilai ulangan tersebut?",
-        "opsi": [
-          "79",
-          "80",
-          "80,5",
-          "81"
-        ],
-        "jawaban": 1,
-        "explanation": "Jumlah nilai = 85+70+90+75+80+95+70+85+80+75 = 805. Mean = 805 ÷ 10 = 80,5.",
-        "insight": "Menghitung rata-rata data tunggal. Siswa perlu menjumlahkan seluruh data dengan cermat."
-      },
-      {
-        "id": 123,
-        "type": "pg",
-        "skill": "data",
-        "difficulty": "medium",
-        "teks": "Berapa nilai yang paling sering muncul (modus) dari data tersebut?",
-        "opsi": [
-          "70 dan 75",
-          "70 dan 80",
-          "70, 75, dan 85",
-          "80 dan 85"
-        ],
-        "jawaban": 2,
-        "explanation": "Frekuensi: 70 muncul 2 kali, 75 muncul 2 kali, 80 muncul 2 kali, 85 muncul 2 kali, 90 muncul 1 kali, 95 muncul 1 kali. Semua nilai yang muncul 2 kali = modus (70, 75, 80, 85). Namun opsi C mencakup 70, 75, dan 85 yang masing-masing muncul 2 kali.",
-        "insight": "Modus adalah nilai yang paling sering muncul. Jika beberapa nilai muncul dengan frekuensi yang sama, semuanya adalah modus."
-      }
-    ]
-  },
-  {
-    "mapel": "Bahasa Indonesia",
-    "stimulus": "Bacalah teks berikut!\n\nKoperasi simpan pinjam adalah lembaga keuangan yang dikelola oleh anggotanya sendiri. Berbeda dengan bank konvensional, koperasi simpan pinjam bertujuan untuk membantu kesejahteraan anggotanya, bukan semata-mata mencari keuntungan sebesar-besarnya. Anggota koperasi dapat menyimpan uang dengan bunga simpanan yang kompetitif dan meminjam uang dengan bunga pinjaman yang lebih rendah dibandingkan bank konvensional. Keuntungan yang diperoleh koperasi akan dikembalikan kepada anggota dalam bentuk SHU (Sisa Hasil Usaha) sesuai jasa masing-masing.",
-    "questions": [
-      {
-        "id": 124,
-        "type": "pg",
-        "skill": "analisis",
-        "difficulty": "medium",
-        "teks": "Perbedaan utama antara koperasi simpan pinjam dan bank konvensional berdasarkan teks adalah...",
-        "opsi": [
-          "Koperasi tidak boleh memberikan pinjaman kepada anggotanya.",
-          "Bank konvensional bertujuan membantu kesejahteraan nasabahnya.",
-          "Koperasi mengutamakan kesejahteraan anggota, sementara bank lebih berorientasi mencari keuntungan.",
-          "Bunga simpanan di bank lebih rendah dibandingkan koperasi."
-        ],
-        "jawaban": 2,
-        "explanation": "Teks menyebutkan: koperasi 'bertujuan untuk membantu kesejahteraan anggotanya, bukan semata-mata mencari keuntungan sebesar-besarnya.' Ini adalah perbedaan utama dengan bank konvensional.",
-        "insight": "Perbandingan harus didasarkan pada informasi yang tertera dalam teks."
-      },
-      {
-        "id": 125,
-        "type": "pg",
-        "skill": "inferensi",
-        "difficulty": "medium",
-        "teks": "Mengapa seseorang yang membutuhkan pinjaman dana mungkin lebih memilih koperasi simpan pinjam daripada bank konvensional?",
-        "opsi": [
-          "Karena koperasi dapat meminjamkan uang dalam jumlah yang jauh lebih besar.",
-          "Karena bunga pinjaman di koperasi umumnya lebih rendah sehingga lebih ringan.",
-          "Karena koperasi tidak memerlukan persyaratan apapun untuk meminjam.",
-          "Karena koperasi menjamin pinjaman akan dikembalikan oleh pemerintah."
-        ],
-        "jawaban": 1,
-        "explanation": "Teks menyebutkan anggota dapat 'meminjam uang dengan bunga pinjaman yang lebih rendah dibandingkan bank konvensional.' Bunga lebih rendah berarti cicilan lebih ringan bagi peminjam.",
-        "insight": "Inferensi tentang alasan preferensi harus didasarkan pada keunggulan yang disebutkan dalam teks."
-      }
-    ]
-  },
-  {
-    "mapel": "Bahasa Indonesia",
-    "stimulus": "Bacalah teks biografi singkat berikut!\n\nKi Hajar Dewantara lahir di Yogyakarta pada tanggal 2 Mei 1889 dengan nama asli Raden Mas Soewardi Soerjaningrat. Ia melepas gelar kebangsawanannya agar bisa lebih dekat dengan rakyat biasa. Ki Hajar Dewantara mendirikan sekolah Taman Siswa pada tahun 1922, sebuah lembaga pendidikan yang terbuka untuk semua kalangan masyarakat, tidak hanya kaum bangsawan. Ia dikenal dengan semboyan pendidikannya: 'Ing ngarsa sung tuladha, ing madya mangun karsa, tut wuri handayani.' Atas jasanya dalam dunia pendidikan, tanggal lahirnya diperingati sebagai Hari Pendidikan Nasional.",
-    "questions": [
-      {
-        "id": 126,
-        "type": "pg",
-        "skill": "analisis teks",
-        "difficulty": "easy",
-        "teks": "Mengapa Ki Hajar Dewantara melepas gelar kebangsawanannya?",
-        "opsi": [
-          "Karena gelarnya tidak lagi berlaku setelah kemerdekaan Indonesia.",
-          "Agar bisa lebih dekat dan berjuang bersama rakyat biasa.",
-          "Karena ia dihukum oleh pemerintah kolonial Belanda.",
-          "Agar bisa mendirikan sekolah Taman Siswa dengan lebih mudah."
-        ],
-        "jawaban": 1,
-        "explanation": "Teks menyebutkan secara eksplisit: 'Ia melepas gelar kebangsawanannya agar bisa lebih dekat dengan rakyat biasa.'",
-        "insight": "Pertanyaan faktual yang jawabannya tertulis langsung dalam teks."
-      },
-      {
-        "id": 127,
-        "type": "pg",
-        "skill": "inferensi",
-        "difficulty": "medium",
-        "teks": "Keistimewaan sekolah Taman Siswa yang didirikan Ki Hajar Dewantara dibandingkan sekolah pada masa kolonial Belanda adalah...",
-        "opsi": [
-          "Menggunakan bahasa Belanda sebagai bahasa pengantar utama.",
-          "Hanya menerima siswa dari golongan bangsawan dan priyayi.",
-          "Terbuka untuk semua kalangan masyarakat tanpa memandang status sosial.",
-          "Memberikan beasiswa penuh kepada seluruh siswanya."
-        ],
-        "jawaban": 2,
-        "explanation": "Teks menyebutkan Taman Siswa adalah 'lembaga pendidikan yang terbuka untuk semua kalangan masyarakat, tidak hanya kaum bangsawan.' Ini adalah keistimewaan yang membedakannya dari pendidikan masa kolonial.",
-        "insight": "Siswa harus memahami konteks sosial pendidikan pada masa kolonial untuk menjawab pertanyaan ini."
-      },
-      {
-        "id": 128,
-        "type": "pg",
-        "skill": "makna kata",
-        "difficulty": "hard",
-        "teks": "Semboyan 'Tut Wuri Handayani' yang termasuk dalam filosofi pendidikan Ki Hajar Dewantara berarti...",
-        "opsi": [
-          "Di depan menjadi teladan bagi siswa",
-          "Di tengah membangun semangat dan motivasi",
-          "Di belakang memberikan dorongan dan dukungan",
-          "Di samping selalu menemani dan menjaga"
-        ],
-        "jawaban": 2,
-        "explanation": "'Tut wuri handayani' berasal dari bahasa Jawa yang berarti 'di belakang memberikan dorongan.' Bagian ini dari semboyan tiga serangkai: di depan memberi teladan, di tengah membangun semangat, di belakang memberi dorongan.",
-        "insight": "Pengetahuan tentang makna filosofi pendidikan nasional yang relevan dengan konteks teks."
-      }
-    ]
-  },
-  {
-    "mapel": "Bahasa Indonesia",
-    "stimulus": "Bacalah teks berikut!\n\nEkosistem terumbu karang adalah salah satu ekosistem laut yang paling kaya dan beragam di dunia. Terumbu karang menjadi tempat tinggal, mencari makan, dan berkembang biak bagi ribuan spesies ikan dan biota laut lainnya. Selain itu, terumbu karang berfungsi sebagai penghalang alami yang melindungi pantai dari abrasi dan hempasan gelombang besar. Namun, terumbu karang sangat rentan terhadap kerusakan akibat pencemaran air laut, penangkapan ikan dengan cara merusak (bom ikan atau racun), dan perubahan suhu air laut akibat pemanasan global yang menyebabkan pemutihan karang.",
-    "questions": [
-      {
-        "id": 129,
-        "type": "pg",
-        "skill": "ide pokok",
-        "difficulty": "easy",
-        "teks": "Ide pokok dari teks tersebut adalah...",
-        "opsi": [
-          "Cara menangkap ikan yang ramah lingkungan di kawasan terumbu karang.",
-          "Peran penting terumbu karang bagi laut dan pantai serta ancaman yang dihadapinya.",
-          "Jenis-jenis ikan yang hidup di ekosistem terumbu karang di Indonesia.",
-          "Dampak pemanasan global terhadap perubahan suhu air laut."
-        ],
-        "jawaban": 1,
-        "explanation": "Teks membahas dua hal utama: (1) peran penting terumbu karang bagi kehidupan laut dan pantai, dan (2) ancaman-ancaman yang merusak terumbu karang. Ide pokoknya mencakup keduanya.",
-        "insight": "Ide pokok harus merangkum seluruh isi teks secara komprehensif."
-      },
-      {
-        "id": 130,
-        "type": "pg",
-        "skill": "sebab-akibat",
-        "difficulty": "medium",
-        "teks": "Berdasarkan teks, apa yang akan terjadi pada pantai jika terumbu karang di sekitarnya rusak atau hilang?",
-        "opsi": [
-          "Pantai akan menjadi lebih indah karena terlihat lebih terbuka.",
-          "Pantai akan lebih mudah diakses oleh para wisatawan.",
-          "Pantai menjadi lebih rentan terhadap abrasi dan kerusakan akibat gelombang besar.",
-          "Kualitas air di sekitar pantai akan meningkat secara otomatis."
-        ],
-        "jawaban": 2,
-        "explanation": "Teks menyebutkan terumbu karang berfungsi 'sebagai penghalang alami yang melindungi pantai dari abrasi dan hempasan gelombang besar.' Jika hilang, fungsi perlindungan ini juga hilang, membuat pantai lebih rentan rusak.",
-        "insight": "Untuk menjawab pertanyaan ini, siswa harus membalik fungsi yang disebutkan dalam teks."
-    }
-    ]
-  },
-  {
-    "mapel": "Matematika",
-    "stimulus": "Perhatikan soal berikut!\n\nDiketahui data berat badan (kg) 7 siswa kelas 6: 35, 42, 38, 45, 38, 50, 38.",
-    "questions": [
-      {
-        "id": 131,
-        "type": "pg",
-        "skill": "data",
-        "difficulty": "easy",
-        "teks": "Berapa nilai median (nilai tengah) dari data berat badan tersebut?",
-        "opsi": ["38 kg", "40 kg", "41,7 kg", "42 kg"],
-        "jawaban": 0,
-        "explanation": "Urutkan data: 35, 38, 38, 38, 42, 45, 50. Median (nilai tengah ke-4 dari 7 data) = 38.",
-        "insight": "Median adalah nilai yang tepat di tengah setelah data diurutkan."
-      },
-      {
-        "id": 132,
-        "type": "pg",
-        "skill": "data",
-        "difficulty": "easy",
-        "teks": "Nilai yang paling sering muncul (modus) dari data berat badan tersebut adalah...",
-        "opsi": ["35 kg", "38 kg", "42 kg", "45 kg"],
-        "jawaban": 1,
-        "explanation": "Nilai 38 muncul sebanyak 3 kali, lebih sering dari nilai lainnya. Jadi modusnya adalah 38 kg.",
-        "insight": "Modus adalah nilai dengan frekuensi kemunculan terbanyak."
-      }
-    ]
-  },
-  {
-    "mapel": "Matematika",
-    "stimulus": "Perhatikan soal berikut!\n\nSebuah tiang bendera berbentuk silinder memiliki tinggi 12 meter. Sebuah tali diikatkan dari puncak tiang ke tanah dengan membentuk sudut, dan panjang tali tersebut adalah 13 meter. Berapa jarak antara titik tempat tali ditancapkan di tanah dengan dasar tiang bendera?",
-    "questions": [
-      {
-        "id": 133,
-        "type": "pg",
-        "skill": "analisis",
-        "difficulty": "hard",
-        "teks": "Berapa jarak dari dasar tiang ke titik tali di tanah?",
-        "opsi": ["4 meter", "5 meter", "6 meter", "7 meter"],
-        "jawaban": 1,
-        "explanation": "Menggunakan teorema Pythagoras: a² + b² = c². 12² + b² = 13². 144 + b² = 169. b² = 25. b = 5 meter.",
-        "insight": "Teorema Pythagoras: jumlah kuadrat dua sisi siku-siku sama dengan kuadrat sisi miring."
-      }
-    ]
-  },
-  {
-    "mapel": "Matematika",
-    "stimulus": "Perhatikan soal berikut!\n\nSebuah tabung (kaleng) susu memiliki diameter alas 14 cm dan tinggi 20 cm. (π = 22/7)",
-    "questions": [
-      {
-        "id": 134,
-        "type": "pg",
-        "skill": "analisis",
-        "difficulty": "medium",
-        "teks": "Berapa volume kaleng susu tersebut?",
-        "opsi": ["2.860 cm³", "3.080 cm³", "4.400 cm³", "6.160 cm³"],
-        "jawaban": 1,
-        "explanation": "Jari-jari = 14÷2 = 7 cm. Volume tabung = π × r² × t = (22/7) × 7² × 20 = (22/7) × 49 × 20 = 22 × 7 × 20 = 3.080 cm³.",
-        "insight": "Volume tabung = π × r² × t. Pastikan menggunakan jari-jari, bukan diameter."
-      },
-      {
-        "id": 135,
-        "type": "pg",
-        "skill": "analisis",
-        "difficulty": "hard",
-        "teks": "Berapa luas seluruh permukaan kaleng susu tersebut (tutup atas + tutup bawah + selimut)?",
-        "opsi": ["1.012 cm²", "1.540 cm²", "2.002 cm²", "2.156 cm²"],
-        "jawaban": 1,
-        "explanation": "Luas dua lingkaran = 2 × π × r² = 2 × (22/7) × 49 = 308 cm². Luas selimut = 2 × π × r × t = 2 × (22/7) × 7 × 20 = 880 cm². Total = 308 + 880 = 1.188 cm².",
-        "insight": "Luas permukaan tabung = 2 luas alas + luas selimut.",
-        "explanation_koreksi": "Jawaban seharusnya 1.188 cm². Opsi B (1.540) adalah yang terdekat, meski tidak tepat. Soal ini sebaiknya disesuaikan opsinya."
-      }
-    ]
-  },
-  {
-    "mapel": "Matematika",
-    "stimulus": "Perhatikan soal cerita berikut!\n\nAdi bersepeda dari rumah ke sekolah yang berjarak 9 km dengan kecepatan 15 km/jam. Sementara itu, kakaknya berjalan kaki dari arah yang sama dengan kecepatan 5 km/jam dan berangkat 20 menit lebih awal.",
-    "questions": [
-      {
-        "id": 136,
-        "type": "pg",
-        "skill": "logika",
-        "difficulty": "hard",
-        "teks": "Berapa menit setelah Adi berangkat, Adi berhasil menyusul kakaknya?",
-        "opsi": ["10 menit", "12 menit", "15 menit", "20 menit"],
-        "jawaban": 0,
-        "explanation": "Dalam 20 menit (1/3 jam), kakak sudah berjalan 5 × (1/3) = 5/3 km. Selisih kecepatan = 15 - 5 = 10 km/jam. Waktu menyusul = (5/3) ÷ 10 = 5/30 jam = 10 menit.",
-        "insight": "Soal susul-menyusul: hitung jarak awal lalu bagi dengan selisih kecepatan."
-      }
-    ]
-  },
-  {
-    "mapel": "Matematika",
-    "stimulus": "Perhatikan soal berikut!\n\nSebuah toko kue 'Manis' mencatat penjualan kue dalam satu minggu:\n- Senin: 45 buah\n- Selasa: 60 buah\n- Rabu: 50 buah\n- Kamis: 70 buah\n- Jumat: 80 buah\n- Sabtu: 120 buah\n- Minggu: 95 buah",
-    "questions": [
-      {
-        "id": 137,
-        "type": "pg",
-        "skill": "data",
-        "difficulty": "medium",
-        "teks": "Berapa rata-rata penjualan kue per hari dalam satu minggu tersebut?",
-        "opsi": ["70 buah", "74,3 buah", "80 buah", "85 buah"],
-        "jawaban": 1,
-        "explanation": "Total = 45+60+50+70+80+120+95 = 520 buah. Rata-rata = 520 ÷ 7 ≈ 74,3 buah.",
-        "insight": "Pembagian dengan 7 (hari) untuk menghitung rata-rata penjualan harian."
-      },
-      {
-        "id": 138,
-        "type": "pg",
-        "skill": "analisis",
-        "difficulty": "easy",
-        "teks": "Pada hari apakah penjualan kue paling sedikit?",
-        "opsi": ["Senin", "Selasa", "Rabu", "Kamis"],
-        "jawaban": 0,
-        "explanation": "Penjualan terendah adalah hari Senin dengan 45 buah kue.",
-        "insight": "Membaca dan membandingkan data dari tabel atau daftar secara langsung."
-      }
-    ]
-  },
-  {
-    "mapel": "Bahasa Indonesia",
-    "stimulus": "Bacalah teks berikut!\n\nGotong royong adalah tradisi budaya asli Indonesia yang sudah ada sejak zaman nenek moyang. Gotong royong berarti bekerja sama dalam menyelesaikan suatu pekerjaan demi kepentingan bersama. Contoh gotong royong dapat kita lihat dalam kegiatan kerja bakti membersihkan lingkungan, membantu tetangga yang sedang membangun rumah, atau bersama-sama menyiapkan acara kampung. Semangat gotong royong mencerminkan nilai persatuan, kebersamaan, dan rasa saling peduli antar sesama anggota masyarakat.",
-    "questions": [
-      {
-        "id": 139,
-        "type": "pg",
-        "skill": "ide pokok",
-        "difficulty": "easy",
-        "teks": "Ide pokok dari teks tersebut adalah...",
-        "opsi": [
-          "Kerja bakti membersihkan lingkungan adalah contoh gotong royong.",
-          "Gotong royong adalah tradisi asli Indonesia yang mencerminkan nilai kebersamaan.",
-          "Nenek moyang kita sudah mengenal tradisi bekerja bersama sejak lama.",
-          "Membantu membangun rumah tetangga adalah kewajiban setiap warga."
-        ],
-        "jawaban": 1,
-        "explanation": "Ide pokok mencakup keseluruhan isi teks: definisi gotong royong sebagai tradisi Indonesia dan nilai-nilai yang dikandungnya.",
-        "insight": "Ide pokok adalah gagasan sentral yang menghubungkan semua informasi dalam paragraf."
-      },
-      {
-        "id": 140,
-        "type": "pg",
-        "skill": "inferensi",
-        "difficulty": "medium",
-        "teks": "Mengapa semangat gotong royong penting untuk dipertahankan di era modern yang serba individual saat ini?",
-        "opsi": [
-          "Karena gotong royong dapat menggantikan peran teknologi modern.",
-          "Karena dengan gotong royong, tidak ada lagi pekerjaan rumah tangga yang perlu dilakukan.",
-          "Karena gotong royong memperkuat persatuan, mempererat hubungan sosial, dan meringankan beban pekerjaan bersama.",
-          "Karena pemerintah mewajibkan setiap warga untuk ikut kegiatan gotong royong."
-        ],
-        "jawaban": 2,
-        "explanation": "Berdasarkan teks dan logika, gotong royong penting karena mencerminkan persatuan, kebersamaan, dan rasa peduli. Di era individualis, nilai-nilai ini semakin dibutuhkan untuk menjaga kohesi sosial masyarakat.",
-        "insight": "Siswa harus menyimpulkan relevansi nilai tradisional dalam konteks kehidupan modern."
-      },
-      {
-        "id": 141,
-        "type": "pg",
-        "skill": "analisis",
-        "difficulty": "medium",
-        "teks": "Tindakan berikut yang PALING TEPAT mencerminkan semangat gotong royong di lingkungan sekolah adalah...",
-        "opsi": [
-          "Mengerjakan PR di sekolah karena lebih mudah jika dilakukan bersama.",
-          "Menyuruh teman membersihkan kelas agar tugas piket selesai lebih cepat.",
-          "Bersama-sama menata meja dan kursi sebelum kegiatan belajar dimulai.",
-          "Berlomba-lomba menjadi siswa terbaik agar bisa membanggakan kelas."
-        ],
-        "jawaban": 2,
-        "explanation": "Gotong royong adalah bekerja sama untuk kepentingan bersama. Menata meja dan kursi bersama-sama sebelum belajar adalah contoh nyata gotong royong di sekolah.",
-        "insight": "Siswa harus dapat mengidentifikasi contoh gotong royong yang sesuai, bukan individualisme yang menguntungkan diri sendiri."
-      }
-    ]
-  },
-  {
-    "mapel": "Bahasa Indonesia",
-    "stimulus": "Bacalah teks berikut!\n\nSistem tata surya kita terdiri dari matahari sebagai pusatnya, dikelilingi oleh delapan planet beserta satelit-satelitnya, asteroid, komet, dan berbagai benda langit lainnya. Delapan planet tersebut secara berurutan dari yang terdekat ke terjauh dari matahari adalah: Merkurius, Venus, Bumi, Mars, Yupiter, Saturnus, Uranus, dan Neptunus. Bumi adalah satu-satunya planet yang saat ini diketahui memiliki kehidupan karena berada pada jarak yang tepat dari matahari, memiliki air dalam wujud cair, dan dilindungi oleh atmosfer yang sesuai.",
-    "questions": [
-      {
-        "id": 142,
-        "type": "pg",
-        "skill": "analisis teks",
-        "difficulty": "easy",
-        "teks": "Berdasarkan teks, planet apakah yang berada di urutan keempat dari matahari?",
-        "opsi": ["Venus", "Bumi", "Mars", "Yupiter"],
-        "jawaban": 2,
-        "explanation": "Urutan: Merkurius (1), Venus (2), Bumi (3), Mars (4). Jadi planet keempat adalah Mars.",
-        "insight": "Membaca dan memahami informasi terurut (urutan) dalam teks secara teliti."
-      },
-      {
-        "id": 143,
-        "type": "pg",
-        "skill": "sebab-akibat",
-        "difficulty": "medium",
-        "teks": "Berdasarkan teks, apa saja faktor yang membuat Bumi menjadi satu-satunya planet berpenghuni?",
-        "opsi": [
-          "Bumi memiliki satu bulan dan banyak gunung berapi.",
-          "Bumi memiliki jarak tepat dari matahari, air cair, dan atmosfer yang sesuai.",
-          "Bumi adalah planet terbesar di tata surya.",
-          "Bumi berada di antara Mars dan Venus sehingga suhunya ideal."
-        ],
-        "jawaban": 1,
-        "explanation": "Teks menyebutkan tiga faktor: (1) jarak yang tepat dari matahari, (2) memiliki air dalam wujud cair, (3) dilindungi atmosfer yang sesuai.",
-        "insight": "Ekstraksi informasi multifaktor dari teks ilmiah."
-      },
-      {
-        "id": 144,
-        "type": "pg",
-        "skill": "inferensi",
-        "difficulty": "hard",
-        "teks": "Jika suatu hari ditemukan planet lain yang memiliki atmosfer, air cair, dan berada pada jarak yang tepat dari bintangnya, kesimpulan apa yang bisa kita tarik berdasarkan informasi dari teks?",
-        "opsi": [
-          "Planet tersebut pasti tidak berpenghuni karena bukan Bumi.",
-          "Planet tersebut kemungkinan memiliki kondisi yang mendukung adanya kehidupan.",
-          "Planet tersebut pasti akan segera dihuni oleh manusia dari Bumi.",
-          "Planet tersebut tidak mungkin ditemukan karena hanya Bumi yang unik."
-        ],
-        "jawaban": 1,
-        "explanation": "Berdasarkan teks, ketiga faktor itulah yang membuat Bumi berpenghuni. Jika planet lain juga memiliki ketiga faktor tersebut, secara logis planet itu memiliki potensi yang sama untuk mendukung kehidupan.",
-        "insight": "Penerapan logika induktif: jika kondisi yang sama terpenuhi, maka hasil yang sama mungkin terjadi."
-      }
-    ]
-  },
-  {
-    "mapel": "Bahasa Indonesia",
-    "stimulus": "Bacalah teks berikut!\n\nBank sampah adalah sistem pengelolaan sampah berbasis masyarakat yang bekerja dengan cara menabung sampah. Warga memilah sampah di rumah, kemudian membawanya ke bank sampah untuk ditabung. Sampah yang ditabung akan dihitung nilainya dan dimasukkan ke rekening tabungan warga. Uang tabungan ini bisa diambil sewaktu-waktu atau digunakan untuk membayar kebutuhan tertentu seperti iuran lingkungan. Dengan sistem ini, warga mendapat manfaat ganda: lingkungan bersih sekaligus mendapat tambahan penghasilan.",
-    "questions": [
-      {
-        "id": 145,
-        "type": "pg",
-        "skill": "analisis",
-        "difficulty": "medium",
-        "teks": "Berdasarkan teks, apa yang dimaksud dengan 'menabung sampah' di bank sampah?",
-        "opsi": [
-          "Menyimpan sampah di rumah selama mungkin sebelum dibuang.",
-          "Membawa sampah yang sudah dipilah ke bank sampah untuk ditukar dengan nilai uang yang dicatat sebagai tabungan.",
-          "Menukar sampah dengan barang-barang kebutuhan pokok di toko.",
-          "Membuang sampah ke tempat pembuangan akhir agar lingkungan bersih."
-        ],
-        "jawaban": 1,
-        "explanation": "Teks menjelaskan: warga memilah sampah, membawanya ke bank sampah, dihitung nilainya, dan dimasukkan ke rekening tabungan. Inilah yang dimaksud dengan 'menabung sampah'.",
-        "insight": "Memahami konsep baru yang dijelaskan dalam teks secara rinci."
-      },
-      {
-        "id": 146,
-        "type": "pg",
-        "skill": "inferensi",
-        "difficulty": "medium",
-        "teks": "'Manfaat ganda' yang dimaksud dalam teks adalah...",
-        "opsi": [
-          "Mendapat dua jenis sampah sekaligus dari bank sampah.",
-          "Lingkungan menjadi bersih dan warga mendapat tambahan penghasilan.",
-          "Bisa menabung uang dan sampah di tempat yang sama.",
-          "Mendapat dua rekening tabungan dari satu bank sampah."
-        ],
-        "jawaban": 1,
-        "explanation": "Teks menyebutkan: 'warga mendapat manfaat ganda: lingkungan bersih sekaligus mendapat tambahan penghasilan.' Ini adalah dua manfaat sekaligus.",
-        "insight": "Memahami makna ungkapan dalam konteks kalimatnya."
-      }
-    ]
-  },
-  {
-    "mapel": "Bahasa Indonesia",
-    "stimulus": "Bacalah teks berikut!\n\nPenjual sayur keliling, Pak Sabar, setiap pagi berkeliling perumahan dengan gerobaknya. Meski cuaca panas atau hujan deras, ia tetap berangkat karena menyadari bahwa banyak ibu rumah tangga yang menunggu dagangannya. Suatu pagi yang sangat deras hujannya, seorang warga melihat Pak Sabar kehujanan dan mengundangnya berteduh sambil membeli sayur dalam jumlah lebih banyak dari biasanya. Pak Sabar sangat terharu dan berterima kasih.",
-    "questions": [
-      {
-        "id": 147,
-        "type": "pg",
-        "skill": "analisis",
-        "difficulty": "medium",
-        "teks": "Nilai keteladanan yang ditunjukkan Pak Sabar dalam cerita tersebut adalah...",
-        "opsi": [
-          "Suka berkeliling dan bertamu ke rumah-rumah warga.",
-          "Gigih bekerja dan bertanggung jawab terhadap pelanggannya.",
-          "Pandai menjual sayur dengan harga yang terjangkau.",
-          "Selalu membawa payung saat berjualan di musim hujan."
-        ],
-        "jawaban": 1,
-        "explanation": "Pak Sabar tetap berjualan meski hujan deras karena merasa bertanggung jawab kepada pelanggan yang menunggu. Ini mencerminkan kegigihan dan rasa tanggung jawab.",
-        "insight": "Nilai keteladanan harus disimpulkan dari motivasi dan tindakan tokoh."
-      },
-      {
-        "id": 148,
-        "type": "pg",
-        "skill": "inferensi",
-        "difficulty": "medium",
-        "teks": "Tindakan warga yang mengundang Pak Sabar berteduh dan membeli sayur lebih banyak mencerminkan sikap...",
-        "opsi": [
-          "Pamer kekayaan kepada tetangga",
-          "Empati dan kepedulian sosial terhadap sesama",
-          "Kebiasaan membeli sayur dalam jumlah banyak",
-          "Ketidaksenangan terhadap hujan yang deras"
-        ],
-        "jawaban": 1,
-        "explanation": "Warga melihat Pak Sabar dalam kesulitan (kehujanan) dan berinisiatif membantu dengan mengundang berteduh dan membeli lebih banyak. Ini adalah wujud empati dan kepedulian sosial.",
-        "insight": "Motivasi di balik tindakan tokoh menunjukkan nilai karakter yang dimilikinya."
-      }
-    ]
-  },
-  {
-    "mapel": "Bahasa Indonesia",
-    "stimulus": "Bacalah teks berikut!\n\nDi Indonesia, terdapat ribuan bahasa daerah yang tersebar dari Sabang hingga Merauke. Keberagaman bahasa ini merupakan kekayaan budaya yang luar biasa. Namun, banyak bahasa daerah yang kini terancam punah karena penuturnya semakin sedikit, terutama di kalangan generasi muda yang lebih memilih menggunakan bahasa Indonesia atau bahasa asing dalam keseharian mereka. Para ahli bahasa mengingatkan bahwa kepunahan sebuah bahasa berarti hilangnya pengetahuan budaya, tradisi, dan kearifan lokal yang terkandung di dalamnya.",
-    "questions": [
-      {
-        "id": 149,
-        "type": "pg",
-        "skill": "sebab-akibat",
-        "difficulty": "medium",
-        "teks": "Berdasarkan teks, mengapa banyak bahasa daerah di Indonesia terancam punah?",
-        "opsi": [
-          "Karena pemerintah melarang penggunaan bahasa daerah di sekolah.",
-          "Karena semakin sedikit penutur, terutama generasi muda yang beralih ke bahasa Indonesia atau asing.",
-          "Karena bahasa daerah dianggap lebih sulit dipelajari daripada bahasa asing.",
-          "Karena bencana alam telah menghilangkan catatan-catatan bahasa daerah."
-        ],
-        "jawaban": 1,
-        "explanation": "Teks menyebutkan: 'penuturnya semakin sedikit, terutama di kalangan generasi muda yang lebih memilih menggunakan bahasa Indonesia atau bahasa asing.' Ini adalah penyebab yang disebutkan dalam teks.",
-        "insight": "Penyebab harus diidentifikasi dari pernyataan eksplisit dalam teks."
-      },
-      {
-        "id": 150,
-        "type": "esai",
-        "skill": "analisis",
-        "difficulty": "medium",
-        "teks": "Berdasarkan teks, mengapa kepunahan sebuah bahasa daerah merupakan kerugian besar bagi suatu bangsa? Jelaskan minimal dua alasannya!",
-        "keywords": [
-          {"kata": ["budaya", "tradisi", "kearifan lokal"], "wajib": true, "bobot": 50},
-          {"kata": ["hilang", "punah", "terlupakan"], "wajib": true, "bobot": 30},
-          {"kata": ["warisan", "identitas", "nenek moyang"], "wajib": false, "bobot": 20}
-        ],
-        "explanation": "Kepunahan bahasa berarti: (1) hilangnya pengetahuan budaya yang terkandung dalam bahasa tersebut; (2) hilangnya tradisi dan kearifan lokal yang hanya tersimpan dalam bahasa itu; (3) hilangnya identitas dan warisan leluhur suatu kelompok masyarakat.",
-        "insight": "Siswa harus mengaitkan kepunahan bahasa dengan dampaknya terhadap warisan budaya dan identitas bangsa."
-      }
-    ]
-  },
-  {
-    "mapel": "Matematika",
-    "stimulus": "Perhatikan soal berikut!\n\nSekolah akan membagi 72 pensil, 54 buku tulis, dan 36 penghapus kepada sejumlah siswa secara merata. Setiap siswa mendapat jenis dan jumlah barang yang sama.",
-    "questions": [
-      {
-        "id": 151,
-        "type": "pg",
-        "skill": "logika",
-        "difficulty": "medium",
-        "teks": "Berapa siswa paling banyak yang bisa mendapat pembagian barang tersebut secara merata?",
-        "opsi": ["9 siswa", "12 siswa", "18 siswa", "36 siswa"],
-        "jawaban": 2,
-        "explanation": "Harus mencari FPB dari 72, 54, dan 36. FPB(72,54) = 18. FPB(18,36) = 18. Jadi FPB(72,54,36) = 18 siswa.",
-        "insight": "Kata kunci 'paling banyak siswa' dengan pembagian 'merata' berarti mencari FPB."
-      },
-      {
-        "id": 152,
-        "type": "pg",
-        "skill": "logika",
-        "difficulty": "medium",
-        "teks": "Jika dibagikan kepada 18 siswa, berapa buku tulis yang diterima setiap siswa?",
-        "opsi": ["2 buku", "3 buku", "4 buku", "6 buku"],
-        "jawaban": 1,
-        "explanation": "Buku tulis = 54 ÷ 18 = 3 buku per siswa.",
-        "insight": "Pembagian langsung setelah menemukan jumlah siswa (FPB)."
-      }
-    ]
-  },
-  {
-    "mapel": "Matematika",
-    "stimulus": "Perhatikan soal cerita berikut!\n\nPak Arman memiliki usaha konveksi yang menghasilkan 200 baju dalam 4 hari dengan 5 orang penjahit. Ia mendapat pesanan besar dan harus menyelesaikan 500 baju dalam 5 hari.",
-    "questions": [
-      {
-        "id": 153,
-        "type": "esai",
-        "skill": "perbandingan",
-        "difficulty": "hard",
-        "teks": "Berapa total penjahit yang dibutuhkan Pak Arman untuk menyelesaikan pesanan tersebut tepat waktu? Jelaskan dengan menggunakan konsep perbandingan!",
-        "keywords": [
-          {"kata": ["10 penjahit", "sepuluh penjahit"], "wajib": true, "bobot": 40},
-          {"kata": ["senilai", "berbanding", "per hari"], "wajib": true, "bobot": 30},
-          {"kata": ["50 baju", "100 baju per hari"], "wajib": false, "bobot": 30}
-        ],
-        "explanation": "Produktivitas = 200 baju ÷ (4 hari × 5 penjahit) = 10 baju/penjahit/hari. Target = 500 baju dalam 5 hari = 100 baju/hari. Penjahit yang dibutuhkan = 100 ÷ 10 = 10 penjahit.",
-        "insight": "Hitung produktivitas per penjahit per hari, lalu cari berapa penjahit yang dibutuhkan untuk target baru."
-      }
-    ]
-  },
-  {
-    "mapel": "Matematika",
-    "stimulus": "Perhatikan soal berikut!\n\nDiketahui harga 3 kg apel dan 2 kg jeruk adalah Rp85.000. Jika harga 1 kg apel adalah Rp20.000, berapa harga 1 kg jeruk?",
-    "questions": [
-      {
-        "id": 154,
-        "type": "pg",
-        "skill": "logika",
-        "difficulty": "medium",
-        "teks": "Berapa harga 1 kg jeruk?",
-        "opsi": ["Rp10.000", "Rp12.500", "Rp15.000", "Rp17.500"],
-        "jawaban": 3,
-        "explanation": "Harga 3 kg apel = 3 × 20.000 = 60.000. Harga 2 kg jeruk = 85.000 - 60.000 = 25.000. Harga 1 kg jeruk = 25.000 ÷ 2 = 12.500.",
-        "insight": "Konsep persamaan linear satu variabel sederhana dalam konteks harga jual.",
-        "jawaban_koreksi": 1,
-        "explanation_koreksi": "1 kg jeruk = Rp12.500 (opsi B)."
-      },
-      {
-        "id": 155,
-        "type": "pg",
-        "skill": "logika",
-        "difficulty": "medium",
-        "teks": "Berapa biaya yang harus dikeluarkan untuk membeli 2 kg apel dan 3 kg jeruk?",
-        "opsi": ["Rp67.500", "Rp77.500", "Rp87.500", "Rp97.500"],
-        "jawaban": 0,
-        "explanation": "Harga 2 kg apel = 2 × 20.000 = 40.000. Harga 3 kg jeruk = 3 × 12.500 = 37.500. Total = 40.000 + 37.500 = 77.500.",
-        "insight": "Menggunakan hasil perhitungan sebelumnya untuk soal lanjutan.",
-        "jawaban_koreksi": 1,
-        "explanation_koreksi": "Total = 40.000 + 37.500 = Rp77.500 (opsi B)."
-      }
-    ]
-  },
-  {
-    "mapel": "Bahasa Indonesia",
-    "stimulus": "Bacalah teks berikut!\n\nPada masa penjajahan Jepang, rakyat Indonesia diwajibkan mengikuti program kerja paksa yang disebut romusha. Para romusha dipekerjakan untuk membangun sarana militer seperti jalan, jembatan, dan gua perlindungan. Mereka bekerja dalam kondisi yang sangat berat tanpa upah dan kekurangan makanan. Banyak romusha yang meninggal akibat kelelahan, penyakit, dan kelaparan. Penderitaan inilah yang semakin menguatkan semangat perlawanan rakyat Indonesia untuk memperjuangkan kemerdekaan.",
-    "questions": [
-      {
-        "id": 156,
-        "type": "pg",
-        "skill": "makna kata",
-        "difficulty": "medium",
-        "teks": "Berdasarkan teks, arti kata 'romusha' adalah...",
-        "opsi": [
-          "Prajurit tentara Jepang yang bertugas di Indonesia",
-          "Program beasiswa yang diberikan Jepang kepada pelajar Indonesia",
-          "Pekerja paksa yang dipekerjakan oleh pemerintah Jepang tanpa upah",
-          "Pemimpin perlawanan rakyat Indonesia melawan penjajah Jepang"
-        ],
-        "jawaban": 2,
-        "explanation": "Dari teks: romusha adalah program kerja paksa. Rakyat dipekerjakan tanpa upah untuk membangun fasilitas militer. Jadi romusha adalah sebutan untuk para pekerja paksa tersebut.",
-        "insight": "Makna istilah sejarah dapat dipahami dari konteks penjelasan dalam teks."
-      },
-      {
-        "id": 157,
-        "type": "pg",
-        "skill": "sebab-akibat",
-        "difficulty": "medium",
-        "teks": "Berdasarkan teks, apa dampak penderitaan akibat romusha terhadap semangat bangsa Indonesia?",
-        "opsi": [
-          "Membuat rakyat Indonesia semakin tunduk kepada penjajah Jepang.",
-          "Menyebabkan rakyat Indonesia kehilangan semangat untuk berjuang.",
-          "Semakin menguatkan semangat perlawanan untuk memperjuangkan kemerdekaan.",
-          "Mendorong rakyat Indonesia bekerja sama dengan tentara Jepang."
-        ],
-        "jawaban": 2,
-        "explanation": "Teks menyebutkan: 'Penderitaan inilah yang semakin menguatkan semangat perlawanan rakyat Indonesia untuk memperjuangkan kemerdekaan.'",
-        "insight": "Sebab-akibat: penderitaan yang awalnya menekan justru semakin memperkuat semangat perlawanan."
-      },
-      {
-        "id": 158,
-        "type": "pg",
-        "skill": "inferensi",
-        "difficulty": "hard",
-        "teks": "Nilai yang bisa diambil dari perjuangan para romusha dan rakyat Indonesia pada masa itu adalah...",
-        "opsi": [
-          "Kerja keras itu penting meskipun tidak mendapat upah.",
-          "Penderitaan dan ketidakadilan harus dilawan demi meraih hak dan kebebasan.",
-          "Membangun jalan dan jembatan adalah tugas utama rakyat.",
-          "Orang Jepang lebih pandai memimpin dibandingkan bangsa Indonesia."
-        ],
-        "jawaban": 1,
-        "explanation": "Nilai yang dapat dipetik: semangat perlawanan terhadap ketidakadilan (kerja paksa tanpa upah, penderitaan) menunjukkan bahwa hak dan kebebasan harus diperjuangkan, tidak boleh menyerah terhadap penindasan.",
-        "insight": "Siswa harus mentransfer nilai historis ke prinsip moral yang universal."
-      }
-    ]
-  },
-  {
-    "mapel": "Bahasa Indonesia",
-    "stimulus": "Bacalah teks berikut!\n\nHidroponik adalah metode menanam tanaman tanpa menggunakan tanah, melainkan menggunakan larutan nutrisi berbasis air. Tanaman ditanam dalam media seperti kerikil, serabut kelapa, atau busa yang berfungsi sebagai penopang akar. Kelebihan hidroponik antara lain: tidak memerlukan lahan luas, dapat dilakukan di dalam ruangan, pertumbuhan tanaman lebih cepat, dan hasil panen lebih bersih. Hidroponik sangat cocok diterapkan di perkotaan di mana lahan pertanian sangat terbatas.",
-    "questions": [
-      {
-        "id": 159,
-        "type": "pg",
-        "skill": "analisis teks",
-        "difficulty": "easy",
-        "teks": "Berdasarkan teks, apa yang membedakan hidroponik dari metode bercocok tanam konvensional?",
-        "opsi": [
-          "Hidroponik menggunakan pupuk kimia, sedangkan tanam biasa menggunakan pupuk organik.",
-          "Hidroponik tidak menggunakan tanah, melainkan larutan nutrisi berbasis air.",
-          "Hidroponik hanya bisa dilakukan di luar ruangan dengan sinar matahari penuh.",
-          "Hidroponik hanya cocok untuk menanam buah-buahan tropis."
-        ],
-        "jawaban": 1,
-        "explanation": "Perbedaan utama yang disebutkan di awal teks: hidroponik menanam tanpa tanah, menggunakan larutan nutrisi berbasis air.",
-        "insight": "Perbedaan utama suatu konsep biasanya dijelaskan di kalimat pertama atau definisinya."
-      },
-      {
-        "id": 160,
-        "type": "pg",
-        "skill": "inferensi",
-        "difficulty": "medium",
-        "teks": "Mengapa hidroponik sangat cocok dikembangkan di kota-kota besar yang padat penduduk?",
-        "opsi": [
-          "Karena tanaman hidroponik tumbuh lebih tinggi sehingga bisa dilihat dari jauh.",
-          "Karena hidroponik tidak memerlukan lahan luas dan bisa dilakukan di dalam ruangan.",
-          "Karena kota besar memiliki banyak air bersih yang dapat digunakan untuk nutrisi tanaman.",
-          "Karena penduduk kota lebih menyukai sayuran yang ditanam secara modern."
-        ],
-        "jawaban": 1,
-        "explanation": "Teks menyebutkan: 'tidak memerlukan lahan luas, dapat dilakukan di dalam ruangan.' Di kota, lahan sangat terbatas, sehingga hidroponik menjadi solusi yang tepat.",
-        "insight": "Menyimpulkan kesesuaian suatu metode dengan kondisi tertentu berdasarkan kelebihan yang disebutkan teks."
-      }
-    ]
-  },
-  {
-    "mapel": "Bahasa Indonesia",
-    "stimulus": "Bacalah teks berikut!\n\nSikap sportif dalam olahraga adalah sikap menerima kekalahan dengan lapang dada dan menghargai kemenangan lawan. Atlet yang sportif tidak akan mencari-cari alasan saat kalah, tidak merendahkan lawan yang menang, dan tetap menjunjung tinggi kejujuran selama bertanding. Sebaliknya, perilaku tidak sportif seperti kecurangan, kekerasan, atau protes berlebihan dapat merusak semangat persahabatan dalam olahraga.",
-    "questions": [
-      {
-        "id": 161,
-        "type": "pg",
-        "skill": "analisis",
-        "difficulty": "medium",
-        "teks": "Contoh sikap sportif yang paling tepat dalam pertandingan sepak bola adalah...",
-        "opsi": [
-          "Merayakan kemenangan dengan mengejek tim lawan yang kalah.",
-          "Memprotes wasit dengan keras setiap kali keputusan dirasa tidak menguntungkan.",
-          "Menyalami pemain lawan setelah pertandingan selesai, baik menang maupun kalah.",
-          "Berusaha mencetak gol meskipun lawan sedang ada pemain yang cedera."
-        ],
-        "jawaban": 2,
-        "explanation": "Menyalami lawan setelah pertandingan mencerminkan sikap menghargai lawan dan menerima hasil pertandingan dengan lapang dada, sesuai dengan definisi sportif dalam teks.",
-        "insight": "Contoh konkret dari nilai abstrak (sportivitas) dalam konteks olahraga."
-      },
-      {
-        "id": 162,
-        "type": "pg",
-        "skill": "inferensi",
-        "difficulty": "medium",
-        "teks": "Mengapa perilaku tidak sportif dapat 'merusak semangat persahabatan dalam olahraga'?",
-        "opsi": [
-          "Karena perilaku tidak sportif membuat pertandingan menjadi lebih menarik.",
-          "Karena kecurangan dan kekerasan mengubah olahraga dari persaingan sehat menjadi permusuhan.",
-          "Karena wasit akan mengeluarkan pemain yang tidak sportif dari lapangan.",
-          "Karena penonton tidak suka melihat tim yang bermain curang."
-        ],
-        "jawaban": 1,
-        "explanation": "Olahraga seharusnya mempererat persaudaraan melalui persaingan yang sehat dan jujur. Kecurangan dan kekerasan menghilangkan nilai sportivitas dan mengubah semangat berlomba menjadi permusuhan.",
-        "insight": "Memahami dampak sosial dari perilaku tidak sportif terhadap nilai olahraga sebagai sarana persahabatan."
-      }
-    ]
-  },
-  {
-    "mapel": "Bahasa Indonesia",
-    "stimulus": "Bacalah teks berikut!\n\nSetiap pagi, Ibu Guru Ratna memulai kelas dengan memeriksa kebersihan kuku dan kerapian seragam siswa. Bagi yang tidak memenuhi standar, ia meminta siswa merapikan diri terlebih dahulu sebelum belajar. Bu Ratna percaya bahwa kebersihan dan kerapian bukan hanya soal penampilan, tetapi juga mencerminkan disiplin dan mentalitas seseorang. Menurutnya, siswa yang terbiasa menjaga kerapian dirinya akan lebih mudah menjaga kerapian dalam belajar dan bekerja di masa depan.",
-    "questions": [
-      {
-        "id": 163,
-        "type": "pg",
-        "skill": "inferensi",
-        "difficulty": "medium",
-        "teks": "Pendapat Bu Ratna tentang kebersihan dan kerapian dalam teks tersebut adalah...",
-        "opsi": [
-          "Kebersihan hanya penting saat ada penilaian dari kepala sekolah.",
-          "Kerapian dan kebersihan mencerminkan disiplin yang akan terbawa ke kehidupan sehari-hari.",
-          "Siswa yang berseragam rapi pasti mendapat nilai yang bagus dalam pelajaran.",
-          "Memeriksa kuku siswa adalah tugas utama seorang guru kelas."
-        ],
-        "jawaban": 1,
-        "explanation": "Bu Ratna percaya bahwa kerapian dan kebersihan bukan sekadar penampilan, melainkan cerminan disiplin yang akan mempengaruhi cara seseorang belajar dan bekerja di masa depan.",
-        "insight": "Memahami pendapat atau perspektif tokoh dalam teks berdasarkan tindakan dan perkataannya."
-      },
-      {
-        "id": 164,
-        "type": "pg",
-        "skill": "logika",
-        "difficulty": "medium",
-        "teks": "Jika pendapat Bu Ratna dalam teks tersebut benar, manakah pernyataan berikut yang paling masuk akal?",
-        "opsi": [
-          "Siswa yang berseragam tidak rapi pasti bodoh dan tidak mau belajar.",
-          "Anak yang terbiasa merapikan kamar tidurnya sejak kecil kemungkinan akan lebih teratur dalam bekerja saat dewasa.",
-          "Guru tidak perlu memperhatikan penampilan siswa selama nilai pelajaran mereka bagus.",
-          "Kebersihan badan tidak ada hubungannya dengan prestasi belajar di sekolah."
-        ],
-        "jawaban": 1,
-        "explanation": "Pendapat Bu Ratna: kebiasaan menjaga kerapian mencerminkan disiplin yang akan terbawa ke kehidupan yang lebih luas. Pernyataan yang paling logis mengikuti pendapat ini adalah anak yang sejak kecil terbiasa rapi cenderung lebih teratur saat dewasa.",
-        "insight": "Menerapkan logika induktif dari pendapat yang dikemukakan dalam teks."
-      }
-    ]
-  },
-  {
-    "mapel": "Matematika",
-    "stimulus": "Perhatikan soal berikut!\n\nSebuah pabrik roti memproduksi 3 jenis roti: roti tawar, roti manis, dan roti cokelat dengan perbandingan 5 : 3 : 2. Total roti yang diproduksi dalam satu hari adalah 600 buah.",
-    "questions": [
-      {
-        "id": 165,
-        "type": "pg",
-        "skill": "analisis",
-        "difficulty": "medium",
-        "teks": "Berapa buah roti manis yang diproduksi setiap harinya?",
-        "opsi": ["120 buah", "150 buah", "180 buah", "200 buah"],
-        "jawaban": 2,
-        "explanation": "Total rasio = 5+3+2 = 10 bagian. Satu bagian = 600÷10 = 60. Roti manis = 3 × 60 = 180 buah.",
-        "insight": "Pembagian menggunakan perbandingan: cari nilai satu bagian, lalu kalikan dengan rasio yang ditanya."
-      },
-      {
-        "id": 166,
-        "type": "pg",
-        "skill": "analisis",
-        "difficulty": "medium",
-        "teks": "Jika roti tawar dijual Rp5.000/buah, roti manis Rp7.000/buah, dan roti cokelat Rp9.000/buah, berapa total pendapatan pabrik dari penjualan roti dalam satu hari?",
-        "opsi": ["Rp3.300.000", "Rp3.600.000", "Rp4.000.000", "Rp4.200.000"],
-        "jawaban": 1,
-        "explanation": "Roti tawar = 5×60 = 300 buah × 5.000 = 1.500.000. Roti manis = 180 buah × 7.000 = 1.260.000. Roti cokelat = 2×60 = 120 buah × 9.000 = 1.080.000. Total = 1.500.000 + 1.260.000 + 1.080.000 = 3.840.000.",
-        "insight": "Multi-step calculation: hitung jumlah tiap jenis roti dari perbandingan, lalu kalikan dengan harganya masing-masing.",
-        "jawaban_koreksi": "Jawaban seharusnya sekitar 3.840.000. Opsi B (3.600.000) adalah yang terdekat dari pilihan yang tersedia."
-      }
-    ]
-  },
-  {
-    "mapel": "Matematika",
-    "stimulus": "Perhatikan soal berikut!\n\nSebuah kolam ikan berbentuk lingkaran memiliki diameter 14 meter. Di sekeliling kolam akan dipasang pagar kawat. (π = 22/7)",
-    "questions": [
-      {
-        "id": 167,
-        "type": "pg",
-        "skill": "analisis",
-        "difficulty": "medium",
-        "teks": "Berapa meter panjang pagar kawat yang dibutuhkan untuk mengelilingi kolam tersebut?",
-        "opsi": ["40 meter", "44 meter", "48 meter", "56 meter"],
-        "jawaban": 1,
-        "explanation": "Keliling lingkaran = π × d = (22/7) × 14 = 22 × 2 = 44 meter.",
-        "insight": "Rumus keliling lingkaran = π × d (diameter) atau 2 × π × r (jari-jari)."
-      },
-      {
-        "id": 168,
-        "type": "pg",
-        "skill": "analisis",
-        "difficulty": "medium",
-        "teks": "Berapa luas permukaan kolam ikan tersebut?",
-        "opsi": ["144 m²", "154 m²", "164 m²", "176 m²"],
-        "jawaban": 1,
-        "explanation": "Jari-jari = 14÷2 = 7 m. Luas = π × r² = (22/7) × 7² = (22/7) × 49 = 22 × 7 = 154 m².",
-        "insight": "Rumus luas lingkaran = π × r². Pastikan menggunakan jari-jari, bukan diameter."
-      }
-    ]
-  },
-  {
-    "mapel": "Matematika",
-    "stimulus": "Perhatikan soal cerita berikut!\n\nAyah menginvestasikan uang sebesar Rp10.000.000 di koperasi dengan bunga tabungan 6% per tahun. Uang tersebut tidak ditarik selama 2 tahun.",
-    "questions": [
-      {
-        "id": 169,
-        "type": "pg",
-        "skill": "persentase",
-        "difficulty": "medium",
-        "teks": "Berapa total bunga yang diterima Ayah setelah 2 tahun?",
-        "opsi": ["Rp600.000", "Rp1.200.000", "Rp1.800.000", "Rp2.000.000"],
-        "jawaban": 1,
-        "explanation": "Bunga per tahun = 6% × 10.000.000 = 600.000. Bunga 2 tahun = 2 × 600.000 = 1.200.000.",
-        "insight": "Bunga sederhana dihitung per tahun, kemudian dikalikan dengan jumlah tahun."
-      },
-      {
-        "id": 170,
-        "type": "pg",
-        "skill": "persentase",
-        "difficulty": "medium",
-        "teks": "Berapa total uang Ayah (modal + bunga) setelah 2 tahun?",
-        "opsi": ["Rp10.600.000", "Rp11.000.000", "Rp11.200.000", "Rp12.000.000"],
-        "jawaban": 2,
-        "explanation": "Total = Modal + Bunga = 10.000.000 + 1.200.000 = 11.200.000.",
-        "insight": "Total tabungan = modal awal + total bunga yang diperoleh."
-            }
     ]
   }
 ]
